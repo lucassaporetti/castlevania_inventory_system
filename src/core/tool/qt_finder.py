@@ -1,6 +1,5 @@
 from abc import ABC
 from typing import Type, Optional
-
 from PyQt5.QtCore import QObject
 from PyQt5.QtWidgets import QWidget, QToolButton, QStackedWidget, QLineEdit, QTableView, QComboBox, QSpinBox, \
     QDialogButtonBox, QDoubleSpinBox, QDateEdit, QLabel, QFrame, QToolBox, QTextEdit

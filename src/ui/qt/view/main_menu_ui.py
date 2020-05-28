@@ -40,14 +40,6 @@ class MainMenuUi(QtView):
         self.removeButton = self.qt.find_tool_button('removeButton')
         self.searchButton = self.qt.find_tool_button('searchButton')
         self.searchLine = self.qt.find_line_edit('searchLine')
-        # self.tabPanel = self.qt.find_widget(self.window, QTabWidget, 'tabPanel')
-        # self.labelStatusBar = self.qt.find_widget(self.window, QLabel, 'labelStatusBar')
-        # self.car_search = CarSearchView(self.window, self)
-        # self.car_edit = CarEditView(self.window, self)
-        # self.user_search = UserSearchView(self.window, self)
-        # self.user_edit = UserEditView(self.window, self)
-        # self.rental_search = RentalSearchView(self.window, self)
-        # self.rental_edit = RentalEditView(self.window, self)
         self.setup_ui()
         # self.set_status('Ready.')
 
@@ -63,7 +55,8 @@ class MainMenuUi(QtView):
         # self.car_search.stackedPanelCars.setCurrentIndex(0)
         # self.user_search.stackedPanelUsers.setCurrentIndex(0)
         # self.rental_search.stackedPanelRentals.setCurrentIndex(0)
-        self.log.info('Tab: tabPanel changed to {}'.format(idx))
+        # self.log.info('Tab: tabPanel changed to {}'.format(idx))
+        pass
 
     # def set_status(self, message):
     #     text = '<font color="{}">{}</font>'.format(str('color.name').lower(), message)

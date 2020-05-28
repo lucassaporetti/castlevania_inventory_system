@@ -1,7 +1,6 @@
 import pathlib
 import sys
 from abc import ABC
-
 from src.core.tool.commons import log_init
 from src.core.tool.properties import Properties
 
