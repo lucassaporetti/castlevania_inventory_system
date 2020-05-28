@@ -3,7 +3,7 @@ from typing import Type, Optional
 
 from PyQt5.QtCore import QObject
 from PyQt5.QtWidgets import QWidget, QToolButton, QStackedWidget, QLineEdit, QTableView, QComboBox, QSpinBox, \
-    QDialogButtonBox, QDoubleSpinBox, QDateEdit, QLabel
+    QDialogButtonBox, QDoubleSpinBox, QDateEdit, QLabel, QFrame, QToolBox
 
 
 class QtFinder(ABC):
@@ -14,6 +14,9 @@ class QtFinder(ABC):
     def __init__(self, window: QWidget):
         super().__init__()
         self.window = window
+
+    def find_frame(self, name: str) -> Optional[QFrame]:
+        return QtFinder.find_widget(self.window, QFrame, name)
 
     def find_label(self, name: str) -> Optional[QLabel]:
         return QtFinder.find_widget(self.window, QLabel, name)
@@ -35,6 +38,9 @@ class QtFinder(ABC):
 
     def find_combo_box(self, name: str) -> Optional[QComboBox]:
         return QtFinder.find_widget(self.window, QComboBox, name)
+
+    def find_tool_box(self, name: str) -> Optional[QToolBox]:
+        return QtFinder.find_widget(self.window, QToolBox, name)
 
     def find_spin_box(self, name: str) -> Optional[QSpinBox]:
         return QtFinder.find_widget(self.window, QSpinBox, name)

@@ -1,18 +1,21 @@
 <RCC>
-  <qresource prefix="weapons">
-    <file>images/alucard_sword_icon.png</file>
+  <qresource prefix="items">
+    <file>resources/images/items/alucard_sword_icon.png</file>
   </qresource>
   <qresource prefix="background">
-    <file>images/background4.jpg</file>
-    <file>images/background3.jpg</file>
-    <file>images/background2.jpg</file>
-    <file>images/background1</file>
-    <file>images/background.jpg</file>
-    <file>images/system_background.jpg</file>
+    <file>resources/images/backgrounds/system_background.jpg</file>
+    <file>resources/images/backgrounds/background4.jpg</file>
+    <file>resources/images/backgrounds/background3.jpg</file>
+    <file>resources/images/backgrounds/background2.jpg</file>
+    <file>resources/images/backgrounds/background1</file>
+    <file>resources/images/backgrounds/background.jpg</file>
   </qresource>
   <qresource prefix="icons">
-    <file>images/add_icon.jpg</file>
-    <file>images/search.png</file>
-    <file>images/delete_icon.png</file>
+    <file>resources/images/icons/delete_icon_clear.png</file>
+    <file>resources/images/icons/add_icon_clear.png</file>
+    <file>resources/images/icons/search_icon_clear.png</file>
+    <file>resources/images/icons/search_icon.png</file>
+    <file>resources/images/icons/delete_icon.png</file>
+    <file>resources/images/icons/add_icon.jpg</file>
   </qresource>
 </RCC>
