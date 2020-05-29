@@ -1,5 +1,5 @@
 from PyQt5 import uic, QtGui
-from PyQt5.QtGui import QPixmap
+from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QTabWidget, QLabel, QFrame, QToolBox, QWidget, QStackedWidget, QTextEdit, QLineEdit
 
 # from src.core.config.app_configs import AppConfigs
@@ -49,7 +49,22 @@ class MainMenuUi(QtView):
         self.setup_ui()
         self.animated_item_gif()
         self.show_item_image()
+        self.armor_page_clicked()
         # self.set_status('Ready.')
+
+    def key_pressed(self, key_pressed):
+        if Qt.Key_1 == key_pressed:
+            self.armor_page_clicked()
+
+    def armor_page_clicked(self):
+        self.log.info("Armor page selected!")
+        character_image = '/home/lucassaporetti/GIT-Repository/castlevania_inventory_system/src/resources/images/backgrounds/dracula_pose.png'
+        qimage2 = QtGui.QImage(character_image)
+        pixmap2 = QtGui.QPixmap.fromImage(qimage2)
+        pixmap_image2 = QtGui.QPixmap(pixmap2)
+        pixmap_image2_sized = pixmap_image2.scaled(270, 383)
+        self.characterImage.setPixmap(pixmap_image2_sized)
+        self.characterImage.show()
 
     def setup_ui(self):
         # self.frameMain.setCurrentIndex(0)
@@ -80,7 +95,7 @@ class MainMenuUi(QtView):
         pixmap_image = QtGui.QPixmap(pixmap)
         self.itemImage.setPixmap(pixmap_image)
         self.itemImage.show()
-        character_image = '/home/lucassaporetti/GIT-Repository/castlevania_inventory_system/src/resources/images/backgrounds/alucard_shield_pose.png'
+        character_image = '/home/lucassaporetti/GIT-Repository/castlevania_inventory_system/src/resources/images/backgrounds/alucard_weapon_pose.png'
         qimage2 = QtGui.QImage(character_image)
         pixmap2 = QtGui.QPixmap.fromImage(qimage2)
         pixmap_image2 = QtGui.QPixmap(pixmap2)
