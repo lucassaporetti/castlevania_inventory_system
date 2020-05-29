@@ -11,6 +11,8 @@ from PyQt5.QtWidgets import QTabWidget, QLabel, QFrame, QToolBox, QWidget, QStac
 # from src.ui.qt.views.rental.rental_search_view import RentalSearchView
 # from src.ui.qt.views.user.user_edit_view import UserEditView
 # from src.ui.qt.views.user.user_search_view import UserSearchView
+from PyQt5.uic.properties import QtCore
+
 from src.ui.qt.view.qt_view import QtView
 
 
@@ -36,7 +38,9 @@ class MainMenuUi(QtView):
         self.itemDescription = self.qt.find_text_edit('itemDescription')
         self.itemAttributes = self.qt.find_text_edit('itemAttributes')
         self.itemImage = self.qt.find_label('itemImage')
-        self.itemGif = self.qt.find_label('itemGif')
+        self.characterImage = self.qt.find_label('characterImage')
+        self.itemGifAnimation = self.qt.find_label('itemGifAnimation')
+        self.itemGifSpecial = self.qt.find_label('itemGifSpecial')
         self.frameToolbox = self.qt.find_frame('frameToolbox')
         self.addButton = self.qt.find_tool_button('addButton')
         self.removeButton = self.qt.find_tool_button('removeButton')
@@ -57,18 +61,32 @@ class MainMenuUi(QtView):
 
     def animated_item_gif(self):
         movie = QtGui.QMovie("/home/lucassaporetti/GIT-Repository/"
-                             "castlevania_inventory_system/src/resources"
-                             "/images/items/alucard_sword_animation.gif")
-        self.itemGif.setMovie(movie)
+                             "castlevania_inventory_system/src/resources/"
+                             "images/items/alucard_sword_animation.gif")
+        self.itemGifAnimation.setMovie(movie)
         movie.start()
+        movie2 = QtGui.QMovie("/home/lucassaporetti/GIT-Repository/"
+                              "castlevania_inventory_system/src/resources/"
+                              "images/items/alucard_sword_special.gif")
+        self.itemGifSpecial.setMovie(movie2)
+        movie2.start()
 
     def show_item_image(self):
-        item_image = '/home/lucassaporetti/GIT-Repository/castlevania_inventory_system/src/resources/images/items/alucard_sword_icon.png'
+        item_image = '/home/lucassaporetti/GIT-Repository/' \
+                     'castlevania_inventory_system/src/' \
+                     'resources/images/items/alucard_sword_icon.png'
         qimage = QtGui.QImage(item_image)
         pixmap = QtGui.QPixmap.fromImage(qimage)
         pixmap_image = QtGui.QPixmap(pixmap)
         self.itemImage.setPixmap(pixmap_image)
         self.itemImage.show()
+        character_image = '/home/lucassaporetti/GIT-Repository/castlevania_inventory_system/src/resources/images/backgrounds/alucard_shield_pose.png'
+        qimage2 = QtGui.QImage(character_image)
+        pixmap2 = QtGui.QPixmap.fromImage(qimage2)
+        pixmap_image2 = QtGui.QPixmap(pixmap2)
+        pixmap_image2_sized = pixmap_image2.scaled(270, 383)
+        self.characterImage.setPixmap(pixmap_image2_sized)
+        self.characterImage.show()
 
 
     def tab_changed(self, idx: int):
