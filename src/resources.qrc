@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="items">
+    <file>resources/images/items/alucard_sword_animation.gif</file>
     <file>resources/images/items/alucard_sword_icon.png</file>
   </qresource>
   <qresource prefix="background">

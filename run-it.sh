@@ -5,11 +5,8 @@ CUR_DIR="$(pwd)"
 export PYTHONPATH="${CUR_DIR}"
 
 pushd src &> /dev/null || exit 1
-if [[ "qt" == "$1" ]]; then
-  pyrcc5 resources.qrc -o resources_rc.py
+if pyrcc5 resources.qrc -o resources_rc.py; then
   python3 main.py qt
-else
-  python3 main.py
 fi
 popd &> /dev/null || exit 1
 

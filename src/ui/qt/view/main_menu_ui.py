@@ -1,4 +1,5 @@
-from PyQt5 import uic
+from PyQt5 import uic, QtGui
+from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import QTabWidget, QLabel, QFrame, QToolBox, QWidget, QStackedWidget, QTextEdit, QLineEdit
 
 # from src.core.config.app_configs import AppConfigs
@@ -34,13 +35,16 @@ class MainMenuUi(QtView):
         self.stackedPage = self.qt.find_widget(self.window, QWidget, 'stackedPage')
         self.itemDescription = self.qt.find_text_edit('itemDescription')
         self.itemAttributes = self.qt.find_text_edit('itemAttributes')
-        self.itemImage = self.qt.find_text_edit('itemImage')
+        self.itemImage = self.qt.find_label('itemImage')
+        self.itemGif = self.qt.find_label('itemGif')
         self.frameToolbox = self.qt.find_frame('frameToolbox')
         self.addButton = self.qt.find_tool_button('addButton')
         self.removeButton = self.qt.find_tool_button('removeButton')
         self.searchButton = self.qt.find_tool_button('searchButton')
         self.searchLine = self.qt.find_line_edit('searchLine')
         self.setup_ui()
+        self.animated_item_gif()
+        self.show_item_image()
         # self.set_status('Ready.')
 
     def setup_ui(self):
@@ -50,6 +54,22 @@ class MainMenuUi(QtView):
 
     def show(self):
         self.window.show()
+
+    def animated_item_gif(self):
+        movie = QtGui.QMovie("/home/lucassaporetti/GIT-Repository/"
+                             "castlevania_inventory_system/src/resources"
+                             "/images/items/alucard_sword_animation.gif")
+        self.itemGif.setMovie(movie)
+        movie.start()
+
+    def show_item_image(self):
+        item_image = '/home/lucassaporetti/GIT-Repository/castlevania_inventory_system/src/resources/images/items/alucard_sword_icon.png'
+        qimage = QtGui.QImage(item_image)
+        pixmap = QtGui.QPixmap.fromImage(qimage)
+        pixmap_image = QtGui.QPixmap(pixmap)
+        self.itemImage.setPixmap(pixmap_image)
+        self.itemImage.show()
+
 
     def tab_changed(self, idx: int):
         # self.car_search.stackedPanelCars.setCurrentIndex(0)
