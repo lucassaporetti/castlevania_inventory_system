@@ -34,6 +34,9 @@
   <property name="styleSheet">
    <string notr="true">QDialog#qtCastlevaniaInventory{border-image: url(:/background/resources/images/backgrounds/system_background.jpg)};</string>
   </property>
+  <property name="sizeGripEnabled">
+   <bool>false</bool>
+  </property>
   <widget class="QFrame" name="frameToolbox">
    <property name="geometry">
     <rect>
@@ -418,65 +421,62 @@ background-color: rgba(191, 64, 64, 0);</string>
      <property name="styleSheet">
       <string notr="true">QWidget#stackedPage{background-color: rgba(0, 0, 0, 69)};</string>
      </property>
-     <widget class="QTextEdit" name="itemAttributes">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>150</y>
-        <width>335</width>
-        <height>205</height>
-       </rect>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>335</width>
-        <height>205</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>335</width>
-        <height>205</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">font: 63 20pt &quot;Yrsa&quot;;
-color: rgba(4, 4, 4, 240);
-background-color: rgba(255, 255, 255, 45);</string>
-      </property>
-     </widget>
      <widget class="QTextEdit" name="itemDescription">
       <property name="geometry">
        <rect>
         <x>10</x>
         <y>10</y>
-        <width>335</width>
-        <height>135</height>
+        <width>345</width>
+        <height>346</height>
        </rect>
       </property>
       <property name="minimumSize">
        <size>
-        <width>335</width>
-        <height>135</height>
+        <width>345</width>
+        <height>346</height>
        </size>
       </property>
       <property name="maximumSize">
        <size>
-        <width>335</width>
-        <height>135</height>
+        <width>345</width>
+        <height>346</height>
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true">font: 75 40pt &quot;Yrsa&quot;;
-color: rgba(249, 166, 0, 235);
-background-color: rgba(255, 255, 255, 45);</string>
+       <string notr="true">font: 75 8pt &quot;URW Bookman L&quot;;
+background-color: rgba(0, 0, 0, 93);
+color: rgb(0, 0, 0);
+</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
       </property>
       <property name="html">
        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Yrsa'; font-size:40pt; font-weight:72; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'URW Bookman L'; font-size:8pt; font-weight:72; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; text-decoration: underline; color:#eeeeec;&quot;&gt;INFORMATION&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:6pt; font-weight:400; color:#ef2929;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; color:#ff9900;&quot;&gt;    Type:     &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; color:#5c3566;&quot;&gt;         &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:400; color:#eeeeec;&quot;&gt;Sword&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400; color:#5c3566;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; color:#ff9900;&quot;&gt;    Description:  &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; color:#5c3566;&quot;&gt;  &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:400; color:#eeeeec;&quot;&gt;Mother's family heirloom. &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400; color:#eeeeec;&quot;&gt;                            Alucard's favorite sword.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:6pt; font-weight:400; color:#eeeeec;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; color:#ff9900;&quot;&gt;    Found at: &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; color:#5c3566;&quot;&gt;       &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:400; color:#eeeeec;&quot;&gt;Cave&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400; color:#5c3566;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; color:#ff9900;&quot;&gt;    Dropped by:&lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; color:#5c3566;&quot;&gt;    &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:400; color:#eeeeec;&quot;&gt;Galamoth (Encore of the Night)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:6pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; text-decoration: underline; color:#eeeeec;&quot;&gt;ATTRIBUTES&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:6pt; font-weight:400; color:#ef2929;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; color:#ff9900;&quot;&gt;    Speciality:&lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; color:#5c3566;&quot;&gt;      &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:400; color:#eeeeec;&quot;&gt;Slash&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:400; color:#eeeeec;&quot;&gt;                            ATT +42&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:6pt; font-weight:400; color:#eeeeec;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; color:#ff9900;&quot;&gt;    Special ATT:&lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:600; color:#5c3566;&quot;&gt;   &lt;/span&gt;&lt;span style=&quot; font-family:'Yrsa'; font-size:11pt; font-weight:400; color:#eeeeec;&quot;&gt;↓↘→+[Attack]&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Yrsa'; font-size:11pt; font-weight:400; color:#eeeeec;&quot;&gt;                                    Teleport and attack from behind &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Yrsa'; font-size:11pt; font-weight:400; color:#eeeeec;&quot;&gt;                                    (50 ATT for 5 MP)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QFrame" name="itemFrame">
@@ -501,22 +501,22 @@ p, li { white-space: pre-wrap; }
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-image: url(:/background/resources/images/backgrounds/background.jpg);
-color: rgba(147, 147, 147, 71);</string>
+       <string notr="true">background-color: rgba(0, 0, 0, 200);
+color: rgba(181, 0, 0, 107);</string>
       </property>
       <property name="frameShape">
-       <enum>QFrame::Box</enum>
+       <enum>QFrame::NoFrame</enum>
       </property>
       <property name="frameShadow">
        <enum>QFrame::Plain</enum>
       </property>
       <property name="lineWidth">
-       <number>6</number>
+       <number>1</number>
       </property>
       <widget class="QLabel" name="itemImage">
        <property name="geometry">
         <rect>
-         <x>170</x>
+         <x>171</x>
          <y>30</y>
          <width>56</width>
          <height>56</height>
@@ -535,28 +535,35 @@ color: rgba(147, 147, 147, 71);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-image: url(:/background/resources/images/backgrounds/background.jpg);
-color: rgba(4, 4, 4, 240);
+        <string notr="true">color: rgba(255, 255, 255, 57);
+background-color: rgba(0, 0, 0, 189);
+
 
 </string>
        </property>
        <property name="frameShape">
-        <enum>QFrame::WinPanel</enum>
+        <enum>QFrame::Box</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
        </property>
        <property name="lineWidth">
-        <number>6</number>
+        <number>1</number>
        </property>
        <property name="midLineWidth">
-        <number>6</number>
+        <number>1</number>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
        </property>
       </widget>
       <widget class="QTextEdit" name="itemName">
        <property name="geometry">
         <rect>
-         <x>5</x>
+         <x>1</x>
          <y>30</y>
          <width>171</width>
          <height>56</height>
@@ -576,13 +583,20 @@ color: rgba(4, 4, 4, 240);
        </property>
        <property name="styleSheet">
         <string notr="true">font: 75 40pt &quot;Yrsa&quot;;
+background-color: rgba(181, 0, 0, 107);
+
+
 color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
        </property>
        <property name="html">
         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Yrsa'; font-size:40pt; font-weight:72; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-size:16pt; font-weight:600;&quot;&gt;Alucard Sword&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
@@ -611,20 +625,19 @@ p, li { white-space: pre-wrap; }
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-image: url(:/background/resources/images/backgrounds/background.jpg);
-color: rgba(147, 147, 147, 71);</string>
+        <string notr="true">color: rgba(255, 255, 255, 57);</string>
        </property>
        <property name="frameShape">
-        <enum>QFrame::Panel</enum>
+        <enum>QFrame::Box</enum>
        </property>
        <property name="frameShadow">
         <enum>QFrame::Plain</enum>
        </property>
        <property name="lineWidth">
-        <number>6</number>
+        <number>1</number>
        </property>
        <property name="midLineWidth">
-        <number>6</number>
+        <number>1</number>
        </property>
        <property name="text">
         <string/>
@@ -664,20 +677,19 @@ color: rgba(147, 147, 147, 71);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-image: url(:/background/resources/images/backgrounds/background.jpg);
-color: rgba(147, 147, 147, 71);</string>
+        <string notr="true">color: rgba(255, 255, 255, 57);</string>
        </property>
        <property name="frameShape">
-        <enum>QFrame::Panel</enum>
+        <enum>QFrame::Box</enum>
        </property>
        <property name="frameShadow">
         <enum>QFrame::Plain</enum>
        </property>
        <property name="lineWidth">
-        <number>6</number>
+        <number>1</number>
        </property>
        <property name="midLineWidth">
-        <number>6</number>
+        <number>1</number>
        </property>
        <property name="text">
         <string/>

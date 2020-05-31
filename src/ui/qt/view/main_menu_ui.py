@@ -1,6 +1,7 @@
 from PyQt5 import uic, QtGui
-from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QTabWidget, QLabel, QFrame, QToolBox, QWidget, QStackedWidget, QTextEdit, QLineEdit
+from PyQt5.QtCore import *
+from PyQt5.QtWidgets import QWidget, QApplication, QLabel, QHBoxLayout
+# from PyQt5.QtWidgets import QTabWidget, QLabel, QFrame, QToolBox, QStackedWidget, QTextEdit, QLineEdit
 
 # from src.core.config.app_configs import AppConfigs
 # from core.enum.color import Color
@@ -13,6 +14,7 @@ from PyQt5.QtWidgets import QTabWidget, QLabel, QFrame, QToolBox, QWidget, QStac
 # from src.ui.qt.views.user.user_search_view import UserSearchView
 from PyQt5.uic.properties import QtCore
 
+from src.resources.resources_properties.image_paths import ImagePaths
 from src.ui.qt.view.qt_view import QtView
 
 
@@ -49,27 +51,49 @@ class MainMenuUi(QtView):
         self.setup_ui()
         self.animated_item_gif()
         self.show_item_image()
-        self.armor_page_clicked()
+        # self.clickable(self.categoryBox).connect(self.armor_page_clicked)
         # self.set_status('Ready.')
+
+    def setup_ui(self):
+        self.removeButton.clicked.connect(self.remove_button_clicked)
+        self.categoryBox.currentChanged.connect(self.category_box_clicked)
+        # self.categoryBox.currentChanged.connect(self.shield_page_clicked)
+        # self.categoryBox.currentChanged.connect(self.relic_page_clicked)
+        # self.categoryBox.currentChanged.connect(self.card_page_clicked)
+        # self.categoryBox.currentChanged.connect(self.consumable_page_clicked)
+        # self.categoryBox.currentChanged.connect(self.other_page_clicked)
+
+    def current_index(self):
+        index = self.categoryBox.currentIndex()
+        return index
 
     def key_pressed(self, key_pressed):
         if Qt.Key_1 == key_pressed:
-            self.armor_page_clicked()
+            self.remove_button_clicked()
 
-    def armor_page_clicked(self):
+    def category_box_clicked(self):
+        index = self.current_index()
+        image_index = ImagePaths(index).get_image()
         self.log.info("Armor page selected!")
-        character_image = '/home/lucassaporetti/GIT-Repository/castlevania_inventory_system/src/resources/images/backgrounds/dracula_pose.png'
-        qimage2 = QtGui.QImage(character_image)
-        pixmap2 = QtGui.QPixmap.fromImage(qimage2)
-        pixmap_image2 = QtGui.QPixmap(pixmap2)
-        pixmap_image2_sized = pixmap_image2.scaled(270, 383)
-        self.characterImage.setPixmap(pixmap_image2_sized)
+        character_image = image_index
+        qimage = QtGui.QImage(character_image)
+        pixmap = QtGui.QPixmap.fromImage(qimage)
+        pixmap_image = QtGui.QPixmap(pixmap)
+        pixmap_image_sized = pixmap_image.scaled(270, 383)
+        self.characterImage.setPixmap(pixmap_image_sized)
         self.characterImage.show()
 
-    def setup_ui(self):
-        # self.frameMain.setCurrentIndex(0)
-        # self.frameMain.connect()
-        pass
+    def remove_button_clicked(self):
+        self.log.info("Armor page selected!")
+        character_image = '/home/lucassaporetti/GIT-Repository/' \
+                          'castlevania_inventory_system/src/' \
+                          'resources/images/backgrounds/delete_background.png'
+        qimage = QtGui.QImage(character_image)
+        pixmap = QtGui.QPixmap.fromImage(qimage)
+        pixmap_image = QtGui.QPixmap(pixmap)
+        pixmap_image_sized = pixmap_image.scaled(270, 383)
+        self.characterImage.setPixmap(pixmap_image_sized)
+        self.characterImage.show()
 
     def show(self):
         self.window.show()
@@ -95,14 +119,6 @@ class MainMenuUi(QtView):
         pixmap_image = QtGui.QPixmap(pixmap)
         self.itemImage.setPixmap(pixmap_image)
         self.itemImage.show()
-        character_image = '/home/lucassaporetti/GIT-Repository/castlevania_inventory_system/src/resources/images/backgrounds/alucard_weapon_pose.png'
-        qimage2 = QtGui.QImage(character_image)
-        pixmap2 = QtGui.QPixmap.fromImage(qimage2)
-        pixmap_image2 = QtGui.QPixmap(pixmap2)
-        pixmap_image2_sized = pixmap_image2.scaled(270, 383)
-        self.characterImage.setPixmap(pixmap_image2_sized)
-        self.characterImage.show()
-
 
     def tab_changed(self, idx: int):
         # self.car_search.stackedPanelCars.setCurrentIndex(0)
