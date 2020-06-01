@@ -63,6 +63,7 @@ class MainMenuUi(QtView):
 
     def setup_ui(self):
         self.removeButton.clicked.connect(self.remove_button_clicked)
+        self.addButton.clicked.connect(self.add_button_clicked)
         self.categoryBox.currentChanged.connect(self.category_box_clicked)
 
     def key_pressed(self, key_pressed):
@@ -85,6 +86,9 @@ class MainMenuUi(QtView):
         else:
             self.stackedMain.setCurrentIndex(0)
             self.characterImage.close()
+
+    def add_button_clicked(self):
+        self.stackedMain.setCurrentIndex(2)
 
     @staticmethod
     def open_file():

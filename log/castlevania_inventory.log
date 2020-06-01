@@ -1,1 +1,16 @@
-2020-06-01 13:05:21,500 [MainThread] INFO  root::remove_button_clicked(@Line:101) Remove button pressed. 
+2020-06-01 14:30:14,034 [MainThread] INFO  root::remove_button_clicked(@Line:105) Remove button pressed. 
+2020-06-01 14:30:18,701 [MainThread] INFO  root::remove_button_clicked(@Line:105) Remove button pressed. 
+2020-06-01 14:30:22,941 [MainThread] INFO  root::category_box_clicked(@Line:77) <PyQt5.QtWidgets.QWidget object at 0x7f6f9818fc30> selected! 
+2020-06-01 14:30:24,744 [MainThread] INFO  root::category_box_clicked(@Line:77) <PyQt5.QtWidgets.QWidget object at 0x7f6f9818fa50> selected! 
+2020-06-01 14:30:25,583 [MainThread] INFO  root::category_box_clicked(@Line:77) <PyQt5.QtWidgets.QWidget object at 0x7f6f9818faf0> selected! 
+2020-06-01 14:30:26,045 [MainThread] INFO  root::category_box_clicked(@Line:77) <PyQt5.QtWidgets.QWidget object at 0x7f6f9818fb90> selected! 
+2020-06-01 14:30:26,451 [MainThread] INFO  root::category_box_clicked(@Line:77) <PyQt5.QtWidgets.QWidget object at 0x7f6f9818fcd0> selected! 
+2020-06-01 14:30:26,817 [MainThread] INFO  root::category_box_clicked(@Line:77) <PyQt5.QtWidgets.QWidget object at 0x7f6f9818fe10> selected! 
+2020-06-01 14:30:27,219 [MainThread] INFO  root::category_box_clicked(@Line:77) <PyQt5.QtWidgets.QWidget object at 0x7f6f97e817d0> selected! 
+2020-06-01 14:30:40,246 [MainThread] INFO  root::category_box_clicked(@Line:77) <PyQt5.QtWidgets.QWidget object at 0x7f6f9818fa50> selected! 
+2020-06-01 14:30:41,014 [MainThread] INFO  root::category_box_clicked(@Line:77) <PyQt5.QtWidgets.QWidget object at 0x7f6f9818fc30> selected! 
+2020-06-01 14:30:50,099 [MainThread] INFO  root::category_box_clicked(@Line:77) <PyQt5.QtWidgets.QWidget object at 0x7f6f9818fc30> selected! 
+2020-06-01 14:30:54,426 [MainThread] INFO  root::category_box_clicked(@Line:77) <PyQt5.QtWidgets.QWidget object at 0x7f6f9818fa50> selected! 
+2020-06-01 14:31:12,395 [MainThread] INFO  root::category_box_clicked(@Line:77) <PyQt5.QtWidgets.QWidget object at 0x7f6f9818fc30> selected! 
+2020-06-01 14:31:16,595 [MainThread] INFO  root::category_box_clicked(@Line:77) <PyQt5.QtWidgets.QWidget object at 0x7f6f9818fb90> selected! 
+2020-06-01 14:31:19,726 [MainThread] INFO  root::category_box_clicked(@Line:77) <PyQt5.QtWidgets.QWidget object at 0x7f6f9818fa50> selected! 

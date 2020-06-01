@@ -136,6 +136,15 @@ font: 12pt &quot;URW Bookman L&quot;;</string>
       <property name="text">
        <string/>
       </property>
+      <property name="placeholderText">
+       <string>| Search item...</string>
+      </property>
+      <property name="cursorMoveStyle">
+       <enum>Qt::LogicalMoveStyle</enum>
+      </property>
+      <property name="clearButtonEnabled">
+       <bool>false</bool>
+      </property>
      </widget>
     </item>
     <item>
@@ -859,41 +868,134 @@ p, li { white-space: pre-wrap; }
         <height>346</height>
        </size>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(0, 0, 0, 93);</string>
+      </property>
       <property name="title">
        <string/>
       </property>
       <property name="flat">
        <bool>false</bool>
       </property>
-      <layout class="QGridLayout" name="gridLayout_2">
-       <item row="2" column="0">
-        <widget class="QLabel" name="label_3">
-         <property name="styleSheet">
-          <string notr="true">background-color: rgba(0, 0, 0, 93);
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>14</x>
+         <y>32</y>
+         <width>91</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(0, 0, 0, 93);
 font: 75 italic 11pt &quot;URW Bookman L&quot;;
 color: rgb(241, 146, 0);</string>
-         </property>
-         <property name="text">
-          <string>Found at</string>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="0">
-        <widget class="QLabel" name="label_5">
-         <property name="styleSheet">
-          <string notr="true">background-color: rgba(0, 0, 0, 93);
+       </property>
+       <property name="text">
+        <string>Type</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_2">
+       <property name="geometry">
+        <rect>
+         <x>14</x>
+         <y>66</y>
+         <width>91</width>
+         <height>100</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(0, 0, 0, 93);
 font: 75 italic 11pt &quot;URW Bookman L&quot;;
 color: rgb(241, 146, 0);</string>
-         </property>
-         <property name="text">
-          <string>Speciality</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="QComboBox" name="comboBox_3">
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(0, 0, 0);
+       </property>
+       <property name="text">
+        <string>Description</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_3">
+       <property name="geometry">
+        <rect>
+         <x>14</x>
+         <y>172</y>
+         <width>91</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(0, 0, 0, 93);
+font: 75 italic 11pt &quot;URW Bookman L&quot;;
+color: rgb(241, 146, 0);</string>
+       </property>
+       <property name="text">
+        <string>Found at</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_4">
+       <property name="geometry">
+        <rect>
+         <x>14</x>
+         <y>206</y>
+         <width>91</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(0, 0, 0, 93);
+font: 75 italic 11pt &quot;URW Bookman L&quot;;
+color: rgb(241, 146, 0);</string>
+       </property>
+       <property name="text">
+        <string>Dropped by</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_5">
+       <property name="geometry">
+        <rect>
+         <x>14</x>
+         <y>240</y>
+         <width>91</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(0, 0, 0, 93);
+font: 75 italic 11pt &quot;URW Bookman L&quot;;
+color: rgb(241, 146, 0);</string>
+       </property>
+       <property name="text">
+        <string>Speciality</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_6">
+       <property name="geometry">
+        <rect>
+         <x>14</x>
+         <y>274</y>
+         <width>87</width>
+         <height>60</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(0, 0, 0, 93);
+font: 75 italic 11pt &quot;URW Bookman L&quot;;
+color: rgb(241, 146, 0);</string>
+       </property>
+       <property name="text">
+        <string>Special ATT</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="comboBox">
+       <property name="geometry">
+        <rect>
+         <x>105</x>
+         <y>32</y>
+         <width>117</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(0, 0, 0);
 font: 12pt &quot;URW Bookman L&quot;;
 color: rgb(238, 238, 236);
 gridline-color: rgb(46, 52, 54);
@@ -901,173 +1003,49 @@ selection-color: rgb(0, 0, 0);
 selection-background-color: rgb(181, 0, 0);
 
 </string>
-         </property>
-         <item>
-          <property name="text">
-           <string>Entrance</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Alchemy Laboratory</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Marble Gallery</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Cursed Prison</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Outer Wall</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Long Library</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Underground Caverns</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Royal Chapel</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Castle Keep</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Underground Garden</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Olrox's Quarters</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Colosseum</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Abandoned Mine</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Catacombs</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Clock Tower</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Master of the Castle</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Reverse Keep</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Reverse Clock Tower</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Reverse Outer Wall</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Forbidden Library</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Black Marble Gallery</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Death Wing's Lair</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Reverse Colosseum</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Anti-Chapel</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Reverse Caverns</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Reverse Cursed Prison</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Necromancy Laboratory</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Reverse Entrance</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Hell Garden</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Cave</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Floating Catacombs</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Final Showdown</string>
-          </property>
-         </item>
-        </widget>
+       </property>
+       <item>
+        <property name="text">
+         <string>Fist</string>
+        </property>
        </item>
-       <item row="0" column="1">
-        <widget class="QComboBox" name="comboBox">
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(0, 0, 0);
+       <item>
+        <property name="text">
+         <string>Club</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Two Hand</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Throw One</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Sword</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Dagger</string>
+        </property>
+       </item>
+      </widget>
+      <widget class="QComboBox" name="comboBox_2">
+       <property name="geometry">
+        <rect>
+         <x>105</x>
+         <y>240</y>
+         <width>100</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(0, 0, 0);
 font: 12pt &quot;URW Bookman L&quot;;
 color: rgb(238, 238, 236);
 gridline-color: rgb(46, 52, 54);
@@ -1075,43 +1053,69 @@ selection-color: rgb(0, 0, 0);
 selection-background-color: rgb(181, 0, 0);
 
 </string>
-         </property>
-         <item>
-          <property name="text">
-           <string>Fist</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Club</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Two Hand</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Throw One</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Sword</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Dagger</string>
-          </property>
-         </item>
-        </widget>
+       </property>
+       <item>
+        <property name="text">
+         <string>Hit</string>
+        </property>
        </item>
-       <item row="4" column="1">
-        <widget class="QComboBox" name="comboBox_2">
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(0, 0, 0);
+       <item>
+        <property name="text">
+         <string>Cut</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Curse</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Poison</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Stone</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Fire</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Ice</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Thunder</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Holly</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Dark</string>
+        </property>
+       </item>
+      </widget>
+      <widget class="QComboBox" name="comboBox_3">
+       <property name="geometry">
+        <rect>
+         <x>105</x>
+         <y>172</y>
+         <width>216</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(0, 0, 0);
 font: 12pt &quot;URW Bookman L&quot;;
 color: rgb(238, 238, 236);
 gridline-color: rgb(46, 52, 54);
@@ -1119,87 +1123,179 @@ selection-color: rgb(0, 0, 0);
 selection-background-color: rgb(181, 0, 0);
 
 </string>
-         </property>
-         <item>
-          <property name="text">
-           <string>Hit</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Cut</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Curse</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Poison</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Stone</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Fire</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Ice</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Thunder</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Holly</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Dark</string>
-          </property>
-         </item>
-        </widget>
+       </property>
+       <item>
+        <property name="text">
+         <string>Entrance</string>
+        </property>
        </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="label_2">
-         <property name="styleSheet">
-          <string notr="true">background-color: rgba(0, 0, 0, 93);
-font: 75 italic 11pt &quot;URW Bookman L&quot;;
-color: rgb(241, 146, 0);</string>
-         </property>
-         <property name="text">
-          <string>Description</string>
-         </property>
-        </widget>
+       <item>
+        <property name="text">
+         <string>Alchemy Laboratory</string>
+        </property>
        </item>
-       <item row="3" column="0">
-        <widget class="QLabel" name="label_4">
-         <property name="styleSheet">
-          <string notr="true">background-color: rgba(0, 0, 0, 93);
-font: 75 italic 11pt &quot;URW Bookman L&quot;;
-color: rgb(241, 146, 0);</string>
-         </property>
-         <property name="text">
-          <string>Dropped by</string>
-         </property>
-        </widget>
+       <item>
+        <property name="text">
+         <string>Marble Gallery</string>
+        </property>
        </item>
-       <item row="3" column="1">
-        <widget class="QComboBox" name="comboBox_4">
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(0, 0, 0);
+       <item>
+        <property name="text">
+         <string>Cursed Prison</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Outer Wall</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Long Library</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Underground Caverns</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Royal Chapel</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Castle Keep</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Underground Garden</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Olrox's Quarters</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Colosseum</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Abandoned Mine</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Catacombs</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Clock Tower</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Master of the Castle</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Reverse Keep</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Reverse Clock Tower</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Reverse Outer Wall</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Forbidden Library</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Black Marble Gallery</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Death Wing's Lair</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Reverse Colosseum</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Anti-Chapel</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Reverse Caverns</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Reverse Cursed Prison</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Necromancy Laboratory</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Reverse Entrance</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Hell Garden</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Cave</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Floating Catacombs</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Final Showdown</string>
+        </property>
+       </item>
+      </widget>
+      <widget class="QComboBox" name="comboBox_4">
+       <property name="geometry">
+        <rect>
+         <x>105</x>
+         <y>206</y>
+         <width>148</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(0, 0, 0);
 font: 12pt &quot;URW Bookman L&quot;;
 color: rgb(238, 238, 236);
 gridline-color: rgb(46, 52, 54);
@@ -1207,118 +1303,137 @@ selection-color: rgb(0, 0, 0);
 selection-background-color: rgb(181, 0, 0);
 
 </string>
-         </property>
-         <item>
-          <property name="text">
-           <string>Dracula</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Blood Skeleton</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Bat</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Stone Skull</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Zombie</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Merman</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Skeleton</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Warg</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Bone Scimitar</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Merman</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Spittle Bone</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Axe Knight</string>
-          </property>
-         </item>
-        </widget>
+       </property>
+       <item>
+        <property name="text">
+         <string>Dracula</string>
+        </property>
        </item>
-       <item row="5" column="0">
-        <widget class="QLabel" name="label_6">
-         <property name="styleSheet">
-          <string notr="true">background-color: rgba(0, 0, 0, 93);
-font: 75 italic 11pt &quot;URW Bookman L&quot;;
-color: rgb(241, 146, 0);</string>
-         </property>
-         <property name="text">
-          <string>Special ATT</string>
-         </property>
-        </widget>
+       <item>
+        <property name="text">
+         <string>Blood Skeleton</string>
+        </property>
        </item>
-       <item row="0" column="0">
-        <widget class="QLabel" name="label">
-         <property name="styleSheet">
-          <string notr="true">background-color: rgba(0, 0, 0, 93);
-font: 75 italic 11pt &quot;URW Bookman L&quot;;
-color: rgb(241, 146, 0);</string>
-         </property>
-         <property name="text">
-          <string>Type</string>
-         </property>
-        </widget>
+       <item>
+        <property name="text">
+         <string>Bat</string>
+        </property>
        </item>
-       <item row="1" column="1">
-        <widget class="QTextEdit" name="textEdit">
-         <property name="styleSheet">
-          <string notr="true">background-color: rgba(255, 255, 255, 134);
+       <item>
+        <property name="text">
+         <string>Stone Skull</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Zombie</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Merman</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Skeleton</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Warg</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Bone Scimitar</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Merman</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Spittle Bone</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Axe Knight</string>
+        </property>
+       </item>
+      </widget>
+      <widget class="QTextEdit" name="textEdit">
+       <property name="geometry">
+        <rect>
+         <x>105</x>
+         <y>66</y>
+         <width>228</width>
+         <height>100</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(255, 255, 255, 134);
 font: 12pt &quot;URW Bookman L&quot;;
 color: rgb(0, 0, 0);</string>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="1">
-        <widget class="QTextEdit" name="textEdit_2">
-         <property name="maximumSize">
-          <size>
-           <width>228</width>
-           <height>60</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: rgba(255, 255, 255, 134);
+       </property>
+       <property name="placeholderText">
+        <string>| Insert item description</string>
+       </property>
+      </widget>
+      <widget class="QTextEdit" name="textEdit_2">
+       <property name="geometry">
+        <rect>
+         <x>105</x>
+         <y>274</y>
+         <width>228</width>
+         <height>60</height>
+        </rect>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>228</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(255, 255, 255, 134);
 font: 12pt &quot;URW Bookman L&quot;;
 color: rgb(0, 0, 0);</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
+       </property>
+       <property name="placeholderText">
+        <string>| Insert item Special ATT</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_11">
+       <property name="geometry">
+        <rect>
+         <x>-9</x>
+         <y>0</y>
+         <width>351</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Ubuntu Condensed</family>
+         <pointsize>18</pointsize>
+         <weight>9</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(0, 0, 0, 200);
+font: 75 18pt &quot;Ubuntu Condensed&quot;;
+color: rgb(211, 215, 207);</string>
+       </property>
+       <property name="text">
+        <string>   Add a new Weapon</string>
+       </property>
+      </widget>
      </widget>
      <widget class="QFrame" name="itemFrame_2">
       <property name="geometry">
@@ -1375,12 +1490,30 @@ color: rgba(181, 0, 0, 107);</string>
          <height>56</height>
         </size>
        </property>
+       <property name="font">
+        <font>
+         <family>Ubuntu Condensed</family>
+         <pointsize>10</pointsize>
+         <weight>75</weight>
+         <italic>false</italic>
+         <bold>true</bold>
+         <underline>false</underline>
+         <strikeout>false</strikeout>
+         <kerning>true</kerning>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="styleSheet">
-        <string notr="true">color: rgba(255, 255, 255, 57);
-background-color: rgba(0, 0, 0, 189);
+        <string notr="true">background-color: rgba(81, 81, 81, 143);
+color: rgb(211, 215, 207);
 
 
 </string>
+       </property>
+       <property name="inputMethodHints">
+        <set>Qt::ImhNone</set>
        </property>
        <property name="frameShape">
         <enum>QFrame::Box</enum>
@@ -1395,7 +1528,7 @@ background-color: rgba(0, 0, 0, 189);
         <number>1</number>
        </property>
        <property name="text">
-        <string/>
+        <string>Click|Add</string>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -1425,8 +1558,23 @@ background-color: rgba(0, 0, 0, 189);
          <height>116</height>
         </size>
        </property>
+       <property name="font">
+        <font>
+         <family>Ubuntu Condensed</family>
+         <pointsize>13</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="mouseTracking">
+        <bool>false</bool>
+       </property>
        <property name="styleSheet">
-        <string notr="true">color: rgba(255, 255, 255, 57);</string>
+        <string notr="true">background-color: rgba(81, 81, 81, 143);
+color: rgb(211, 215, 207);</string>
        </property>
        <property name="frameShape">
         <enum>QFrame::Box</enum>
@@ -1441,7 +1589,7 @@ background-color: rgba(0, 0, 0, 189);
         <number>1</number>
        </property>
        <property name="text">
-        <string/>
+        <string>                    Click|Add</string>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -1477,8 +1625,23 @@ background-color: rgba(0, 0, 0, 189);
          <height>74</height>
         </size>
        </property>
+       <property name="font">
+        <font>
+         <family>Ubuntu Condensed</family>
+         <pointsize>13</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="styleSheet">
-        <string notr="true">color: rgba(255, 255, 255, 57);</string>
+        <string notr="true">background-color: rgba(81, 81, 81, 143);
+color: rgb(211, 215, 207);
+
+
+</string>
        </property>
        <property name="frameShape">
         <enum>QFrame::Box</enum>
@@ -1493,7 +1656,7 @@ background-color: rgba(0, 0, 0, 189);
         <number>1</number>
        </property>
        <property name="text">
-        <string/>
+        <string>                    Click|Add</string>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -1527,32 +1690,115 @@ background-color: rgba(0, 0, 0, 189);
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">font: 75 20pt &quot;Yrsa&quot;;
+        <string notr="true">font: 75 bold 16pt &quot;Ubuntu Condensed&quot;;
 background-color: rgba(181, 0, 0, 107);
 color: rgb(255, 255, 255);</string>
        </property>
        <property name="text">
         <string/>
        </property>
+       <property name="placeholderText">
+        <string>| Insert item name</string>
+       </property>
       </widget>
       <widget class="QLabel" name="label_7">
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>0</y>
-         <width>101</width>
-         <height>31</height>
+         <y>9</y>
+         <width>41</width>
+         <height>21</height>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgba(0, 0, 0, 93);
+        <string notr="true">background-color: rgba(191, 64, 64, 0);
 font: 75 italic 11pt &quot;URW Bookman L&quot;;
 color: rgb(241, 146, 0);</string>
        </property>
        <property name="text">
-        <string>Item Name</string>
+        <string>Name</string>
        </property>
       </widget>
+      <widget class="QLabel" name="label_8">
+       <property name="geometry">
+        <rect>
+         <x>171</x>
+         <y>9</y>
+         <width>51</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 italic 11pt &quot;URW Bookman L&quot;;
+color: rgb(241, 146, 0);
+background-color: rgba(191, 64, 64, 0);</string>
+       </property>
+       <property name="text">
+        <string>Image</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_9">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>89</y>
+         <width>111</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(191, 64, 64, 0);
+font: 75 italic 11pt &quot;URW Bookman L&quot;;
+color: rgb(241, 146, 0);</string>
+       </property>
+       <property name="text">
+        <string>Animation</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_10">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>224</y>
+         <width>131</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(191, 64, 64, 0);
+font: 75 italic 11pt &quot;URW Bookman L&quot;;
+color: rgb(241, 146, 0);</string>
+       </property>
+       <property name="text">
+        <string>Special animation</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QDialogButtonBox" name="buttonBox">
+      <property name="geometry">
+       <rect>
+        <x>352</x>
+        <y>326</y>
+        <width>240</width>
+        <height>43</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(186, 189, 182);
+font: 11pt &quot;URW Bookman L&quot;;
+selection-background-color: rgb(164, 0, 0);
+color: rgb(0, 0, 0);
+</string>
+      </property>
+      <property name="standardButtons">
+       <set>QDialogButtonBox::Abort|QDialogButtonBox::Reset|QDialogButtonBox::Save</set>
+      </property>
+      <property name="centerButtons">
+       <bool>true</bool>
+      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="deletePage"/>
