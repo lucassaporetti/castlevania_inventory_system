@@ -1,6 +1,7 @@
+import os
 from PyQt5 import uic, QtGui
 from PyQt5.QtCore import *
-from PyQt5.QtWidgets import QWidget, QApplication, QLabel, QHBoxLayout
+from PyQt5.QtWidgets import *
 # from PyQt5.QtWidgets import QTabWidget, QLabel, QFrame, QToolBox, QStackedWidget, QTextEdit, QLineEdit
 
 # from src.core.config.app_configs import AppConfigs
@@ -85,18 +86,28 @@ class MainMenuUi(QtView):
             self.stackedMain.setCurrentIndex(0)
             self.characterImage.close()
 
+    @staticmethod
+    def open_file():
+        directory = os.path.expanduser("~/GIT-Repository/"
+                                       "castlevania_inventory_system/"
+                                       "src/resources/images/items")
+        os.system("ls {0}".format(directory))
+        file_name = QFileDialog.getOpenFileName(caption="Choose item image...",
+                                                directory=directory, filter='*.png',
+                                                options=QFileDialog.DontUseNativeDialog)
+        return file_name
 
     def remove_button_clicked(self):
-        self.log.info("Armor page selected!")
-        character_image = '/home/lucassaporetti/GIT-Repository/' \
-                          'castlevania_inventory_system/src/' \
-                          'resources/images/backgrounds/delete_background.png'
+        self.log.info("Remove button pressed.")
+        file_name = self.open_file()
+        character_image = f'{file_name[0]}'
         qimage = QtGui.QImage(character_image)
         pixmap = QtGui.QPixmap.fromImage(qimage)
         pixmap_image = QtGui.QPixmap(pixmap)
         pixmap_image_sized = pixmap_image.scaled(270, 383)
         self.characterImage.setPixmap(pixmap_image_sized)
         self.characterImage.show()
+
 
     def show(self):
         self.window.show()

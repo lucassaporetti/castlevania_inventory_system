@@ -1,7 +1,1 @@
-2020-05-31 22:18:42,656 [MainThread] INFO  root::category_box_clicked(@Line:75) <PyQt5.QtWidgets.QWidget object at 0x7fb817fdde10> selected! 
-2020-05-31 22:18:43,474 [MainThread] INFO  root::category_box_clicked(@Line:75) <PyQt5.QtWidgets.QWidget object at 0x7fb817fdda50> selected! 
-2020-05-31 22:18:43,878 [MainThread] INFO  root::category_box_clicked(@Line:75) <PyQt5.QtWidgets.QWidget object at 0x7fb817fddc30> selected! 
-2020-05-31 22:18:44,318 [MainThread] INFO  root::category_box_clicked(@Line:75) <PyQt5.QtWidgets.QWidget object at 0x7fb817fdd9b0> selected! 
-2020-05-31 22:18:47,896 [MainThread] INFO  root::remove_button_clicked(@Line:90) Armor page selected! 
-2020-05-31 22:18:48,910 [MainThread] INFO  root::category_box_clicked(@Line:75) <PyQt5.QtWidgets.QWidget object at 0x7fb817fdd9b0> selected! 
-2020-05-31 22:18:49,649 [MainThread] INFO  root::category_box_clicked(@Line:75) <PyQt5.QtWidgets.QWidget object at 0x7fb817fddb90> selected! 
+2020-06-01 13:05:21,500 [MainThread] INFO  root::remove_button_clicked(@Line:101) Remove button pressed. 
