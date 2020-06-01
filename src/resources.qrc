@@ -4,6 +4,7 @@
     <file>resources/images/items/alucard_sword_icon.png</file>
   </qresource>
   <qresource prefix="background">
+    <file>resources/images/backgrounds/system_logo.png</file>
     <file>resources/images/backgrounds/richter_sit_pose.png</file>
     <file>resources/images/backgrounds/delete_background.png</file>
     <file>resources/images/backgrounds/richter_weapon_pose.png</file>

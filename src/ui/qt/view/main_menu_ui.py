@@ -35,10 +35,13 @@ class MainMenuUi(QtView):
         self.cardPage = self.qt.find_widget(self.window, QWidget, 'cardPage')
         self.consumablePage = self.qt.find_widget(self.window, QWidget, 'consumablePage')
         self.otherPage = self.qt.find_widget(self.window, QWidget, 'otherPage')
+        self.logoPage = self.qt.find_widget(self.window, QWidget, 'logoPage')
         self.stackedMain = self.qt.find_stacked_widget('stackedMain')
-        self.stackedPage = self.qt.find_widget(self.window, QWidget, 'stackedPage')
+        self.mainPage = self.qt.find_widget(self.window, QWidget, 'mainPage')
+        self.itemsPage = self.qt.find_widget(self.window, QWidget, 'itemsPage')
         self.itemDescription = self.qt.find_text_edit('itemDescription')
         self.itemAttributes = self.qt.find_text_edit('itemAttributes')
+        self.logoImage = self.qt.find_label('logoImage')
         self.itemImage = self.qt.find_label('itemImage')
         self.characterImage = self.qt.find_label('characterImage')
         self.itemGifAnimation = self.qt.find_label('itemGifAnimation')
@@ -50,38 +53,38 @@ class MainMenuUi(QtView):
         self.searchLine = self.qt.find_line_edit('searchLine')
         self.setup_ui()
         self.animated_item_gif()
+        self.categoryBox.setCurrentIndex(7)
+        self.stackedMain.setCurrentIndex(0)
+        self.show_logo_image()
         self.show_item_image()
-        # self.clickable(self.categoryBox).connect(self.armor_page_clicked)
+
         # self.set_status('Ready.')
 
     def setup_ui(self):
         self.removeButton.clicked.connect(self.remove_button_clicked)
         self.categoryBox.currentChanged.connect(self.category_box_clicked)
-        # self.categoryBox.currentChanged.connect(self.shield_page_clicked)
-        # self.categoryBox.currentChanged.connect(self.relic_page_clicked)
-        # self.categoryBox.currentChanged.connect(self.card_page_clicked)
-        # self.categoryBox.currentChanged.connect(self.consumable_page_clicked)
-        # self.categoryBox.currentChanged.connect(self.other_page_clicked)
-
-    def current_index(self):
-        index = self.categoryBox.currentIndex()
-        return index
 
     def key_pressed(self, key_pressed):
         if Qt.Key_1 == key_pressed:
             self.remove_button_clicked()
 
     def category_box_clicked(self):
-        index = self.current_index()
-        image_index = ImagePaths(index).get_image()
-        self.log.info("Armor page selected!")
-        character_image = image_index
-        qimage = QtGui.QImage(character_image)
-        pixmap = QtGui.QPixmap.fromImage(qimage)
-        pixmap_image = QtGui.QPixmap(pixmap)
-        pixmap_image_sized = pixmap_image.scaled(270, 383)
-        self.characterImage.setPixmap(pixmap_image_sized)
-        self.characterImage.show()
+        index = self.categoryBox.currentIndex()
+        if index != 7:
+            image_index = ImagePaths(index).get_image()
+            self.log.info(f'{str(self.categoryBox.widget(index))} selected!')
+            character_image = image_index
+            qimage = QtGui.QImage(character_image)
+            pixmap = QtGui.QPixmap.fromImage(qimage)
+            pixmap_image = QtGui.QPixmap(pixmap)
+            pixmap_image_sized = pixmap_image.scaled(270, 383)
+            self.characterImage.setPixmap(pixmap_image_sized)
+            self.characterImage.show()
+            self.stackedMain.setCurrentWidget(self.itemsPage)
+        else:
+            self.stackedMain.setCurrentIndex(0)
+            self.characterImage.close()
+
 
     def remove_button_clicked(self):
         self.log.info("Armor page selected!")
@@ -119,6 +122,16 @@ class MainMenuUi(QtView):
         pixmap_image = QtGui.QPixmap(pixmap)
         self.itemImage.setPixmap(pixmap_image)
         self.itemImage.show()
+
+    def show_logo_image(self):
+        logo_image = '/home/lucassaporetti/GIT-Repository/' \
+                     'castlevania_inventory_system/src/' \
+                     'resources/images/backgrounds/system_logo.png'
+        qimage = QtGui.QImage(logo_image)
+        pixmap = QtGui.QPixmap.fromImage(qimage)
+        pixmap_image = QtGui.QPixmap(pixmap)
+        self.logoImage.setPixmap(pixmap_image)
+        self.logoImage.show()
 
     def tab_changed(self, idx: int):
         # self.car_search.stackedPanelCars.setCurrentIndex(0)
