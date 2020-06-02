@@ -319,7 +319,7 @@ background-color: rgba(191, 64, 64, 0);</string>
       <enum>Qt::NoFocus</enum>
      </property>
      <property name="autoFillBackground">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="styleSheet">
       <string notr="true"/>
@@ -511,7 +511,7 @@ background-color: rgba(0, 0, 0, 53);</string>
      <enum>QFrame::Plain</enum>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="mainPage">
      <property name="styleSheet">
@@ -553,29 +553,26 @@ image: url(:/background/resources/images/backgrounds/system_logo.png);</string>
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="itemsPage">
-     <property name="styleSheet">
-      <string notr="true">QWidget#stackedPage{background-color: rgba(0, 0, 0, 69)};</string>
-     </property>
+    <widget class="QWidget" name="informationPage">
      <widget class="QTextEdit" name="itemDescription">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>10</y>
-        <width>345</width>
-        <height>346</height>
+        <x>0</x>
+        <y>0</y>
+        <width>350</width>
+        <height>362</height>
        </rect>
       </property>
       <property name="minimumSize">
        <size>
-        <width>345</width>
-        <height>346</height>
+        <width>350</width>
+        <height>362</height>
        </size>
       </property>
       <property name="maximumSize">
        <size>
-        <width>345</width>
-        <height>346</height>
+        <width>350</width>
+        <height>362</height>
        </size>
       </property>
       <property name="styleSheet">
@@ -618,22 +615,22 @@ p, li { white-space: pre-wrap; }
      <widget class="QFrame" name="itemFrame">
       <property name="geometry">
        <rect>
-        <x>352</x>
-        <y>10</y>
-        <width>240</width>
-        <height>346</height>
+        <x>350</x>
+        <y>0</y>
+        <width>247</width>
+        <height>361</height>
        </rect>
       </property>
       <property name="minimumSize">
        <size>
-        <width>240</width>
-        <height>346</height>
+        <width>247</width>
+        <height>361</height>
        </size>
       </property>
       <property name="maximumSize">
        <size>
-        <width>240</width>
-        <height>346</height>
+        <width>247</width>
+        <height>361</height>
        </size>
       </property>
       <property name="styleSheet">
@@ -694,46 +691,6 @@ background-color: rgba(0, 0, 0, 189);
        </property>
        <property name="scaledContents">
         <bool>true</bool>
-       </property>
-      </widget>
-      <widget class="QTextEdit" name="itemName">
-       <property name="geometry">
-        <rect>
-         <x>1</x>
-         <y>30</y>
-         <width>171</width>
-         <height>56</height>
-        </rect>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>226</width>
-         <height>56</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">font: 75 40pt &quot;Yrsa&quot;;
-background-color: rgba(181, 0, 0, 107);
-
-
-color: rgb(255, 255, 255);</string>
-       </property>
-       <property name="frameShape">
-        <enum>QFrame::NoFrame</enum>
-       </property>
-       <property name="html">
-        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Yrsa'; font-size:40pt; font-weight:72; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:6pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-size:16pt; font-weight:600;&quot;&gt;Alucard Sword&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
       <widget class="QLabel" name="itemGifAnimation">
@@ -840,32 +797,46 @@ p, li { white-space: pre-wrap; }
         <number>0</number>
        </property>
       </widget>
-      <zorder>itemName</zorder>
-      <zorder>itemGifAnimation</zorder>
-      <zorder>itemGifSpecial</zorder>
-      <zorder>itemImage</zorder>
+      <widget class="QLabel" name="itemName">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>30</y>
+         <width>171</width>
+         <height>56</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 bold 16pt &quot;Ubuntu Condensed&quot;;
+background-color: rgba(181, 0, 0, 107);
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>  Alucard Sword</string>
+       </property>
+      </widget>
      </widget>
     </widget>
     <widget class="QWidget" name="addPage">
-     <widget class="QGroupBox" name="groupBox">
+     <widget class="QGroupBox" name="addGroupBox">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>10</y>
-        <width>345</width>
-        <height>346</height>
+        <x>0</x>
+        <y>0</y>
+        <width>350</width>
+        <height>362</height>
        </rect>
       </property>
       <property name="minimumSize">
        <size>
-        <width>345</width>
-        <height>346</height>
+        <width>350</width>
+        <height>362</height>
        </size>
       </property>
       <property name="maximumSize">
        <size>
-        <width>345</width>
-        <height>346</height>
+        <width>350</width>
+        <height>362</height>
        </size>
       </property>
       <property name="styleSheet">
@@ -877,13 +848,13 @@ p, li { white-space: pre-wrap; }
       <property name="flat">
        <bool>false</bool>
       </property>
-      <widget class="QLabel" name="label">
+      <widget class="QLabel" name="addTypeLabel">
        <property name="geometry">
         <rect>
-         <x>14</x>
-         <y>32</y>
+         <x>18</x>
+         <y>67</y>
          <width>91</width>
-         <height>28</height>
+         <height>30</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -895,13 +866,13 @@ color: rgb(241, 146, 0);</string>
         <string>Type</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_2">
+      <widget class="QLabel" name="addDescriptionLabel">
        <property name="geometry">
         <rect>
-         <x>14</x>
-         <y>66</y>
+         <x>18</x>
+         <y>97</y>
          <width>91</width>
-         <height>100</height>
+         <height>83</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -913,13 +884,13 @@ color: rgb(241, 146, 0);</string>
         <string>Description</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_3">
+      <widget class="QLabel" name="addFoundLabel">
        <property name="geometry">
         <rect>
-         <x>14</x>
-         <y>172</y>
+         <x>18</x>
+         <y>180</y>
          <width>91</width>
-         <height>28</height>
+         <height>30</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -931,13 +902,13 @@ color: rgb(241, 146, 0);</string>
         <string>Found at</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_4">
+      <widget class="QLabel" name="addDroppedLabel">
        <property name="geometry">
         <rect>
-         <x>14</x>
-         <y>206</y>
+         <x>18</x>
+         <y>210</y>
          <width>91</width>
-         <height>28</height>
+         <height>30</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -949,13 +920,13 @@ color: rgb(241, 146, 0);</string>
         <string>Dropped by</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_5">
+      <widget class="QLabel" name="addSpecialityLabel">
        <property name="geometry">
         <rect>
-         <x>14</x>
+         <x>18</x>
          <y>240</y>
          <width>91</width>
-         <height>28</height>
+         <height>30</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -967,13 +938,13 @@ color: rgb(241, 146, 0);</string>
         <string>Speciality</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_6">
+      <widget class="QLabel" name="addSpecialAttLabel">
        <property name="geometry">
         <rect>
-         <x>14</x>
-         <y>274</y>
-         <width>87</width>
-         <height>60</height>
+         <x>18</x>
+         <y>270</y>
+         <width>91</width>
+         <height>53</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -985,11 +956,11 @@ color: rgb(241, 146, 0);</string>
         <string>Special ATT</string>
        </property>
       </widget>
-      <widget class="QComboBox" name="comboBox">
+      <widget class="QComboBox" name="addTypeBox">
        <property name="geometry">
         <rect>
-         <x>105</x>
-         <y>32</y>
+         <x>109</x>
+         <y>67</y>
          <width>117</width>
          <height>28</height>
         </rect>
@@ -1035,10 +1006,10 @@ selection-background-color: rgb(181, 0, 0);
         </property>
        </item>
       </widget>
-      <widget class="QComboBox" name="comboBox_2">
+      <widget class="QComboBox" name="addSpecialityBox">
        <property name="geometry">
         <rect>
-         <x>105</x>
+         <x>109</x>
          <y>240</y>
          <width>100</width>
          <height>28</height>
@@ -1105,11 +1076,11 @@ selection-background-color: rgb(181, 0, 0);
         </property>
        </item>
       </widget>
-      <widget class="QComboBox" name="comboBox_3">
+      <widget class="QComboBox" name="addFoundBox">
        <property name="geometry">
         <rect>
-         <x>105</x>
-         <y>172</y>
+         <x>109</x>
+         <y>180</y>
          <width>216</width>
          <height>28</height>
         </rect>
@@ -1285,11 +1256,11 @@ selection-background-color: rgb(181, 0, 0);
         </property>
        </item>
       </widget>
-      <widget class="QComboBox" name="comboBox_4">
+      <widget class="QComboBox" name="addDroppedBox">
        <property name="geometry">
         <rect>
-         <x>105</x>
-         <y>206</y>
+         <x>109</x>
+         <y>210</y>
          <width>148</width>
          <height>28</height>
         </rect>
@@ -1365,13 +1336,13 @@ selection-background-color: rgb(181, 0, 0);
         </property>
        </item>
       </widget>
-      <widget class="QTextEdit" name="textEdit">
+      <widget class="QTextEdit" name="addDescriptionEdit">
        <property name="geometry">
         <rect>
-         <x>105</x>
-         <y>66</y>
+         <x>110</x>
+         <y>98</y>
          <width>228</width>
-         <height>100</height>
+         <height>79</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -1383,13 +1354,13 @@ color: rgb(0, 0, 0);</string>
         <string>| Insert item description</string>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit_2">
+      <widget class="QTextEdit" name="addSpecialAttEdit">
        <property name="geometry">
         <rect>
-         <x>105</x>
-         <y>274</y>
+         <x>110</x>
+         <y>271</y>
          <width>228</width>
-         <height>60</height>
+         <height>51</height>
         </rect>
        </property>
        <property name="maximumSize">
@@ -1407,12 +1378,12 @@ color: rgb(0, 0, 0);</string>
         <string>| Insert item Special ATT</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_11">
+      <widget class="QLabel" name="addTitleLabel">
        <property name="geometry">
         <rect>
-         <x>-9</x>
+         <x>0</x>
          <y>0</y>
-         <width>351</width>
+         <width>601</width>
          <height>28</height>
         </rect>
        </property>
@@ -1431,29 +1402,219 @@ font: 75 18pt &quot;Ubuntu Condensed&quot;;
 color: rgb(211, 215, 207);</string>
        </property>
        <property name="text">
-        <string>   Add a new Weapon</string>
+        <string>  Add a new Item</string>
        </property>
       </widget>
+      <widget class="QLabel" name="addCategoryLabel">
+       <property name="geometry">
+        <rect>
+         <x>18</x>
+         <y>37</y>
+         <width>91</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(0, 0, 0, 93);
+font: 75 italic 11pt &quot;URW Bookman L&quot;;
+color: rgb(241, 146, 0);</string>
+       </property>
+       <property name="text">
+        <string>Category</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="addCategoryBox">
+       <property name="geometry">
+        <rect>
+         <x>109</x>
+         <y>37</y>
+         <width>117</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(0, 0, 0);
+font: 12pt &quot;URW Bookman L&quot;;
+color: rgb(238, 238, 236);
+gridline-color: rgb(46, 52, 54);
+selection-color: rgb(0, 0, 0);
+selection-background-color: rgb(181, 0, 0);
+
+</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>Armor</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Weapon</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Shield</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Relic</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Card</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Consumable</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Other</string>
+        </property>
+       </item>
+      </widget>
+      <widget class="QFrame" name="actionButtonBox">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>327</y>
+         <width>233</width>
+         <height>32</height>
+        </rect>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <property name="lineWidth">
+        <number>0</number>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QPushButton" name="resetButton">
+          <property name="minimumSize">
+           <size>
+            <width>70</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>70</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(104, 0, 0);
+font: 12pt &quot;URW Bookman L&quot;;
+selection-background-color: rgb(0, 0, 0);</string>
+          </property>
+          <property name="text">
+           <string>Reset</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="cancelButton">
+          <property name="minimumSize">
+           <size>
+            <width>70</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>70</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(104, 0, 0);
+font: 12pt &quot;URW Bookman L&quot;;
+selection-background-color: rgb(0, 0, 0);</string>
+          </property>
+          <property name="text">
+           <string>Cancel</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="saveButton">
+          <property name="minimumSize">
+           <size>
+            <width>70</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>70</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(104, 0, 0);
+font: 12pt &quot;URW Bookman L&quot;;
+selection-background-color: rgb(0, 0, 0);</string>
+          </property>
+          <property name="text">
+           <string>Save</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
      </widget>
-     <widget class="QFrame" name="itemFrame_2">
+     <widget class="QFrame" name="addItemFrame">
       <property name="geometry">
        <rect>
-        <x>352</x>
-        <y>10</y>
-        <width>240</width>
-        <height>346</height>
+        <x>350</x>
+        <y>0</y>
+        <width>247</width>
+        <height>361</height>
        </rect>
       </property>
       <property name="minimumSize">
        <size>
-        <width>240</width>
-        <height>346</height>
+        <width>247</width>
+        <height>361</height>
        </size>
       </property>
       <property name="maximumSize">
        <size>
-        <width>240</width>
-        <height>346</height>
+        <width>247</width>
+        <height>361</height>
        </size>
       </property>
       <property name="styleSheet">
@@ -1469,11 +1630,11 @@ color: rgba(181, 0, 0, 107);</string>
       <property name="lineWidth">
        <number>1</number>
       </property>
-      <widget class="QLabel" name="itemImage_2">
+      <widget class="QLabel" name="addItemImage">
        <property name="geometry">
         <rect>
-         <x>171</x>
-         <y>30</y>
+         <x>160</x>
+         <y>41</y>
          <width>56</width>
          <height>56</height>
         </rect>
@@ -1534,14 +1695,14 @@ color: rgb(211, 215, 207);
         <bool>true</bool>
        </property>
       </widget>
-      <widget class="QLabel" name="itemGifAnimation_2">
+      <widget class="QLabel" name="addGifAnimation">
        <property name="enabled">
         <bool>true</bool>
        </property>
        <property name="geometry">
         <rect>
-         <x>20</x>
-         <y>110</y>
+         <x>23</x>
+         <y>125</y>
          <width>200</width>
          <height>116</height>
         </rect>
@@ -1601,14 +1762,14 @@ color: rgb(211, 215, 207);</string>
         <number>0</number>
        </property>
       </widget>
-      <widget class="QLabel" name="itemGifSpecial_2">
+      <widget class="QLabel" name="addGifSpecial">
        <property name="enabled">
         <bool>true</bool>
        </property>
        <property name="geometry">
         <rect>
-         <x>20</x>
-         <y>245</y>
+         <x>23</x>
+         <y>264</y>
          <width>200</width>
          <height>74</height>
         </rect>
@@ -1668,11 +1829,11 @@ color: rgb(211, 215, 207);
         <number>0</number>
        </property>
       </widget>
-      <widget class="QLineEdit" name="lineEdit">
+      <widget class="QLineEdit" name="addNameEdit">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>30</y>
+         <x>-1</x>
+         <y>41</y>
          <width>161</width>
          <height>56</height>
         </rect>
@@ -1692,7 +1853,8 @@ color: rgb(211, 215, 207);
        <property name="styleSheet">
         <string notr="true">font: 75 bold 16pt &quot;Ubuntu Condensed&quot;;
 background-color: rgba(181, 0, 0, 107);
-color: rgb(255, 255, 255);</string>
+color: rgb(255, 255, 255);
+selection-background-color: rgb(0, 0, 0);</string>
        </property>
        <property name="text">
         <string/>
@@ -1701,11 +1863,11 @@ color: rgb(255, 255, 255);</string>
         <string>| Insert item name</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_7">
+      <widget class="QLabel" name="addNameLabel">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>9</y>
+         <x>1</x>
+         <y>21</y>
          <width>41</width>
          <height>21</height>
         </rect>
@@ -1719,11 +1881,11 @@ color: rgb(241, 146, 0);</string>
         <string>Name</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_8">
+      <widget class="QLabel" name="addImageLabel">
        <property name="geometry">
         <rect>
-         <x>171</x>
-         <y>9</y>
+         <x>160</x>
+         <y>20</y>
          <width>51</width>
          <height>21</height>
         </rect>
@@ -1737,11 +1899,11 @@ background-color: rgba(191, 64, 64, 0);</string>
         <string>Image</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_9">
+      <widget class="QLabel" name="addAnimationLabel">
        <property name="geometry">
         <rect>
-         <x>20</x>
-         <y>89</y>
+         <x>23</x>
+         <y>105</y>
          <width>111</width>
          <height>21</height>
         </rect>
@@ -1755,11 +1917,11 @@ color: rgb(241, 146, 0);</string>
         <string>Animation</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_10">
+      <widget class="QLabel" name="addSpecialLabel">
        <property name="geometry">
         <rect>
-         <x>20</x>
-         <y>224</y>
+         <x>23</x>
+         <y>242</y>
          <width>131</width>
          <height>21</height>
         </rect>
@@ -1774,34 +1936,7 @@ color: rgb(241, 146, 0);</string>
        </property>
       </widget>
      </widget>
-     <widget class="QDialogButtonBox" name="buttonBox">
-      <property name="geometry">
-       <rect>
-        <x>352</x>
-        <y>326</y>
-        <width>240</width>
-        <height>43</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(186, 189, 182);
-font: 11pt &quot;URW Bookman L&quot;;
-selection-background-color: rgb(164, 0, 0);
-color: rgb(0, 0, 0);
-</string>
-      </property>
-      <property name="standardButtons">
-       <set>QDialogButtonBox::Abort|QDialogButtonBox::Reset|QDialogButtonBox::Save</set>
-      </property>
-      <property name="centerButtons">
-       <bool>true</bool>
-      </property>
-     </widget>
     </widget>
-    <widget class="QWidget" name="deletePage"/>
    </widget>
   </widget>
   <widget class="QLabel" name="characterImage">

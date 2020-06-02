@@ -28,6 +28,12 @@ class MainMenuUi(QtView):
         self.form = MainMenuUi.form()
         self.form.setupUi(self.window)
         self.frameMain = self.qt.find_frame('frameMain')
+        self.characterImage = self.qt.find_label('characterImage')
+        self.frameToolbox = self.qt.find_frame('frameToolbox')
+        self.addButton = self.qt.find_tool_button('addButton')
+        self.removeButton = self.qt.find_tool_button('removeButton')
+        self.searchButton = self.qt.find_tool_button('searchButton')
+        self.searchLine = self.qt.find_line_edit('searchLine')
         self.categoryBox = self.qt.find_tool_box('categoryBox')
         self.armorPage = self.qt.find_widget(self.window, QWidget, 'armorPage')
         self.weaponPage = self.qt.find_widget(self.window, QWidget, 'weaponPage')
@@ -39,26 +45,20 @@ class MainMenuUi(QtView):
         self.logoPage = self.qt.find_widget(self.window, QWidget, 'logoPage')
         self.stackedMain = self.qt.find_stacked_widget('stackedMain')
         self.mainPage = self.qt.find_widget(self.window, QWidget, 'mainPage')
-        self.itemsPage = self.qt.find_widget(self.window, QWidget, 'itemsPage')
-        self.itemDescription = self.qt.find_text_edit('itemDescription')
-        self.itemAttributes = self.qt.find_text_edit('itemAttributes')
         self.logoImage = self.qt.find_label('logoImage')
-        self.itemImage = self.qt.find_label('itemImage')
-        self.characterImage = self.qt.find_label('characterImage')
+        self.informationPage = self.qt.find_widget(self.window, QWidget, 'informationPage')
+        self.itemDescription = self.qt.find_text_edit('itemDescription')
+        self.itemFrame = self.qt.find_frame('itemFrame')
         self.itemGifAnimation = self.qt.find_label('itemGifAnimation')
         self.itemGifSpecial = self.qt.find_label('itemGifSpecial')
-        self.frameToolbox = self.qt.find_frame('frameToolbox')
-        self.addButton = self.qt.find_tool_button('addButton')
-        self.removeButton = self.qt.find_tool_button('removeButton')
-        self.searchButton = self.qt.find_tool_button('searchButton')
-        self.searchLine = self.qt.find_line_edit('searchLine')
+        self.itemImage = self.qt.find_label('itemImage')
+        self.itemName = self.qt.find_label('itemName')
         self.setup_ui()
         self.animated_item_gif()
         self.categoryBox.setCurrentIndex(7)
         self.stackedMain.setCurrentIndex(0)
         self.show_logo_image()
         self.show_item_image()
-
         # self.set_status('Ready.')
 
     def setup_ui(self):
@@ -82,13 +82,14 @@ class MainMenuUi(QtView):
             pixmap_image_sized = pixmap_image.scaled(270, 383)
             self.characterImage.setPixmap(pixmap_image_sized)
             self.characterImage.show()
-            self.stackedMain.setCurrentWidget(self.itemsPage)
+            self.stackedMain.setCurrentWidget(self.informationPage)
         else:
             self.stackedMain.setCurrentIndex(0)
             self.characterImage.close()
 
     def add_button_clicked(self):
-        self.stackedMain.setCurrentIndex(2)
+        index = self.categoryBox.currentIndex() + 1
+        self.stackedMain.setCurrentIndex(index)
 
     @staticmethod
     def open_file():
@@ -111,7 +112,6 @@ class MainMenuUi(QtView):
         pixmap_image_sized = pixmap_image.scaled(270, 383)
         self.characterImage.setPixmap(pixmap_image_sized)
         self.characterImage.show()
-
 
     def show(self):
         self.window.show()

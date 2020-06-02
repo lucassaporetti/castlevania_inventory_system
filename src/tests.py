@@ -1,7 +1,6 @@
 # def clickable(self, toolbox):
 #     class Filter(QObject):
 #         clicked = pyqtSignal()
-#
 #         def eventFilter(self, obj, event):
 #             if obj == toolbox:
 #                 if event.type() == QEvent.MouseButtonPress:
