@@ -21,11 +21,10 @@
     <file>resources/images/backgrounds/background.jpg</file>
   </qresource>
   <qresource prefix="icons">
-    <file>resources/images/icons/delete_icon_clear.png</file>
-    <file>resources/images/icons/add_icon_clear.png</file>
-    <file>resources/images/icons/search_icon_clear.png</file>
+    <file>resources/images/icons/delete_icon_selected.png</file>
     <file>resources/images/icons/search_icon.png</file>
     <file>resources/images/icons/delete_icon.png</file>
+    <file>resources/images/icons/edit_icon.png</file>
     <file>resources/images/icons/add_icon.jpg</file>
   </qresource>
 </RCC>
