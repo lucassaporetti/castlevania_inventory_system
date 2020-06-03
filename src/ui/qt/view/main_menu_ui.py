@@ -28,7 +28,7 @@ class MainMenuUi(QtView):
 
     def setup_ui(self):
         self.stackedMain.setCurrentIndex(0)
-        # self.searchLine.clicked.connect(self.search_button_clicked)
+        self.searchButton.clicked.connect(self.search_button_clicked)
         self.addButton.clicked.connect(self.add_button_clicked)
 
     def show(self):

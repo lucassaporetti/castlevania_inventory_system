@@ -1,11 +1,11 @@
-from abc import ABC
 from PyQt5 import QtGui
+from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import *
 from src.resources.resources_properties.image_paths import ImagePaths
 from src.ui.qt.view.qt_view import QtView
 
 
-class ItemInformationUI(QtView, ABC):
+class ItemInformationUI(QtView):
     def __init__(self, parent: QtView):
         super().__init__(parent.window, parent)
         self.characterImage = self.qt.find_label('characterImage')
@@ -34,28 +34,7 @@ class ItemInformationUI(QtView, ABC):
     def setup_ui(self):
         self.categoryBox.setCurrentIndex(7)
         self.categoryBox.currentChanged.connect(self.category_box_clicked)
-
-    def animated_item_gif(self):
-        movie = QtGui.QMovie("/home/lucassaporetti/GIT-Repository/"
-                             "castlevania_inventory_system/src/resources/"
-                             "images/items/alucard_sword_animation.gif")
-        self.itemGifAnimation.setMovie(movie)
-        movie.start()
-        movie2 = QtGui.QMovie("/home/lucassaporetti/GIT-Repository/"
-                              "castlevania_inventory_system/src/resources/"
-                              "images/items/alucard_sword_special.gif")
-        self.itemGifSpecial.setMovie(movie2)
-        movie2.start()
-
-    def show_item_image(self):
-        item_image = '/home/lucassaporetti/GIT-Repository/' \
-                     'castlevania_inventory_system/src/' \
-                     'resources/images/items/alucard_sword_icon.png'
-        qimage = QtGui.QImage(item_image)
-        pixmap = QtGui.QPixmap.fromImage(qimage)
-        pixmap_image = QtGui.QPixmap(pixmap)
-        self.itemImage.setPixmap(pixmap_image)
-        self.itemImage.show()
+        self.removeButton.clicked.connect(self.remove_button_clicked)
 
     def category_box_clicked(self):
         index = self.categoryBox.currentIndex()
@@ -73,5 +52,53 @@ class ItemInformationUI(QtView, ABC):
             self.characterImage.close()
             self.parent.stackedMain.setCurrentIndex(0)
 
-    def remove_button_clicked(self):
+    def show_item_image(self):
+        item_image = '/home/lucassaporetti/GIT-Repository/' \
+                     'castlevania_inventory_system/src/' \
+                     'resources/images/items/alucard_sword_icon.png'
+        qimage = QtGui.QImage(item_image)
+        pixmap = QtGui.QPixmap.fromImage(qimage)
+        pixmap_image = QtGui.QPixmap(pixmap)
+        self.itemImage.setPixmap(pixmap_image)
+        self.itemImage.show()
+
+    def animated_item_gif(self):
+        movie = QtGui.QMovie("/home/lucassaporetti/GIT-Repository/"
+                             "castlevania_inventory_system/src/resources/"
+                             "images/items/alucard_sword_animation.gif")
+        self.itemGifAnimation.setMovie(movie)
+        movie.start()
+        movie2 = QtGui.QMovie("/home/lucassaporetti/GIT-Repository/"
+                              "castlevania_inventory_system/src/resources/"
+                              "images/items/alucard_sword_special.gif")
+        self.itemGifSpecial.setMovie(movie2)
+        movie2.start()
+
+    def edit_button_clicked(self):
         pass
+
+    def remove_button_clicked(self):
+        remove_image = ImagePaths(8).get_image()
+        q_image = QtGui.QImage(remove_image)
+        q_pixmap = QtGui.QPixmap.fromImage(q_image)
+        q_pixmap_image = QtGui.QPixmap(q_pixmap)
+        q_pixmap_image_sized = q_pixmap_image.scaled(270, 383)
+        self.characterImage.setPixmap(q_pixmap_image_sized)
+        self.characterImage.show()
+        message_box = QMessageBox()
+        message_box.setStyleSheet("background-color: rgb(0, 0, 0); "
+                                  "font: 12pt 'URW Bookman L'; "
+                                  "color: rgb(238, 238, 236); "
+                                  "gridline-color: rgb(46, 52, 54); "
+                                  "selection-color: rgb(0, 0, 0); "
+                                  "selection-background-color: rgb(181, 0, 0);")
+        message_box.setWindowModality(Qt.WindowModal)
+        message_box.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+        message_box.setWindowTitle("Warning!")
+        message_box.setText("Remove this item from inventory?")
+        ret = message_box.exec_()
+
+        if ret == QMessageBox.Yes:
+            self.parent.stackedMain.setCurrentIndex(0)
+        else:
+            self.category_box_clicked()

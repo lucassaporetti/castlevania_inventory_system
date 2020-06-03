@@ -42,3 +42,8 @@ class ImagePaths:
             return '/home/lucassaporetti/GIT-Repository/' \
                     'castlevania_inventory_system/src/' \
                     'resources/images/backgrounds/system_logo.png'
+
+        elif self.image_index == 8:
+            return '/home/lucassaporetti/GIT-Repository/' \
+                   'castlevania_inventory_system/src/' \
+                   'resources/images/backgrounds/delete_background.png'
