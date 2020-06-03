@@ -6,12 +6,12 @@ class ImagePaths:
         if self.image_index == 0:
             return '/home/lucassaporetti/GIT-Repository/' \
                    'castlevania_inventory_system/src/' \
-                   'resources/images/backgrounds/alucard_weapon_pose.png'
+                   'resources/images/backgrounds/richter_weapon_pose.png'
 
         elif self.image_index == 1:
             return '/home/lucassaporetti/GIT-Repository/' \
                    'castlevania_inventory_system/src/' \
-                   'resources/images/backgrounds/richter_weapon_pose.png'
+                   'resources/images/backgrounds/alucard_weapon_pose.png'
 
         elif self.image_index == 2:
             return '/home/lucassaporetti/GIT-Repository/' \

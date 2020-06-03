@@ -43,7 +43,7 @@ class MainMenuUi(QtView):
         pass
 
     def add_button_clicked(self):
-        return self.stackedMain.setCurrentIndex(2)
+        self.stackedMain.setCurrentIndex(2)
 
     def show_logo_image(self):
         logo_image = ImagePaths(7).get_image()
