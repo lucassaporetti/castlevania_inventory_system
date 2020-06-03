@@ -2,7 +2,7 @@ from abc import ABC
 from typing import Type, Optional
 from PyQt5.QtCore import QObject
 from PyQt5.QtWidgets import QWidget, QToolButton, QStackedWidget, QLineEdit, QTableView, QComboBox, QSpinBox, \
-     QDialogButtonBox, QDoubleSpinBox, QDateEdit, QLabel, QFrame, QToolBox, QTextEdit
+    QDialogButtonBox, QDoubleSpinBox, QDateEdit, QLabel, QFrame, QToolBox, QTextEdit, QPushButton
 
 
 class QtFinder(ABC):
@@ -25,6 +25,9 @@ class QtFinder(ABC):
 
     def find_tool_button(self, name: str) -> Optional[QToolButton]:
         return QtFinder.find_widget(self.window, QToolButton, name)
+
+    def find_push_button(self, name: str) -> Optional[QPushButton]:
+        return QtFinder.find_widget(self.window, QPushButton, name)
 
     def find_table_view(self, name: str) -> Optional[QTableView]:
         return QtFinder.find_widget(self.window, QTableView, name)
