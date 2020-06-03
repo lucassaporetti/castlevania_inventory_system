@@ -3,6 +3,7 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import *
 from src.resources.resources_properties.image_paths import ImagePaths
 from src.ui.qt.view.qt_view import QtView
+from ui.promotions.cv_message_box import CvMessageBox
 
 
 class ItemInformationUI(QtView):
@@ -85,19 +86,9 @@ class ItemInformationUI(QtView):
         q_pixmap_image_sized = q_pixmap_image.scaled(270, 383)
         self.characterImage.setPixmap(q_pixmap_image_sized)
         self.characterImage.show()
-        message_box = QMessageBox()
-        message_box.setStyleSheet("background-color: rgb(0, 0, 0); "
-                                  "font: 12pt 'URW Bookman L'; "
-                                  "color: rgb(238, 238, 236); "
-                                  "gridline-color: rgb(46, 52, 54); "
-                                  "selection-color: rgb(0, 0, 0); "
-                                  "selection-background-color: rgb(181, 0, 0);")
-        message_box.setWindowModality(Qt.WindowModal)
-        message_box.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
-        message_box.setWindowTitle("Warning!")
-        message_box.setText("Remove this item from inventory?")
+        message_box = CvMessageBox(self.window, 'Warning!', 'Remove this item from inventory?')
         ret = message_box.exec_()
-
+        
         if ret == QMessageBox.Yes:
             self.parent.stackedMain.setCurrentIndex(0)
         else:
