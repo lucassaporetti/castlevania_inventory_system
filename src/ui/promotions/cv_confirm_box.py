@@ -1,4 +1,4 @@
-from PyQt5.QtCore import Qt
+from PyQt5.QtCore import Qt, pyqtSignal
 from PyQt5.QtWidgets import QMessageBox, QWidget
 
 STYLESHEET = """
@@ -11,7 +11,11 @@ selection-background-color: rgb(181, 0, 0);
 """
 
 
-class CvMessageBox(QMessageBox):
+class CvConfirmBox(QMessageBox):
+
+    yesClicked = pyqtSignal()
+    noClicked = pyqtSignal()
+
     def __init__(self, parent, title: str, message: str):
         super().__init__(parent=parent)
         self.title = title
@@ -24,3 +28,12 @@ class CvMessageBox(QMessageBox):
         self.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
         self.setWindowTitle(self.title)
         self.setText(self.message)
+
+    def exec(self) -> int:
+        ret = super().exec_()
+        if ret == QMessageBox.Yes:
+            self.yesClicked.emit()
+        else:
+            self.noClicked.emit()
+
+        return ret

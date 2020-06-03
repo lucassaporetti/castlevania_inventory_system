@@ -1,9 +1,8 @@
 from PyQt5 import QtGui
-from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import *
 from src.resources.resources_properties.image_paths import ImagePaths
 from src.ui.qt.view.qt_view import QtView
-from ui.promotions.cv_message_box import CvMessageBox
+from ui.promotions.cv_confirm_box import CvConfirmBox
 
 
 class ItemInformationUI(QtView):
@@ -86,10 +85,13 @@ class ItemInformationUI(QtView):
         q_pixmap_image_sized = q_pixmap_image.scaled(270, 383)
         self.characterImage.setPixmap(q_pixmap_image_sized)
         self.characterImage.show()
-        message_box = CvMessageBox(self.window, 'Warning!', 'Remove this item from inventory?')
-        ret = message_box.exec_()
-        
-        if ret == QMessageBox.Yes:
-            self.parent.stackedMain.setCurrentIndex(0)
-        else:
-            self.category_box_clicked()
+        message_box = CvConfirmBox(self.window, 'Warning!', 'Remove this item from inventory?')
+        message_box.yesClicked.connect(self.yes_clicked)
+        message_box.noClicked.connect(self.no_clicked)
+        message_box.exec()
+
+    def yes_clicked(self):
+        self.parent.stackedMain.setCurrentIndex(0)
+
+    def no_clicked(self):
+        self.category_box_clicked()
