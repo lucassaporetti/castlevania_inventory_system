@@ -1,7 +1,7 @@
 from enum import Enum
 
 
-class Type(Enum):
+class ItemType(Enum):
     UNIQUE = 1
     FIST_WEAPON = 2
     SHORT_SWORD_WEAPON = 3

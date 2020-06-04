@@ -1,7 +1,7 @@
 import uuid
 from src.model.entity_model import Entity
 from src.core.enum.category_enum import Category
-from src.core.enum.type_enum import Type
+from src.core.enum.item_type_enum import ItemType
 from src.core.enum.attributes_enum import Attributes
 from src.core.enum.found_at_enum import FoundAt
 from src.core.enum.dropped_by_enum import DroppedBy
@@ -15,7 +15,7 @@ class Item(Entity):
     #         Color[values[3]], int(values[4]), Fuel[values[5]],
     #         str(values[6]), float(values[7]), YesNo(values[8])
     #     )
-    def __init__(self, entity_id: str = None, name: str = None, category: Category = None, type: Type = None,
+    def __init__(self, entity_id: str = None, name: str = None, category: Category = None, item_type: ItemType = None,
                  description: str = None, attributes: Attributes = None, consume_mp: int = None,
                  consume_heart: int = None, statistics_hp: int = None, statistics_mp: int = None,
                  statistics_heart: int = None, statistics_str: int = None, statistics_att: int = None,
@@ -27,7 +27,7 @@ class Item(Entity):
         super().__init__(entity_id)
         self.name = name
         self.category = category
-        self.type = type
+        self.item_type = item_type
         self.description = description
         self.attributes = attributes
         self.consume_mp = consume_mp
@@ -56,7 +56,7 @@ class Item(Entity):
         return "{} | {} | {} | {} | {} | {} | {} | {} | {} | {}" \
                "{} | {} | {} | {} | {} | {} | {} | {} | {} | {}" \
                "{} | {} | {} | {} | {}".format(
-                super().__str__(), self.name, self.category.name, self.type.name, self.description,
+                super().__str__(), self.name, self.category.name, self.item_type.name, self.description,
                 self.attributes.name, self.consume_mp, self.consume_heart, self.statistics_hp, self.statistics_mp,
                 self.statistics_heart, self.statistics_str, self.statistics_att, self.statistics_gold,
                 self.statistics_con, self.statistics_def, self.statistics_max_ht, self.statistics_int,
@@ -68,7 +68,7 @@ class Item(Entity):
             self.entity_id = str(uuid.uuid4())
             self.name = None
             self.category = None
-            self.type = None
+            self.item_type = None
             self.description = None
             self.attributes = None
             self.consume_mp = None
@@ -101,7 +101,7 @@ class Item(Entity):
             self.category = category
             return self
 
-        def with_type(self, type: Type):
+        def with_item_type(self, item_type: ItemType):
             self.type = type
             return self
 
@@ -198,7 +198,7 @@ class Item(Entity):
             return self
 
         def build(self):
-            return Item(self.entity_id, self.name, self.category, self.type, self.description, self.attributes,
+            return Item(self.entity_id, self.name, self.category, self.item_type, self.description, self.attributes,
                         self.consume_mp, self.consume_heart, self.statistics_hp, self.statistics_mp,
                         self.statistics_heart, self.statistics_str, self.statistics_att, self.statistics_gold,
                         self.statistics_con, self.statistics_def, self.statistics_max_ht, self.statistics_int,

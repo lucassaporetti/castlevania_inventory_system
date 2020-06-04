@@ -2,8 +2,7 @@ import logging as log
 import os
 from time import sleep
 from typing import Type
-
-# from str.core.model.entity import Entity
+from src.model.entity_model import Entity
 
 DEFAULT_LOG_FMT = '{} {} {} {}{} {} '.format(
     '%(asctime)s',
@@ -57,9 +56,9 @@ def print_list(the_list: list):
     wait_enter()
 
 
-# def print_one(entity: Entity):
-#     print(str(entity))
-#     wait_enter()
+def print_one(entity: Entity):
+    print(str(entity))
+    wait_enter()
 
 
 def prompt(message: str = '', end: str = '', clear: bool = False):
@@ -93,6 +92,6 @@ def check_criteria(partial_value, whole_value):
 def class_attribute_names(clazz: Type) -> tuple:
     return tuple(vars(clazz()).keys()) if clazz else None
 
-#
-# def class_attribute_values(entity: Entity) -> tuple:
-#     return tuple(entity.__dict__.values()) if entity else None
+
+def class_attribute_values(entity: Entity) -> tuple:
+    return tuple(entity.__dict__.values()) if entity else None

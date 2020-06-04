@@ -1,9 +1,9 @@
 class Entity:
     def __init__(self, entity_id: str = None):
-        self.uuid = entity_id
+        self.entity_id = entity_id
 
     def __str__(self):
-        return "{}".format(self.uuid)
+        return "{}".format(self.entity_id)
 
     def to_dict(self) -> dict:
         ret_dict = {}
