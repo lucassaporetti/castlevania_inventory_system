@@ -1,0 +1,30 @@
+from enum import Enum
+
+
+class Type(Enum):
+    UNIQUE = 1
+    FIST_WEAPON = 2
+    SHORT_SWORD_WEAPON = 3
+    SWORD_WEAPON = 4
+    CLUB_WEAPON = 5
+    TWO_HANDED_WEAPON = 6
+    THROWING_SWORD_WEAPON = 7
+    BOMB_WEAPON = 8
+    PROJECTILE_WEAPON = 9
+    SUB_WEAPON = 10
+    HEAD_ARMOR_CLOTHE = 11
+    BODY_ARMOR_CLOTHE = 12
+    GAUNTLET_ARMOR_CLOTHE = 13
+    CLOAK_ARMOR_CLOTHE = 14
+    BOOT_ARMOR_CLOTHE = 15
+    RING_OTHER = 16
+    NECKLACE_OTHER = 17
+    BELT_OTHER = 18
+    BROOCH_OTHER = 19
+    MEDICINE_CONSUMABLE = 20
+    FOOD_CONSUMABLE = 21
+    DRINK_CONSUMABLE = 22
+    CARD_CONSUMABLE = 23
+
+    def __str__(self):
+        return "{}".format(self.name.upper())
