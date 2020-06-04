@@ -69,7 +69,7 @@ class Item(Entity):
             self.name = None
             self.category = None
             self.type = None
-            self.description, = None
+            self.description = None
             self.attributes = None
             self.consume_mp = None
             self.consume_heart = None
@@ -97,36 +97,110 @@ class Item(Entity):
             self.name = name
             return self
 
-        def with_chassis(self, chassis: str):
-            self.chassis = chassis
+        def with_category(self, category: Category):
+            self.category = category
             return self
 
-        def with_color(self, color: Color):
-            self.color = color
+        def with_type(self, type: Type):
+            self.type = type
             return self
 
-        def with_doors(self, doors: int):
-            self.doors = doors
+        def with_description(self, description: str):
+            self.description = description
             return self
 
-        def with_fuel(self, fuel: Fuel):
-            self.fuel = fuel
+        def with_attributes(self, attributes: Attributes):
+            self.attributes = attributes
             return self
 
-        def with_plate(self, plate: str):
-            self.plate = plate
+        def with_consume_mp(self, consume_mp: int):
+            self.consume_mp = consume_mp
             return self
 
-        def with_price(self, price: float):
-            self.price = price
+        def with_consume_heart(self, consume_heart: int):
+            self.consume_heart = consume_heart
             return self
 
-        def with_available(self, available: YesNo):
-            self.available = available
+        def with_statistics_hp(self, statistics_hp: int):
+            self.statistics_hp = statistics_hp
+            return self
+
+        def with_statistics_mp(self, statistics_mp: int):
+            self.statistics_mp = statistics_mp
+            return self
+
+        def with_statistics_heart(self, statistics_heart: int):
+            self.statistics_heart = statistics_heart
+            return self
+
+        def with_statistics_str(self, statistics_str: int):
+            self.statistics_str = statistics_str
+            return self
+
+        def with_statistics_att(self, statistics_att: int):
+            self.statistics_att = statistics_att
+            return self
+
+        def with_statistics_gold(self, statistics_gold: int):
+            self.statistics_gold = statistics_gold
+            return self
+
+        def with_statistics_con(self, statistics_con: int):
+            self.statistics_con = statistics_con
+            return self
+
+        def with_statistics_def(self, statistics_def: int):
+            self.statistics_def = statistics_def
+            return self
+
+        def with_statistics_max_ht(self, statistics_max_ht: int):
+            self.statistics_max_ht = statistics_max_ht
+            return self
+
+        def with_statistics_int(self, statistics_int: int):
+            self.statistics_int = statistics_int
+            return self
+
+        def with_statistics_lck(self, statistics_lck: int):
+            self.statistics_lck = statistics_lck
+            return self
+
+        def with_statistics_max_hp(self, statistics_max_hp: int):
+            self.statistics_max_hp = statistics_max_hp
+            return self
+
+        def with_sell(self, sell: float):
+            self.sell = sell
+            return self
+
+        def with_found_at(self, found_at: FoundAt):
+            self.found_at = found_at
+            return self
+
+        def with_dropped_by(self, dropped_by: DroppedBy):
+            self.dropped_by = dropped_by
+            return self
+
+        def with_effect(self, effect: str):
+            self.effect = effect
+            return self
+
+        def with_image(self, image: str):
+            self.image = image
+            return self
+
+        def with_animation(self, animation: str):
+            self.animation = animation
+            return self
+
+        def with_special_animation(self, special_animation: str):
+            self.special_animation = special_animation
             return self
 
         def build(self):
-            return Car(
-                self.uuid, self.name, self.chassis, self.color, self.doors, self.fuel, self.plate, self.price,
-                self.available
-            )
+            return Item(self.entity_id, self.name, self.category, self.type, self.description, self.attributes,
+                        self.consume_mp, self.consume_heart, self.statistics_hp, self.statistics_mp,
+                        self.statistics_heart, self.statistics_str, self.statistics_att, self.statistics_gold,
+                        self.statistics_con, self.statistics_def, self.statistics_max_ht, self.statistics_int,
+                        self.statistics_lck, self.statistics_max_hp, self.sell, self.found_at, self.dropped_by,
+                        self.effect, self.image, self.animation, self.special_animation)
