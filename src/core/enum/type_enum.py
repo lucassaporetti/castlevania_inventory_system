@@ -27,4 +27,4 @@ class Type(Enum):
     CARD_CONSUMABLE = 23
 
     def __str__(self):
-        return "{}".format(self.name.upper())
+        return self.name

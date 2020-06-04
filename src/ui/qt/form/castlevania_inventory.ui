@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>850</width>
-    <height>500</height>
+    <width>855</width>
+    <height>502</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -922,10 +922,10 @@ color: rgb(211, 215, 207);</string>
     <widget class="QGroupBox" name="addGroupBox">
      <property name="geometry">
       <rect>
-       <x>-12</x>
+       <x>-7</x>
        <y>0</y>
-       <width>401</width>
-       <height>421</height>
+       <width>395</width>
+       <height>423</height>
       </rect>
      </property>
      <property name="minimumSize">
@@ -952,8 +952,8 @@ color: rgb(211, 215, 207);</string>
      <widget class="QLabel" name="addTypeLabel">
       <property name="geometry">
        <rect>
-        <x>18</x>
-        <y>67</y>
+        <x>20</x>
+        <y>70</y>
         <width>91</width>
         <height>30</height>
        </rect>
@@ -970,8 +970,8 @@ color: rgb(241, 146, 0);</string>
      <widget class="QLabel" name="addDescriptionLabel">
       <property name="geometry">
        <rect>
-        <x>18</x>
-        <y>97</y>
+        <x>20</x>
+        <y>100</y>
         <width>91</width>
         <height>53</height>
        </rect>
@@ -988,8 +988,8 @@ color: rgb(241, 146, 0);</string>
      <widget class="QLabel" name="addFoundLabel">
       <property name="geometry">
        <rect>
-        <x>18</x>
-        <y>291</y>
+        <x>20</x>
+        <y>294</y>
         <width>91</width>
         <height>30</height>
        </rect>
@@ -1006,8 +1006,8 @@ color: rgb(241, 146, 0);</string>
      <widget class="QLabel" name="addDroppedLabel">
       <property name="geometry">
        <rect>
-        <x>18</x>
-        <y>321</y>
+        <x>20</x>
+        <y>324</y>
         <width>91</width>
         <height>30</height>
        </rect>
@@ -1024,8 +1024,8 @@ color: rgb(241, 146, 0);</string>
      <widget class="QLabel" name="addSpecialityLabel">
       <property name="geometry">
        <rect>
-        <x>18</x>
-        <y>150</y>
+        <x>20</x>
+        <y>153</y>
         <width>91</width>
         <height>28</height>
        </rect>
@@ -1042,8 +1042,8 @@ color: rgb(241, 146, 0);</string>
      <widget class="QComboBox" name="addTypeBox">
       <property name="geometry">
        <rect>
-        <x>109</x>
-        <y>67</y>
+        <x>111</x>
+        <y>70</y>
         <width>222</width>
         <height>28</height>
        </rect>
@@ -1180,8 +1180,8 @@ selection-background-color: rgb(181, 0, 0);
      <widget class="QComboBox" name="addSpecialityBox">
       <property name="geometry">
        <rect>
-        <x>109</x>
-        <y>151</y>
+        <x>111</x>
+        <y>154</y>
         <width>222</width>
         <height>28</height>
        </rect>
@@ -1258,11 +1258,14 @@ selection-background-color: rgb(181, 0, 0);
      <widget class="QTextEdit" name="addDescriptionEdit">
       <property name="geometry">
        <rect>
-        <x>110</x>
-        <y>98</y>
+        <x>112</x>
+        <y>101</y>
         <width>219</width>
         <height>51</height>
        </rect>
+      </property>
+      <property name="cursor" stdset="0">
+       <cursorShape>IBeamCursor</cursorShape>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgba(255, 255, 255, 134);
@@ -1303,8 +1306,8 @@ color: rgb(211, 215, 207);</string>
      <widget class="QLabel" name="addCategoryLabel">
       <property name="geometry">
        <rect>
-        <x>18</x>
-        <y>37</y>
+        <x>20</x>
+        <y>40</y>
         <width>91</width>
         <height>30</height>
        </rect>
@@ -1321,8 +1324,8 @@ color: rgb(241, 146, 0);</string>
      <widget class="QComboBox" name="addCategoryBox">
       <property name="geometry">
        <rect>
-        <x>109</x>
-        <y>38</y>
+        <x>111</x>
+        <y>41</y>
         <width>222</width>
         <height>28</height>
        </rect>
@@ -1384,8 +1387,8 @@ selection-background-color: rgb(181, 0, 0);
      <widget class="QLabel" name="addSpecialityLabel_3">
       <property name="geometry">
        <rect>
-        <x>18</x>
-        <y>178</y>
+        <x>20</x>
+        <y>181</y>
         <width>92</width>
         <height>34</height>
        </rect>
@@ -1402,28 +1405,34 @@ color: rgb(241, 146, 0);</string>
      <widget class="QSpinBox" name="spinBox">
       <property name="geometry">
        <rect>
-        <x>271</x>
-        <y>184</y>
+        <x>270</x>
+        <y>187</y>
         <width>48</width>
         <height>26</height>
        </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
       </property>
      </widget>
      <widget class="QSpinBox" name="spinBox_2">
       <property name="geometry">
        <rect>
-        <x>148</x>
-        <y>184</y>
+        <x>152</x>
+        <y>187</y>
         <width>48</width>
         <height>26</height>
        </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
       </property>
      </widget>
      <widget class="QLabel" name="addSpecialityLabel_4">
       <property name="geometry">
        <rect>
-        <x>110</x>
-        <y>178</y>
+        <x>112</x>
+        <y>181</y>
         <width>91</width>
         <height>36</height>
        </rect>
@@ -1434,14 +1443,14 @@ font: 75 bold 12pt &quot;URW Bookman L&quot;;
 color: rgb(32, 74, 135);</string>
       </property>
       <property name="text">
-       <string>MP:</string>
+       <string> MP:</string>
       </property>
      </widget>
      <widget class="QLabel" name="addSpecialityLabel_5">
       <property name="geometry">
        <rect>
-        <x>212</x>
-        <y>178</y>
+        <x>214</x>
+        <y>181</y>
         <width>91</width>
         <height>36</height>
        </rect>
@@ -1458,8 +1467,8 @@ color: rgb(164, 0, 0);</string>
      <widget class="QLabel" name="addSpecialityLabel_6">
       <property name="geometry">
        <rect>
-        <x>18</x>
-        <y>212</y>
+        <x>20</x>
+        <y>215</y>
         <width>91</width>
         <height>49</height>
        </rect>
@@ -1479,8 +1488,8 @@ color: rgb(241, 146, 0);</string>
      <widget class="QToolBox" name="toolBox">
       <property name="geometry">
        <rect>
-        <x>109</x>
-        <y>213</y>
+        <x>111</x>
+        <y>216</y>
         <width>281</width>
         <height>201</height>
        </rect>
@@ -1888,26 +1897,29 @@ color: rgb(255, 255, 255);</string>
         <property name="geometry">
          <rect>
           <x>17</x>
-          <y>-1</y>
+          <y>1</y>
           <width>69</width>
           <height>26</height>
          </rect>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
         </property>
        </widget>
        <widget class="QLabel" name="label">
         <property name="geometry">
          <rect>
-          <x>3</x>
+          <x>0</x>
           <y>-3</y>
-          <width>16</width>
-          <height>30</height>
+          <width>85</width>
+          <height>35</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-color: rgba(0, 0, 0, 93);</string>
+         <string notr="true">font: 12pt &quot;URW Bookman L&quot;;</string>
         </property>
         <property name="text">
-         <string>$</string>
+         <string> $</string>
         </property>
        </widget>
        <widget class="QComboBox" name="addFoundBox">
@@ -2204,6 +2216,9 @@ selection-background-color: rgb(181, 0, 0);
           <height>60</height>
          </size>
         </property>
+        <property name="cursor" stdset="0">
+         <cursorShape>IBeamCursor</cursorShape>
+        </property>
         <property name="styleSheet">
          <string notr="true">background-color: rgba(255, 255, 255, 134);
 font: 12pt &quot;URW Bookman L&quot;;
@@ -2213,13 +2228,18 @@ color: rgb(0, 0, 0);</string>
          <string>| Insert item Effect</string>
         </property>
        </widget>
+       <zorder>label</zorder>
+       <zorder>doubleSpinBox</zorder>
+       <zorder>addFoundBox</zorder>
+       <zorder>addDroppedBox</zorder>
+       <zorder>addSpecialAttEdit</zorder>
       </widget>
      </widget>
      <widget class="QLabel" name="addSpecialityLabel_19">
       <property name="geometry">
        <rect>
-        <x>18</x>
-        <y>261</y>
+        <x>20</x>
+        <y>264</y>
         <width>91</width>
         <height>30</height>
        </rect>
@@ -2236,8 +2256,8 @@ color: rgb(241, 146, 0);</string>
      <widget class="QLabel" name="addSpecialAttLabel">
       <property name="geometry">
        <rect>
-        <x>18</x>
-        <y>351</y>
+        <x>20</x>
+        <y>354</y>
         <width>91</width>
         <height>53</height>
        </rect>
@@ -4108,7 +4128,7 @@ background-color: rgba(191, 64, 64, 0);</string>
     <enum>QFrame::NoFrame</enum>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>8</number>
    </property>
    <property name="tabSpacing">
     <number>6</number>
@@ -4119,7 +4139,7 @@ background-color: rgba(191, 64, 64, 0);</string>
       <x>0</x>
       <y>0</y>
       <width>215</width>
-      <height>26</height>
+      <height>143</height>
      </rect>
     </property>
     <attribute name="label">
@@ -4131,8 +4151,8 @@ background-color: rgba(191, 64, 64, 0);</string>
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>215</width>
-      <height>143</height>
+      <width>100</width>
+      <height>30</height>
      </rect>
     </property>
     <attribute name="label">
@@ -4147,8 +4167,8 @@ background-color: rgba(191, 64, 64, 0);</string>
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>215</width>
-      <height>85</height>
+      <width>100</width>
+      <height>30</height>
      </rect>
     </property>
     <property name="cursor">
@@ -4175,8 +4195,8 @@ background-color: rgba(191, 64, 64, 0);</string>
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>215</width>
-      <height>85</height>
+      <width>100</width>
+      <height>30</height>
      </rect>
     </property>
     <attribute name="label">
@@ -4188,8 +4208,8 @@ background-color: rgba(191, 64, 64, 0);</string>
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>215</width>
-      <height>85</height>
+      <width>100</width>
+      <height>30</height>
      </rect>
     </property>
     <attribute name="label">
@@ -4201,8 +4221,8 @@ background-color: rgba(191, 64, 64, 0);</string>
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>215</width>
-      <height>85</height>
+      <width>100</width>
+      <height>30</height>
      </rect>
     </property>
     <attribute name="label">
@@ -4210,11 +4230,27 @@ background-color: rgba(191, 64, 64, 0);</string>
     </attribute>
    </widget>
    <widget class="QWidget" name="page">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>100</width>
+      <height>30</height>
+     </rect>
+    </property>
     <attribute name="label">
      <string>Consumable</string>
     </attribute>
    </widget>
    <widget class="QWidget" name="page_2">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>215</width>
+      <height>143</height>
+     </rect>
+    </property>
     <attribute name="label">
      <string>Standard</string>
     </attribute>

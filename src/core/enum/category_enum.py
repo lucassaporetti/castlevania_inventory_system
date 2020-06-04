@@ -12,4 +12,4 @@ class Category(Enum):
     STANDARD = 8
 
     def __str__(self):
-        return "{}".format(self.name.upper())
+        return self.name
