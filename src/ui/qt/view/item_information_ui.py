@@ -57,7 +57,7 @@ class ItemInformationUI(QtView):
         self.categoryBox.setCurrentIndex(9)
         self.categoryBox.currentChanged.connect(self.category_box_clicked)
         self.removeButton.clicked.connect(self.remove_button_clicked)
-        self.addButton.clicked.connect(self.add_button_clicked)
+        # self.addButton.clicked.connect(self.add_button_clicked)
 
     def category_box_clicked(self):
         index = self.categoryBox.currentIndex()
@@ -100,8 +100,8 @@ class ItemInformationUI(QtView):
     def edit_button_clicked(self):
         pass
 
-    def add_button_clicked(self):
-        self.categoryBox.setCurrentIndex(9)
+    # def add_button_clicked(self):
+    #     self.categoryBox.setCurrentIndex(9)
 
     def remove_button_clicked(self):
         remove_image = ImagePaths(8).get_image()

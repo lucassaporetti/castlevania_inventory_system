@@ -1,0 +1,13 @@
+2020-06-05 19:41:49,037 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f38c17baa50> selected! 
+2020-06-05 19:42:03,739 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f38c17bad70> selected! 
+2020-06-05 19:42:04,952 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f38c17bab90> selected! 
+2020-06-05 19:42:05,891 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f38c17bac30> selected! 
+2020-06-05 19:42:12,315 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f38c17bab90> selected! 
+2020-06-05 19:42:18,193 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f38c17bac30> selected! 
+2020-06-05 19:42:45,244 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f38c17bacd0> selected! 
+2020-06-05 19:42:48,591 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f38c17bae10> selected! 
+2020-06-05 19:43:03,315 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f38c17baeb0> selected! 
+2020-06-05 19:43:04,774 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f38c17baf50> selected! 
+2020-06-05 19:43:07,604 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f38c17bc050> selected! 
+2020-06-05 19:43:12,232 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f38c17bc050> selected! 
+2020-06-05 19:43:25,032 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f38c17baa50> selected! 

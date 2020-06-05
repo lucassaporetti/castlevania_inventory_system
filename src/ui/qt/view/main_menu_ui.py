@@ -3,7 +3,7 @@ from PyQt5 import uic, QtGui
 from PyQt5.QtWidgets import *
 from src.resources.resources_properties.image_paths import ImagePaths
 from src.ui.qt.view.qt_view import QtView
-from ui.qt.view.item_add_ui import ItemAddUI
+# from ui.qt.view.item_add_ui import ItemAddUI
 from ui.qt.view.item_information_ui import ItemInformationUI
 
 
@@ -16,7 +16,7 @@ class MainMenuUi(QtView):
         self.form = MainMenuUi.form()
         self.form.setupUi(self.window)
         self.itemInformationUi = ItemInformationUI(self)
-        self.itemAddUi = ItemAddUI(self)
+        # self.itemAddUi = ItemAddUI(self)
         self.frameMain = self.qt.find_frame('frameMain')
         self.frameToolbox = self.qt.find_frame('frameToolbox')
         self.addButton = self.qt.find_tool_button('addButton')
@@ -31,7 +31,7 @@ class MainMenuUi(QtView):
     def setup_ui(self):
         self.stackedMain.setCurrentIndex(0)
         self.searchButton.clicked.connect(self.search_button_clicked)
-        self.addButton.clicked.connect(self.add_button_clicked)
+        # self.addButton.clicked.connect(self.add_button_clicked)
 
     def show(self):
         self.window.show()
@@ -42,8 +42,8 @@ class MainMenuUi(QtView):
     def search_button_clicked(self):
         pass
 
-    def add_button_clicked(self):
-        self.stackedMain.setCurrentIndex(2)
+    # def add_button_clicked(self):
+    #     self.stackedMain.setCurrentIndex(2)
 
     def show_logo_image(self):
         logo_image = ImagePaths(7).get_image()
