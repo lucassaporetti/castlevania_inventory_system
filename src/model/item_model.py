@@ -8,13 +8,18 @@ from src.core.enum.dropped_by_enum import DroppedBy
 
 
 class Item(Entity):
-    # @staticmethod
-    # def of(values: list):
-    #     return Item(
-    #         str(values[0]), str(values[1]), str(values[2]),
-    #         Color[values[3]], int(values[4]), Fuel[values[5]],
-    #         str(values[6]), float(values[7]), YesNo(values[8])
-    #     )
+    @staticmethod
+    def of(values: list):
+        return Item(
+            str(values[0]), str(values[1]), Category(values[2]),
+            ItemType[values[3]], str(values[4]), Attributes[values[5]],
+            int(values[6]), int(values[7]), int(values[8]), int(values[9]),
+            int(values[10]), int(values[11]), int(values[12]), int(values[13]),
+            int(values[14]), int(values[15]), int(values[16]), int(values[17]),
+            int(values[18]), int(values[19]), float(values[20]), FoundAt(values[21]),
+            DroppedBy(values[22]), str(values[23]), str(values[24]), str(values[25]), str(values[26])
+        )
+
     def __init__(self, entity_id: str = None, name: str = None, category: Category = None, item_type: ItemType = None,
                  description: str = None, attributes: Attributes = None, consume_mp: int = None,
                  consume_heart: int = None, statistics_hp: int = None, statistics_mp: int = None,
@@ -102,7 +107,7 @@ class Item(Entity):
             return self
 
         def with_item_type(self, item_type: ItemType):
-            self.type = type
+            self.item_type = item_type
             return self
 
         def with_description(self, description: str):
