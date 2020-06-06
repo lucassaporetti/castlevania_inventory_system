@@ -1,10 +1,5 @@
 from PyQt5.QtWidgets import *
 from src.model.item_model import Item
-from src.core.enum.attributes_enum import Attributes
-from src.core.enum.category_enum import Category
-from src.core.enum.dropped_by_enum import DroppedBy
-from src.core.enum.found_at_enum import FoundAt
-from src.core.enum.item_type_enum import ItemType
 from src.core.service.service_facade import ServiceFacade
 from src.ui.qt.view.qt_view import QtView
 
@@ -58,10 +53,10 @@ class ItemAddUi(QtView):
         self.log.info('Item selected for update: {}'.format(item))
         self.selected_item = item
         self.addNameEdit.setText(item.name)
-        self.addCategoryBox.setCurrentText(item.category)
-        self.addTypeBox.setCurrentText(item.item_type)
+        self.addCategoryBox.setCurrentText(item.category.name)
+        self.addTypeBox.setCurrentText.upper()(item.item_type.name)
         self.addDescriptionEdit.setText(item.description)
-        self.addAttributes.setCurrentText(item.attributes)
+        self.addAttributes.setCurrentText(item.attributes.name)
         self.addConsumeMp.setValue(item.consume_mp)
         self.addConsumeHt.setValue(item.consume_heart)
         self.addStatHp.setValue(item.statistics_hp)
@@ -77,8 +72,8 @@ class ItemAddUi(QtView):
         self.addStatLck.setValue(item.statistics_lck)
         self.addStatGold.setValue(item.statistics_gold)
         self.addSell.setValue(item.sell)
-        self.addFoundBox.setCurrentText(item.found_at)
-        self.addDroppedBox.setCurrentText(item.dropped_by)
+        self.addFoundBox.setCurrentText(item.found_at.name)
+        self.addDroppedBox.setCurrentText(item.dropped_by.name)
         self.addEffectEdit.setText(item.effect)
         self.addItemImage.setText(item.image)
         self.addItemAnimation.setText(item.animation)
@@ -118,10 +113,10 @@ class ItemAddUi(QtView):
     def on_save(self):
         self.selected_item = self.selected_item if self.selected_item else Item()
         self.selected_item.name = self.addNameEdit.text()
-        self.selected_item.category = Category[self.addCategoryBox.currentText()]
-        self.selected_item.item_type = ItemType[self.addTypeBox.currentText()]
-        self.selected_item.description = self.addDescriptionEdit.text()
-        self.selected_item.attributes = Attributes[self.addAttributes.currentText()]
+        self.selected_item.category = self.addCategoryBox.currentText()
+        self.selected_item.item_type = self.addTypeBox.currentText()
+        self.selected_item.description = self.addDescriptionEdit.toPlainText()
+        self.selected_item.attributes = self.addAttributes.currentText()
         self.selected_item.consume_mp = self.addConsumeMp.value()
         self.selected_item.consume_heart = self.addConsumeHt.value()
         self.selected_item.statistics_hp = self.addStatHp.value()
@@ -137,9 +132,9 @@ class ItemAddUi(QtView):
         self.selected_item.statistics_lck = self.addStatLck.value()
         self.selected_item.statistics_gold = self.addStatGold.value()
         self.selected_item.sell = self.addSell.value()
-        self.selected_item.found_at = FoundAt[self.addFoundBox.currentText()]
-        self.selected_item.dropped_by = DroppedBy[self.addDroppedBox.currentText()]
-        self.selected_item.effect = self.addEffectEdit.text()
+        self.selected_item.found_at = self.addFoundBox.currentText()
+        self.selected_item.dropped_by = self.addDroppedBox.currentText()
+        self.selected_item.effect = self.addEffectEdit.toPlainText()
         self.selected_item.image = self.addItemImage
         self.selected_item.animation = self.addItemAnimation
         self.selected_item.special_animation = self.addItemSpecialAnimation

@@ -1,33 +1,28 @@
 import uuid
 from src.model.entity_model import Entity
-from src.core.enum.category_enum import Category
-from src.core.enum.item_type_enum import ItemType
-from src.core.enum.attributes_enum import Attributes
-from src.core.enum.found_at_enum import FoundAt
-from src.core.enum.dropped_by_enum import DroppedBy
 
 
 class Item(Entity):
     @staticmethod
     def of(values: list):
         return Item(
-            str(values[0]), str(values[1]), Category(values[2]),
-            ItemType[values[3]], str(values[4]), Attributes[values[5]],
+            str(values[0]), str(values[1]), str(values[2]),
+            str(values[3]), str(values[4]), str(values[5]),
             int(values[6]), int(values[7]), int(values[8]), int(values[9]),
             int(values[10]), int(values[11]), int(values[12]), int(values[13]),
             int(values[14]), int(values[15]), int(values[16]), int(values[17]),
-            int(values[18]), int(values[19]), float(values[20]), FoundAt(values[21]),
-            DroppedBy(values[22]), str(values[23]), str(values[24]), str(values[25]), str(values[26])
+            int(values[18]), int(values[19]), float(values[20]), str(values[21]),
+            str(values[22]), str(values[23]), str(values[24]), str(values[25]), str(values[26])
         )
 
-    def __init__(self, entity_id: str = None, name: str = None, category: Category = None, item_type: ItemType = None,
-                 description: str = None, attributes: Attributes = None, consume_mp: int = None,
+    def __init__(self, entity_id: str = None, name: str = None, category: str = None, item_type: str = None,
+                 description: str = None, attributes: str = None, consume_mp: int = None,
                  consume_heart: int = None, statistics_hp: int = None, statistics_mp: int = None,
                  statistics_heart: int = None, statistics_str: int = None, statistics_att: int = None,
                  statistics_gold: int = None, statistics_con: int = None, statistics_def: int = None,
                  statistics_max_ht: int = None, statistics_int: int = None, statistics_lck: int = None,
-                 statistics_max_hp: int = None, sell: float = None, found_at: FoundAt = None,
-                 dropped_by: DroppedBy = None, effect: str = None, image: str = None, animation: str = None,
+                 statistics_max_hp: int = None, sell: float = None, found_at: str = None,
+                 dropped_by: str = None, effect: str = None, image: str = None, animation: str = None,
                  special_animation: str = None):
         super().__init__(entity_id)
         self.name = name
@@ -61,11 +56,11 @@ class Item(Entity):
         return "{} | {} | {} | {} | {} | {} | {} | {} | {} | {}" \
                "{} | {} | {} | {} | {} | {} | {} | {} | {} | {}" \
                "{} | {} | {} | {} | {}".format(
-                super().__str__(), self.name, self.category.name, self.item_type.name, self.description,
-                self.attributes.name, self.consume_mp, self.consume_heart, self.statistics_hp, self.statistics_mp,
+                super().__str__(), self.name, self.category, self.item_type, self.description,
+                self.attributes, self.consume_mp, self.consume_heart, self.statistics_hp, self.statistics_mp,
                 self.statistics_heart, self.statistics_str, self.statistics_att, self.statistics_gold,
                 self.statistics_con, self.statistics_def, self.statistics_max_ht, self.statistics_int,
-                self.statistics_lck, self.statistics_max_hp, self.sell, self.found_at.name, self.dropped_by.name,
+                self.statistics_lck, self.statistics_max_hp, self.sell, self.found_at, self.dropped_by,
                 self.effect, self.image, self.animation, self.special_animation)
 
     class Builder:
@@ -102,11 +97,11 @@ class Item(Entity):
             self.name = name
             return self
 
-        def with_category(self, category: Category):
+        def with_category(self, category: str):
             self.category = category
             return self
 
-        def with_item_type(self, item_type: ItemType):
+        def with_item_type(self, item_type: str):
             self.item_type = item_type
             return self
 
@@ -114,7 +109,7 @@ class Item(Entity):
             self.description = description
             return self
 
-        def with_attributes(self, attributes: Attributes):
+        def with_attributes(self, attributes: str):
             self.attributes = attributes
             return self
 
@@ -178,11 +173,11 @@ class Item(Entity):
             self.sell = sell
             return self
 
-        def with_found_at(self, found_at: FoundAt):
+        def with_found_at(self, found_at: str):
             self.found_at = found_at
             return self
 
-        def with_dropped_by(self, dropped_by: DroppedBy):
+        def with_dropped_by(self, dropped_by: str):
             self.dropped_by = dropped_by
             return self
 

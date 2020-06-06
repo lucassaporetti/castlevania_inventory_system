@@ -1,39 +1,8 @@
-2020-06-05 22:24:36,833 [MainThread] INFO  root::connect(@Line:43) Connected to car-rental@0.0.0.0:3306/car_rental_db established 
-2020-06-05 22:24:36,833 [MainThread] INFO  root::get(@Line:33) Retrieving service: ItemService 
-2020-06-05 22:24:57,193 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f088d933a50> selected! 
-2020-06-05 22:24:59,239 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f088d933af0> selected! 
-2020-06-05 22:25:00,100 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f088d933b90> selected! 
-2020-06-05 22:25:01,041 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f088d933c30> selected! 
-2020-06-05 22:25:01,612 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f088d933cd0> selected! 
-2020-06-05 22:25:02,340 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f088d933d70> selected! 
-2020-06-05 22:25:09,223 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f088d933e10> selected! 
-2020-06-05 22:25:10,203 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f088d933eb0> selected! 
-2020-06-05 22:25:10,943 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f088d933f50> selected! 
-2020-06-05 22:25:12,488 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f088d933b90> selected! 
-2020-06-05 22:25:13,541 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f088d933a50> selected! 
-2020-06-05 22:25:14,942 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f088d933af0> selected! 
-2020-06-05 22:25:15,457 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f088d933b90> selected! 
-2020-06-05 22:25:15,888 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f088d933cd0> selected! 
-2020-06-05 22:25:16,428 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f088d933d70> selected! 
-2020-06-05 22:25:19,905 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f088d933e10> selected! 
-2020-06-05 22:25:20,662 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f088d933eb0> selected! 
-2020-06-05 22:25:21,514 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f088d933f50> selected! 
-2020-06-05 22:25:22,422 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f088d933a50> selected! 
-2020-06-05 22:25:33,856 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f088d933af0> selected! 
-2020-06-05 22:25:35,490 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f088d933a50> selected! 
-2020-06-05 22:25:43,183 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f088d933af0> selected! 
-2020-06-05 22:25:44,381 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f088d933c30> selected! 
-2020-06-05 22:25:44,903 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f088d933cd0> selected! 
-2020-06-05 22:25:45,311 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f088d933d70> selected! 
-2020-06-05 22:25:45,961 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f088d933af0> selected! 
-2020-06-05 22:25:47,067 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f088d933d70> selected! 
-2020-06-05 22:25:47,969 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f088d933cd0> selected! 
-2020-06-05 22:25:48,541 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f088d933c30> selected! 
-2020-06-05 22:25:49,969 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f088d933cd0> selected! 
-2020-06-05 22:25:57,943 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f088d933c30> selected! 
-2020-06-05 22:26:03,649 [MainThread] INFO  root::on_reset(@Line:88) Item form reset 
-2020-06-05 22:26:06,015 [MainThread] INFO  root::on_reset(@Line:88) Item form reset 
-2020-06-05 22:26:06,033 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f088d933a50> selected! 
-2020-06-05 22:26:07,827 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f088d933af0> selected! 
-2020-06-05 22:26:08,225 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f088d933c30> selected! 
-2020-06-05 22:26:09,083 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f088d933a50> selected! 
+2020-06-06 01:28:23,633 [MainThread] INFO  root::connect(@Line:43) Connected to car-rental@0.0.0.0:3306/castlevania_inventory_db established 
+2020-06-06 01:28:23,633 [MainThread] INFO  root::get(@Line:33) Retrieving service: ItemService 
+2020-06-06 01:28:31,504 [MainThread] INFO  root::insert(@Line:72) Executing SQL statement: INSERT INTO ITEMS (ENTITY_ID, NAME, CATEGORY, ITEM_TYPE, DESCRIPTION, ATTRIBUTES, CONSUME_MP, CONSUME_HEART, STATISTICS_HP, STATISTICS_MP, STATISTICS_HEART, STATISTICS_STR, STATISTICS_ATT, STATISTICS_GOLD, STATISTICS_CON, STATISTICS_DEF, STATISTICS_MAX_HT, STATISTICS_INT, STATISTICS_LCK, STATISTICS_MAX_HP, SELL, FOUND_AT, DROPPED_BY, EFFECT, IMAGE, ANIMATION, SPECIAL_ANIMATION) VALUES ('0e1de60c-1754-4be6-a461-b2bd56aca670', '', 'Weapon', 'Unique', '', 'None', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0.0', 'None', 'None', '', '<PyQt5.QtWidgets.QLabel object at 0x7fb5d5dfcb90>', '<PyQt5.QtWidgets.QLabel object at 0x7fb5d5dfcc30>', '<PyQt5.QtWidgets.QLabel object at 0x7fb5d5dfccd0>') 
+2020-06-06 01:28:31,585 [MainThread] INFO  root::on_reset(@Line:88) Item form reset 
+2020-06-06 01:28:31,601 [MainThread] INFO  root::on_save(@Line:148) Item saved: None 
+2020-06-06 01:31:00,923 [MainThread] INFO  root::insert(@Line:72) Executing SQL statement: INSERT INTO ITEMS (ENTITY_ID, NAME, CATEGORY, ITEM_TYPE, DESCRIPTION, ATTRIBUTES, CONSUME_MP, CONSUME_HEART, STATISTICS_HP, STATISTICS_MP, STATISTICS_HEART, STATISTICS_STR, STATISTICS_ATT, STATISTICS_GOLD, STATISTICS_CON, STATISTICS_DEF, STATISTICS_MAX_HT, STATISTICS_INT, STATISTICS_LCK, STATISTICS_MAX_HP, SELL, FOUND_AT, DROPPED_BY, EFFECT, IMAGE, ANIMATION, SPECIAL_ANIMATION) VALUES ('4767a082-8b56-41fb-a7ae-afb321838409', '', 'Relic', 'Belt Other', 'uhuhuhuhuhuh', 'Cut', '2', '2', '0', '2', '0', '0', '0', '0', '0', '3', '0', '0', '0', '0', '2.0', 'Reverse Keep', 'Zombie', 'bnjjbjbjbjbbjb', '<PyQt5.QtWidgets.QLabel object at 0x7fb5d5dfcb90>', '<PyQt5.QtWidgets.QLabel object at 0x7fb5d5dfcc30>', '<PyQt5.QtWidgets.QLabel object at 0x7fb5d5dfccd0>') 
+2020-06-06 01:31:01,047 [MainThread] INFO  root::on_reset(@Line:88) Item form reset 
+2020-06-06 01:31:01,064 [MainThread] INFO  root::on_save(@Line:148) Item saved: None 
