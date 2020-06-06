@@ -75,7 +75,7 @@ background-color: rgba(0, 0, 0, 113);</string>
     <enum>QFrame::Plain</enum>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>2</number>
    </property>
    <widget class="QWidget" name="mainPage">
     <property name="styleSheet">
@@ -1862,7 +1862,7 @@ color: rgb(241, 146, 0);</string>
        <string>Consume</string>
       </property>
      </widget>
-     <widget class="QSpinBox" name="addConsumeHeart">
+     <widget class="QSpinBox" name="addConsumeHt">
       <property name="geometry">
        <rect>
         <x>310</x>
@@ -2352,7 +2352,7 @@ selection-background-color: rgb(181, 0, 0);
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QSpinBox" name="addStatStrBox">
+      <widget class="QSpinBox" name="addStatStr">
        <property name="geometry">
         <rect>
          <x>42</x>
@@ -2362,7 +2362,7 @@ selection-background-color: rgb(181, 0, 0);
         </rect>
        </property>
       </widget>
-      <widget class="QSpinBox" name="addStatAttBox">
+      <widget class="QSpinBox" name="addStatAtt">
        <property name="geometry">
         <rect>
          <x>152</x>
@@ -2372,7 +2372,7 @@ selection-background-color: rgb(181, 0, 0);
         </rect>
        </property>
       </widget>
-      <widget class="QSpinBox" name="addStatGoldBox">
+      <widget class="QSpinBox" name="addStatGold">
        <property name="geometry">
         <rect>
          <x>269</x>
@@ -2382,7 +2382,7 @@ selection-background-color: rgb(181, 0, 0);
         </rect>
        </property>
       </widget>
-      <widget class="QSpinBox" name="addStatMaxHtBox">
+      <widget class="QSpinBox" name="addStatMaxHt">
        <property name="geometry">
         <rect>
          <x>269</x>
@@ -2428,7 +2428,7 @@ color: rgb(255, 255, 255);</string>
         <string>MaxHT</string>
        </property>
       </widget>
-      <widget class="QSpinBox" name="addStatIntBox">
+      <widget class="QSpinBox" name="addStatInt">
        <property name="geometry">
         <rect>
          <x>42</x>
@@ -2438,7 +2438,7 @@ color: rgb(255, 255, 255);</string>
         </rect>
        </property>
       </widget>
-      <widget class="QSpinBox" name="addStatHpBox">
+      <widget class="QSpinBox" name="addStatHp">
        <property name="geometry">
         <rect>
          <x>42</x>
@@ -2448,7 +2448,7 @@ color: rgb(255, 255, 255);</string>
         </rect>
        </property>
       </widget>
-      <widget class="QSpinBox" name="addStatMaxHpBox">
+      <widget class="QSpinBox" name="addStatMaxHp">
        <property name="geometry">
         <rect>
          <x>269</x>
@@ -2530,7 +2530,7 @@ color: rgb(255, 255, 255);</string>
         <string>Heart</string>
        </property>
       </widget>
-      <widget class="QSpinBox" name="addStatMpBox">
+      <widget class="QSpinBox" name="addStatMp">
        <property name="geometry">
         <rect>
          <x>151</x>
@@ -2576,7 +2576,7 @@ color: rgb(255, 255, 255);</string>
         <string>MP</string>
        </property>
       </widget>
-      <widget class="QSpinBox" name="addStatDefBox">
+      <widget class="QSpinBox" name="addStatDef">
        <property name="geometry">
         <rect>
          <x>152</x>
@@ -2586,7 +2586,7 @@ color: rgb(255, 255, 255);</string>
         </rect>
        </property>
       </widget>
-      <widget class="QSpinBox" name="addStatLckBox">
+      <widget class="QSpinBox" name="addStatLck">
        <property name="geometry">
         <rect>
          <x>152</x>
@@ -2596,7 +2596,7 @@ color: rgb(255, 255, 255);</string>
         </rect>
        </property>
       </widget>
-      <widget class="QSpinBox" name="addStatHeartBox">
+      <widget class="QSpinBox" name="addStatHt">
        <property name="geometry">
         <rect>
          <x>269</x>
@@ -2642,7 +2642,7 @@ color: rgb(255, 255, 255);</string>
         <string>LCK</string>
        </property>
       </widget>
-      <widget class="QSpinBox" name="addStatConBox">
+      <widget class="QSpinBox" name="addStatCon">
        <property name="geometry">
         <rect>
          <x>42</x>
@@ -2698,20 +2698,20 @@ color: rgb(255, 255, 255);</string>
       <zorder>addStatMaxHpLabel</zorder>
       <zorder>addStatMaxHtLabel</zorder>
       <zorder>addStatGoldLabel</zorder>
-      <zorder>addStatStrBox</zorder>
-      <zorder>addStatAttBox</zorder>
-      <zorder>addStatGoldBox</zorder>
-      <zorder>addStatMaxHtBox</zorder>
+      <zorder>addStatStr</zorder>
+      <zorder>addStatAtt</zorder>
+      <zorder>addStatGold</zorder>
+      <zorder>addStatMaxHt</zorder>
       <zorder>addStatIntLabel</zorder>
-      <zorder>addStatIntBox</zorder>
-      <zorder>addStatHpBox</zorder>
-      <zorder>addStatMaxHpBox</zorder>
+      <zorder>addStatInt</zorder>
+      <zorder>addStatHp</zorder>
+      <zorder>addStatMaxHp</zorder>
       <zorder>addStatHeartLabel</zorder>
-      <zorder>addStatMpBox</zorder>
-      <zorder>addStatDefBox</zorder>
-      <zorder>addStatLckBox</zorder>
-      <zorder>addStatHeartBox</zorder>
-      <zorder>addStatConBox</zorder>
+      <zorder>addStatMp</zorder>
+      <zorder>addStatDef</zorder>
+      <zorder>addStatLck</zorder>
+      <zorder>addStatHt</zorder>
+      <zorder>addStatCon</zorder>
      </widget>
      <widget class="QFrame" name="addItemFrame">
       <property name="geometry">
@@ -2812,7 +2812,7 @@ color: rgb(211, 215, 207);
         <bool>true</bool>
        </property>
       </widget>
-      <widget class="QLabel" name="addGifAnimation">
+      <widget class="QLabel" name="addItemAnimation">
        <property name="enabled">
         <bool>true</bool>
        </property>
@@ -2879,7 +2879,7 @@ color: rgb(211, 215, 207);</string>
         <number>0</number>
        </property>
       </widget>
-      <widget class="QLabel" name="addGifSpecial">
+      <widget class="QLabel" name="addItemSpecialAnimation">
        <property name="enabled">
         <bool>true</bool>
        </property>
@@ -3034,7 +3034,7 @@ color: rgb(241, 146, 0);</string>
         <string>Animation</string>
        </property>
       </widget>
-      <widget class="QLabel" name="addSpecialLabel">
+      <widget class="QLabel" name="addSpecialAnimationLabel">
        <property name="geometry">
         <rect>
          <x>53</x>
@@ -3091,7 +3091,7 @@ background-color: rgba(0, 0, 0, 0);</string>
          <number>0</number>
         </property>
         <item>
-         <widget class="QPushButton" name="resetButton">
+         <widget class="QToolButton" name="resetButton">
           <property name="minimumSize">
            <size>
             <width>70</width>
@@ -3118,7 +3118,7 @@ selection-background-color: rgb(0, 0, 0);</string>
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="cancelButton">
+         <widget class="QToolButton" name="cancelButton">
           <property name="minimumSize">
            <size>
             <width>70</width>
@@ -3145,7 +3145,7 @@ selection-background-color: rgb(0, 0, 0);</string>
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="saveButton">
+         <widget class="QToolButton" name="saveButton">
           <property name="minimumSize">
            <size>
             <width>70</width>
@@ -3214,7 +3214,7 @@ color: rgb(211, 215, 207);</string>
      <zorder>addCategoryLabel</zorder>
      <zorder>addCategoryBox</zorder>
      <zorder>addConsumeLabel</zorder>
-     <zorder>addConsumeHeart</zorder>
+     <zorder>addConsumeHt</zorder>
      <zorder>addConsumeMp</zorder>
      <zorder>addStatisticsLabel</zorder>
      <zorder>addSellLabel</zorder>
