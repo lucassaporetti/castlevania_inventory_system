@@ -49,7 +49,8 @@ class MainMenuUi(QtView):
         q_image = QtGui.QImage(logo_image)
         q_pixmap = QtGui.QPixmap.fromImage(q_image)
         q_pixmap_image = QtGui.QPixmap(q_pixmap)
-        self.logoImage.setPixmap(q_pixmap_image)
+        q_pixmap_image_sized = q_pixmap_image.scaled(307, 164)
+        self.logoImage.setPixmap(q_pixmap_image_sized)
         self.logoImage.show()
 
     @staticmethod

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1050</width>
-    <height>594</height>
+    <width>1167</width>
+    <height>605</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -43,7 +43,7 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>218</x>
+     <x>337</x>
      <y>63</y>
      <width>811</width>
      <height>519</height>
@@ -75,7 +75,7 @@ background-color: rgba(0, 0, 0, 113);</string>
     <enum>QFrame::Plain</enum>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="mainPage">
     <property name="styleSheet">
@@ -84,10 +84,10 @@ background-color: rgba(0, 0, 0, 113);</string>
     <widget class="QLabel" name="logoImage">
      <property name="geometry">
       <rect>
-       <x>162</x>
-       <y>109</y>
-       <width>476</width>
-       <height>286</height>
+       <x>251</x>
+       <y>157</y>
+       <width>307</width>
+       <height>164</height>
       </rect>
      </property>
      <property name="sizePolicy">
@@ -109,8 +109,7 @@ background-color: rgba(0, 0, 0, 113);</string>
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgba(191, 64, 64, 0);
-image: url(:/background/resources/images/backgrounds/system_logo.png);</string>
+      <string notr="true">background-color: rgba(191, 64, 64, 0);</string>
      </property>
      <property name="text">
       <string/>
@@ -3233,7 +3232,7 @@ color: rgb(211, 215, 207);</string>
   <widget class="QFrame" name="frameToolbox">
    <property name="geometry">
     <rect>
-     <x>208</x>
+     <x>327</x>
      <y>-2</y>
      <width>511</width>
      <height>71</height>
@@ -3420,10 +3419,10 @@ color: rgb(238, 238, 236);</string>
   <widget class="QLabel" name="characterImage">
    <property name="geometry">
     <rect>
-     <x>82</x>
-     <y>68</y>
-     <width>270</width>
-     <height>383</height>
+     <x>26</x>
+     <y>73</y>
+     <width>370</width>
+     <height>517</height>
     </rect>
    </property>
    <property name="minimumSize">
@@ -3434,8 +3433,8 @@ color: rgb(238, 238, 236);</string>
    </property>
    <property name="maximumSize">
     <size>
-     <width>270</width>
-     <height>383</height>
+     <width>50000</width>
+     <height>50000</height>
     </size>
    </property>
    <property name="styleSheet">
@@ -3451,10 +3450,10 @@ color: rgb(238, 238, 236);</string>
   <widget class="QToolBox" name="categoryBox">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>37</y>
-     <width>215</width>
-     <height>449</height>
+     <x>13</x>
+     <y>36</y>
+     <width>324</width>
+     <height>546</height>
     </rect>
    </property>
    <property name="minimumSize">
@@ -3494,8 +3493,8 @@ background-color: rgba(191, 64, 64, 0);</string>
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>215</width>
-      <height>143</height>
+      <width>324</width>
+      <height>240</height>
      </rect>
     </property>
     <attribute name="label">
@@ -3507,8 +3506,8 @@ background-color: rgba(191, 64, 64, 0);</string>
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>215</width>
-      <height>143</height>
+      <width>324</width>
+      <height>240</height>
      </rect>
     </property>
     <attribute name="label">
@@ -3523,8 +3522,8 @@ background-color: rgba(191, 64, 64, 0);</string>
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>215</width>
-      <height>143</height>
+      <width>324</width>
+      <height>240</height>
      </rect>
     </property>
     <property name="cursor">
@@ -3551,8 +3550,8 @@ background-color: rgba(191, 64, 64, 0);</string>
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>215</width>
-      <height>143</height>
+      <width>324</width>
+      <height>240</height>
      </rect>
     </property>
     <attribute name="label">
@@ -3564,8 +3563,8 @@ background-color: rgba(191, 64, 64, 0);</string>
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>215</width>
-      <height>143</height>
+      <width>324</width>
+      <height>240</height>
      </rect>
     </property>
     <attribute name="label">
@@ -3577,8 +3576,8 @@ background-color: rgba(191, 64, 64, 0);</string>
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>215</width>
-      <height>143</height>
+      <width>324</width>
+      <height>240</height>
      </rect>
     </property>
     <attribute name="label">
@@ -3590,8 +3589,8 @@ background-color: rgba(191, 64, 64, 0);</string>
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>215</width>
-      <height>143</height>
+      <width>324</width>
+      <height>240</height>
      </rect>
     </property>
     <attribute name="label">
@@ -3603,8 +3602,8 @@ background-color: rgba(191, 64, 64, 0);</string>
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>215</width>
-      <height>143</height>
+      <width>324</width>
+      <height>240</height>
      </rect>
     </property>
     <attribute name="label">
@@ -3683,105 +3682,10 @@ background-color: rgba(191, 64, 64, 0);</string>
     </attribute>
    </widget>
   </widget>
-  <widget class="QFrame" name="centralFilter">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>218</width>
-     <height>582</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <kerning>false</kerning>
-    </font>
-   </property>
-   <property name="toolTip">
-    <string notr="true"/>
-   </property>
-   <property name="toolTipDuration">
-    <number>0</number>
-   </property>
-   <property name="statusTip">
-    <string notr="true"/>
-   </property>
-   <property name="whatsThis">
-    <string notr="true"/>
-   </property>
-   <property name="accessibleName">
-    <string notr="true"/>
-   </property>
-   <property name="accessibleDescription">
-    <string notr="true"/>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgba(0, 0, 0, 58);</string>
-   </property>
-   <property name="frameShape">
-    <enum>QFrame::NoFrame</enum>
-   </property>
-   <property name="frameShadow">
-    <enum>QFrame::Plain</enum>
-   </property>
-   <property name="lineWidth">
-    <number>0</number>
-   </property>
-  </widget>
-  <widget class="QFrame" name="filterFrame">
-   <property name="geometry">
-    <rect>
-     <x>218</x>
-     <y>0</y>
-     <width>822</width>
-     <height>63</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgba(0, 0, 0, 58);</string>
-   </property>
-   <property name="frameShape">
-    <enum>QFrame::NoFrame</enum>
-   </property>
-   <property name="frameShadow">
-    <enum>QFrame::Plain</enum>
-   </property>
-   <property name="lineWidth">
-    <number>0</number>
-   </property>
-  </widget>
-  <widget class="QFrame" name="filterFrame2">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>582</y>
-     <width>913</width>
-     <height>12</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgba(0, 0, 0, 58);</string>
-   </property>
-   <property name="frameShape">
-    <enum>QFrame::NoFrame</enum>
-   </property>
-   <property name="frameShadow">
-    <enum>QFrame::Plain</enum>
-   </property>
-   <property name="lineWidth">
-    <number>0</number>
-   </property>
-  </widget>
   <zorder>stackedMain</zorder>
   <zorder>characterImage</zorder>
-  <zorder>centralFilter</zorder>
   <zorder>categoryBox</zorder>
-  <zorder>filterFrame</zorder>
   <zorder>frameToolbox</zorder>
-  <zorder>filterFrame2</zorder>
  </widget>
  <resources>
   <include location="../../../resources.qrc"/>
