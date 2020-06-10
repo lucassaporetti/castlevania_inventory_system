@@ -1,4 +1,5 @@
 from PyQt5 import QtGui
+from PyQt5.QtGui import QIcon, QStandardItemModel, QImage
 from PyQt5.QtWidgets import *
 from src.resources.resources_properties.image_paths import ImagePaths
 from src.ui.qt.view.qt_view import QtView
@@ -11,6 +12,7 @@ class ItemInformationUi(QtView):
         self.characterImage = self.qt.find_label('characterImage')
         self.categoryBox = self.qt.find_tool_box('categoryBox')
         self.weaponPage = self.qt.find_widget(self.window, QWidget, 'weaponPage')
+        self.weaponList = self.qt.find_list_widget('weaponList')
         self.shieldPage = self.qt.find_widget(self.window, QWidget, 'shieldPage')
         self.armorPage = self.qt.find_widget(self.window, QWidget, 'armorPage')
         self.relicPage = self.qt.find_widget(self.window, QWidget, 'relicPage')
@@ -48,9 +50,9 @@ class ItemInformationUi(QtView):
         self.infoItemSpecial = self.qt.find_label('infoItemSpecial')
         self.editButton = self.qt.find_tool_button('editButton')
         self.removeButton = self.qt.find_tool_button('removeButton')
+        self.addButton = self.qt.find_tool_button('addButton')
         self.animated_item_gif()
         self.show_item_image()
-        self.addButton = self.qt.find_tool_button('addButton')
         self.setup_ui()
 
     def setup_ui(self):
@@ -58,6 +60,15 @@ class ItemInformationUi(QtView):
         self.categoryBox.currentChanged.connect(self.category_box_clicked)
         self.removeButton.clicked.connect(self.remove_button_clicked)
         self.addButton.clicked.connect(self.add_button_clicked)
+        self.weaponList.setViewMode(QListView.IconMode)
+        item = QListWidgetItem()
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap('/home/lucassaporetti/GIT-Repository/'
+                                     'castlevania_inventory_system/src/'
+                                     'resources/images/items/alucard_sword_icon.png'),
+                       QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        item.setIcon(icon)
+        self.weaponList.addItem(item)
 
     def category_box_clicked(self):
         index = self.categoryBox.currentIndex()

@@ -2770,7 +2770,7 @@ color: rgba(181, 0, 0, 107);</string>
        <property name="font">
         <font>
          <family>Ubuntu Condensed</family>
-         <pointsize>10</pointsize>
+         <pointsize>11</pointsize>
          <weight>75</weight>
          <italic>false</italic>
          <bold>true</bold>
@@ -2783,7 +2783,7 @@ color: rgba(181, 0, 0, 107);</string>
         <cursorShape>PointingHandCursor</cursorShape>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgba(81, 81, 81, 143);
+        <string notr="true">background-color: rgb(0, 0, 0);
 color: rgb(211, 215, 207);
 
 
@@ -2805,7 +2805,7 @@ color: rgb(211, 215, 207);
         <number>1</number>
        </property>
        <property name="text">
-        <string>Click|Add</string>
+        <string>Click</string>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -2853,7 +2853,7 @@ color: rgb(211, 215, 207);
         <bool>false</bool>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgba(81, 81, 81, 143);
+        <string notr="true">background-color: rgb(0, 0, 0);
 color: rgb(211, 215, 207);</string>
        </property>
        <property name="frameShape">
@@ -2869,7 +2869,7 @@ color: rgb(211, 215, 207);</string>
         <number>1</number>
        </property>
        <property name="text">
-        <string>Click|Add</string>
+        <string>Click</string>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -2920,7 +2920,7 @@ color: rgb(211, 215, 207);</string>
         <cursorShape>PointingHandCursor</cursorShape>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgba(81, 81, 81, 143);
+        <string notr="true">background-color: rgb(0, 0, 0);
 color: rgb(211, 215, 207);
 
 
@@ -2939,7 +2939,7 @@ color: rgb(211, 215, 207);
         <number>1</number>
        </property>
        <property name="text">
-        <string>Click|Add</string>
+        <string>Click</string>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -3492,7 +3492,7 @@ background-color: rgba(191, 64, 64, 0);</string>
     <enum>QFrame::NoFrame</enum>
    </property>
    <property name="currentIndex">
-    <number>8</number>
+    <number>0</number>
    </property>
    <property name="tabSpacing">
     <number>6</number>
@@ -3509,6 +3509,11 @@ background-color: rgba(191, 64, 64, 0);</string>
     <attribute name="label">
      <string>Weapon</string>
     </attribute>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <widget class="QListWidget" name="weaponList"/>
+     </item>
+    </layout>
    </widget>
    <widget class="QWidget" name="shieldPage">
     <property name="geometry">

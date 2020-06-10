@@ -1,11 +1,7 @@
 import base64
 import os
 import functools
-
 from PyQt5 import QtGui
-from PyQt5.QtCore import pyqtSignal
-from PyQt5.QtCore import QEvent
-from PyQt5.QtCore import QObject
 from PyQt5.QtWidgets import *
 from src.model.item_model import Item
 from src.core.service.service_facade import ServiceFacade
@@ -49,7 +45,6 @@ class ItemAddUi(QtView):
         self.saveButton = self.qt.find_tool_button('saveButton')
         self.imagePath = None
         self.setup_ui()
-        # self.animated_item_gif()
 
     def setup_ui(self):
         self.saveButton.clicked.connect(self.on_save)
@@ -116,9 +111,9 @@ class ItemAddUi(QtView):
         self.addFoundBox.setCurrentIndex(0)
         self.addDroppedBox.setCurrentIndex(0)
         self.addEffectEdit.setText(None)
-        self.addItemImage.setText('Click|Add')
-        self.addItemAnimation.setText('Click|Add')
-        self.addItemSpecialAnimation.setText('Click|Add')
+        self.addItemImage.setText('Click')
+        self.addItemAnimation.setText('Click')
+        self.addItemSpecialAnimation.setText('Click')
         self.window.repaint()
 
     def on_save(self):
@@ -150,6 +145,7 @@ class ItemAddUi(QtView):
         self.selected_item.animation = self.imagePath
         self.selected_item.special_animation = self.imagePath
         self.item_service.save(self.selected_item)
+
         self.on_reset()
         self.log.info('Item saved: {}'.format(self.selected_item))
 
