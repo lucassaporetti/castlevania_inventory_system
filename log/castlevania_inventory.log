@@ -1,4 +1,7 @@
-2020-06-10 16:12:35,780 [MainThread] INFO  root::connect(@Line:43) Connected to car-rental@0.0.0.0:3306/castlevania_inventory_db established 
-2020-06-10 16:12:35,780 [MainThread] INFO  root::get(@Line:33) Retrieving service: ItemService 
-2020-06-10 16:12:37,962 [MainThread] INFO  root::category_box_clicked(@Line:76) <PyQt5.QtWidgets.QWidget object at 0x7fe552928a50> selected! 
-2020-06-10 16:12:38,873 [MainThread] INFO  root::category_box_clicked(@Line:76) <PyQt5.QtWidgets.QWidget object at 0x7fe552928870> selected! 
+2020-06-10 18:28:34,117 [MainThread] INFO  root::create_or_get(@Line:25) Creating service ItemService 
+2020-06-10 18:28:34,117 [MainThread] INFO  root::create_or_get(@Line:24) Retrieving repository ItemRepository 
+2020-06-10 18:28:34,117 [MainThread] INFO  root::get(@Line:33) Retrieving service: ItemService 
+2020-06-10 18:28:35,583 [MainThread] INFO  root::category_box_clicked(@Line:74) <PyQt5.QtWidgets.QWidget object at 0x7f0a23a8b910> selected! 
+2020-06-10 18:28:35,595 [MainThread] INFO  root::find_all(@Line:98) Executing SQL statement: SELECT * FROM ITEMS WHERE 1 = 1  
+2020-06-10 18:28:36,550 [MainThread] INFO  root::category_box_clicked(@Line:74) <PyQt5.QtWidgets.QWidget object at 0x7f0a23a8b730> selected! 
+2020-06-10 18:28:36,566 [MainThread] INFO  root::find_all(@Line:98) Executing SQL statement: SELECT * FROM ITEMS WHERE 1 = 1  

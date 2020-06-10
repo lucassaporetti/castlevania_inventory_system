@@ -1,14 +1,21 @@
+import base64
+import io
+import numpy as np
+import cv2
 from PyQt5 import QtGui
-from PyQt5.QtGui import QIcon, QStandardItemModel, QImage
+from PyQt5.QtGui import QImage
 from PyQt5.QtWidgets import *
+from core.service.service_facade import ServiceFacade
 from src.resources.resources_properties.image_paths import ImagePaths
 from src.ui.qt.view.qt_view import QtView
 from ui.promotions.cv_confirm_box import CvConfirmBox
+import imageio
 
 
 class ItemInformationUi(QtView):
     def __init__(self, parent: QtView):
         super().__init__(parent.window, parent)
+        self.item_service = ServiceFacade.get_item_service()
         self.characterImage = self.qt.find_label('characterImage')
         self.categoryBox = self.qt.find_tool_box('categoryBox')
         self.weaponPage = self.qt.find_widget(self.window, QWidget, 'weaponPage')
@@ -60,15 +67,6 @@ class ItemInformationUi(QtView):
         self.categoryBox.currentChanged.connect(self.category_box_clicked)
         self.removeButton.clicked.connect(self.remove_button_clicked)
         self.addButton.clicked.connect(self.add_button_clicked)
-        self.weaponList.setViewMode(QListView.IconMode)
-        item = QListWidgetItem()
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap('/home/lucassaporetti/GIT-Repository/'
-                                     'castlevania_inventory_system/src/'
-                                     'resources/images/items/alucard_sword_icon.png'),
-                       QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        item.setIcon(icon)
-        self.weaponList.addItem(item)
 
     def category_box_clicked(self):
         index = self.categoryBox.currentIndex()
@@ -82,6 +80,7 @@ class ItemInformationUi(QtView):
         self.characterImage.setPixmap(q_pixmap_image_sized)
         self.characterImage.show()
         self.parent.stackedMain.setCurrentIndex(1)
+        self.weapon_list()
         if index == 9:
             self.characterImage.close()
             self.parent.stackedMain.setCurrentIndex(0)
@@ -132,3 +131,25 @@ class ItemInformationUi(QtView):
 
     def no_clicked(self):
         self.category_box_clicked()
+
+    def weapon_list(self):
+        for item in self.item_service.list():
+            if 'Weapon' in item.category:
+                self.weaponList.setViewMode(QListView.IconMode)
+                list_item = QListWidgetItem()
+                item_icon = QtGui.QIcon()
+                item_image_right = item.image.replace('b"', '').replace("b'", '').replace('"', '').replace("'", "")
+                item_image = self.str_to_rgb(item_image_right)
+                height, width, channel = item_image.shape
+                bytes_per_line = 3 * width
+                q_img = QImage(item_image.data, width, height, bytes_per_line, QImage.Format_RGB888).rgbSwapped()
+                item_icon.addPixmap(QtGui.QPixmap(q_img),
+                                    QtGui.QIcon.Normal, QtGui.QIcon.Off)
+                list_item.setIcon(item_icon)
+                list_item.setText(item.category)
+                self.weaponList.addItem(list_item)
+
+    def str_to_rgb(self, base64_str):
+        image_data = base64.b64decode(base64_str)
+        image = imageio.imread(io.BytesIO(image_data))
+        return cv2.cvtColor(np.array(image), cv2.COLOR_BGR2RGB)
