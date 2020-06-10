@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `castlevania_inventory_db` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `castlevania_inventory_db`;
 -- MySQL dump 10.13  Distrib 8.0.20, for Linux (x86_64)
 --
 -- Host: localhost    Database: castlevania_inventory_db
@@ -23,12 +25,12 @@ DROP TABLE IF EXISTS `ITEMS`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `ITEMS` (
-  `ENTITY_ID` varchar(36) NOT NULL,
-  `NAME` varchar(30) DEFAULT 'NAMELESS',
-  `CATEGORY` varchar(30) DEFAULT NULL,
-  `ITEM_TYPE` varchar(30) DEFAULT NULL,
+  `ENTITY_ID` char(36) NOT NULL,
+  `NAME` varchar(50) DEFAULT 'NAMELESS',
+  `CATEGORY` varchar(50) DEFAULT 'STANDARD',
+  `ITEM_TYPE` varchar(50) DEFAULT 'UNIQUE',
   `DESCRIPTION` varchar(1000) DEFAULT 'WITHOUT DESCRIPTION',
-  `ATTRIBUTES` varchar(30) DEFAULT NULL,
+  `ATTRIBUTES` varchar(50) DEFAULT 'NONE',
   `CONSUME_MP` int DEFAULT '0',
   `CONSUME_HEART` int DEFAULT '0',
   `STATISTICS_HP` int DEFAULT '0',
@@ -44,14 +46,13 @@ CREATE TABLE `ITEMS` (
   `STATISTICS_LCK` int DEFAULT '0',
   `STATISTICS_MAX_HP` int DEFAULT '0',
   `SELL` float DEFAULT '0',
-  `FOUND_AT` varchar(30) DEFAULT NULL,
-  `DROPPED_BY` varchar(30) DEFAULT NULL,
+  `FOUND_AT` varchar(100) DEFAULT 'NONE',
+  `DROPPED_BY` varchar(100) DEFAULT 'NONE',
   `EFFECT` varchar(1000) DEFAULT 'WITHOUT EFFECT',
-  `IMAGE` varchar(1000) DEFAULT 'WITHOUT IMAGE',
-  `ANIMATION` varchar(1000) DEFAULT 'WITHOUT ANIMATION',
-  `SPECIAL_ANIMATION` varchar(1000) DEFAULT 'WITHOUT SPECIAL ANIMATION',
-  PRIMARY KEY (`ENTITY_ID`),
-  UNIQUE KEY `ENTITY_ID` (`ENTITY_ID`)
+  `IMAGE` mediumblob NOT NULL,
+  `ANIMATION` mediumblob NOT NULL,
+  `SPECIAL_ANIMATION` mediumblob NOT NULL,
+  PRIMARY KEY (`ENTITY_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -73,4 +74,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-06-06  0:40:33
+-- Dump completed on 2020-06-09 16:09:16

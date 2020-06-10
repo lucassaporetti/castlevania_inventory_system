@@ -88,7 +88,7 @@ class ItemInformationUi(QtView):
     def animated_item_gif(self):
         movie = QtGui.QMovie("/home/lucassaporetti/GIT-Repository/"
                              "castlevania_inventory_system/src/resources/"
-                             "images/items/alucard_sword_animation.gif")
+                             "images/items/alucard_sword.gif")
         self.infoItemAnimation.setMovie(movie)
         movie.start()
         movie2 = QtGui.QMovie("/home/lucassaporetti/GIT-Repository/"
@@ -101,7 +101,7 @@ class ItemInformationUi(QtView):
         pass
 
     def add_button_clicked(self):
-        self.categoryBox.setCurrentIndex(9)
+        pass
 
     def remove_button_clicked(self):
         remove_image = ImagePaths(8).get_image()

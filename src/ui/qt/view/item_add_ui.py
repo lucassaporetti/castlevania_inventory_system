@@ -1,3 +1,11 @@
+import base64
+import os
+import functools
+
+from PyQt5 import QtGui
+from PyQt5.QtCore import pyqtSignal
+from PyQt5.QtCore import QEvent
+from PyQt5.QtCore import QObject
 from PyQt5.QtWidgets import *
 from src.model.item_model import Item
 from src.core.service.service_facade import ServiceFacade
@@ -39,14 +47,20 @@ class ItemAddUi(QtView):
         self.cancelButton = self.qt.find_tool_button('cancelButton')
         self.resetButton = self.qt.find_tool_button('resetButton')
         self.saveButton = self.qt.find_tool_button('saveButton')
+        self.imagePath = None
         self.setup_ui()
         # self.animated_item_gif()
-        # self.show_item_image()
 
     def setup_ui(self):
         self.saveButton.clicked.connect(self.on_save)
         self.cancelButton.clicked.connect(self.on_cancel)
         self.resetButton.clicked.connect(self.on_reset)
+        self.addItemImage.mouseReleaseEvent = functools.partial(self.open_file,
+                                                                source_object=self.addItemImage)
+        self.addItemAnimation.mouseReleaseEvent = functools.partial(self.open_file,
+                                                                    source_object=self.addItemAnimation)
+        self.addItemSpecialAnimation.mouseReleaseEvent = functools.partial(self.open_file,
+                                                                           source_object=self.addItemSpecialAnimation)
 
     def item_selected(self, args):
         item = args['selected_item']
@@ -75,9 +89,6 @@ class ItemAddUi(QtView):
         self.addFoundBox.setCurrentText(item.found_at.name)
         self.addDroppedBox.setCurrentText(item.dropped_by.name)
         self.addEffectEdit.setText(item.effect)
-        self.addItemImage.setText(item.image)
-        self.addItemAnimation.setText(item.animation)
-        self.addItemSpecialAnimation.setText(item.special_animation)
 
     def on_reset(self):
         self.log.info('Item form reset')
@@ -105,9 +116,9 @@ class ItemAddUi(QtView):
         self.addFoundBox.setCurrentIndex(0)
         self.addDroppedBox.setCurrentIndex(0)
         self.addEffectEdit.setText(None)
-        self.addItemImage.setText(None)
-        self.addItemAnimation.setText(None)
-        self.addItemSpecialAnimation.setText(None)
+        self.addItemImage.setText('Click|Add')
+        self.addItemAnimation.setText('Click|Add')
+        self.addItemSpecialAnimation.setText('Click|Add')
         self.window.repaint()
 
     def on_save(self):
@@ -135,9 +146,9 @@ class ItemAddUi(QtView):
         self.selected_item.found_at = self.addFoundBox.currentText()
         self.selected_item.dropped_by = self.addDroppedBox.currentText()
         self.selected_item.effect = self.addEffectEdit.toPlainText()
-        self.selected_item.image = self.addItemImage
-        self.selected_item.animation = self.addItemAnimation
-        self.selected_item.special_animation = self.addItemSpecialAnimation
+        self.selected_item.image = self.imagePath
+        self.selected_item.animation = self.imagePath
+        self.selected_item.special_animation = self.imagePath
         self.item_service.save(self.selected_item)
         self.on_reset()
         self.log.info('Item saved: {}'.format(self.selected_item))
@@ -145,3 +156,28 @@ class ItemAddUi(QtView):
     def on_cancel(self):
         self.on_reset()
         self.parent.itemInformationUi.categoryBox.setCurrentIndex(0)
+        self.parent.stackedMain.setCurrentIndex(1)
+
+    def open_file(self, event, source_object):
+        directory = os.path.expanduser("~/GIT-Repository/"
+                                       "castlevania_inventory_system/"
+                                       "src/resources/images/items")
+        os.system("ls {0}".format(directory))
+        file_name = QFileDialog.getOpenFileName(caption="Choose item image...",
+                                                directory=directory, filter='*',
+                                                options=QFileDialog.DontUseNativeDialog)
+        item_image = file_name[0]
+        if source_object == self.addItemImage:
+            q_image = QtGui.QImage(item_image)
+            q_pixmap = QtGui.QPixmap.fromImage(q_image)
+            q_pixmap_image = QtGui.QPixmap(q_pixmap)
+            source_object.setPixmap(q_pixmap_image)
+            source_object.show()
+        else:
+            movie = QtGui.QMovie(item_image)
+            source_object.setMovie(movie)
+            movie.start()
+        with open(file_name[0], 'rb') as file:
+            binary_data = base64.b64encode(file.read())
+            self.imagePath = binary_data
+        return self.imagePath

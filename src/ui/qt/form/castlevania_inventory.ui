@@ -2810,6 +2810,9 @@ color: rgb(211, 215, 207);
        <property name="scaledContents">
         <bool>true</bool>
        </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
       </widget>
       <widget class="QLabel" name="addItemAnimation">
        <property name="enabled">
@@ -2866,10 +2869,13 @@ color: rgb(211, 215, 207);</string>
         <number>1</number>
        </property>
        <property name="text">
-        <string>                    Click|Add</string>
+        <string>Click|Add</string>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
        <property name="wordWrap">
         <bool>false</bool>
@@ -2933,10 +2939,13 @@ color: rgb(211, 215, 207);
         <number>1</number>
        </property>
        <property name="text">
-        <string>                    Click|Add</string>
+        <string>Click|Add</string>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
        <property name="wordWrap">
         <bool>false</bool>

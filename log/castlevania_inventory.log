@@ -1,8 +1,11 @@
-2020-06-06 01:28:23,633 [MainThread] INFO  root::connect(@Line:43) Connected to car-rental@0.0.0.0:3306/castlevania_inventory_db established 
-2020-06-06 01:28:23,633 [MainThread] INFO  root::get(@Line:33) Retrieving service: ItemService 
-2020-06-06 01:28:31,504 [MainThread] INFO  root::insert(@Line:72) Executing SQL statement: INSERT INTO ITEMS (ENTITY_ID, NAME, CATEGORY, ITEM_TYPE, DESCRIPTION, ATTRIBUTES, CONSUME_MP, CONSUME_HEART, STATISTICS_HP, STATISTICS_MP, STATISTICS_HEART, STATISTICS_STR, STATISTICS_ATT, STATISTICS_GOLD, STATISTICS_CON, STATISTICS_DEF, STATISTICS_MAX_HT, STATISTICS_INT, STATISTICS_LCK, STATISTICS_MAX_HP, SELL, FOUND_AT, DROPPED_BY, EFFECT, IMAGE, ANIMATION, SPECIAL_ANIMATION) VALUES ('0e1de60c-1754-4be6-a461-b2bd56aca670', '', 'Weapon', 'Unique', '', 'None', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0.0', 'None', 'None', '', '<PyQt5.QtWidgets.QLabel object at 0x7fb5d5dfcb90>', '<PyQt5.QtWidgets.QLabel object at 0x7fb5d5dfcc30>', '<PyQt5.QtWidgets.QLabel object at 0x7fb5d5dfccd0>') 
-2020-06-06 01:28:31,585 [MainThread] INFO  root::on_reset(@Line:88) Item form reset 
-2020-06-06 01:28:31,601 [MainThread] INFO  root::on_save(@Line:148) Item saved: None 
-2020-06-06 01:31:00,923 [MainThread] INFO  root::insert(@Line:72) Executing SQL statement: INSERT INTO ITEMS (ENTITY_ID, NAME, CATEGORY, ITEM_TYPE, DESCRIPTION, ATTRIBUTES, CONSUME_MP, CONSUME_HEART, STATISTICS_HP, STATISTICS_MP, STATISTICS_HEART, STATISTICS_STR, STATISTICS_ATT, STATISTICS_GOLD, STATISTICS_CON, STATISTICS_DEF, STATISTICS_MAX_HT, STATISTICS_INT, STATISTICS_LCK, STATISTICS_MAX_HP, SELL, FOUND_AT, DROPPED_BY, EFFECT, IMAGE, ANIMATION, SPECIAL_ANIMATION) VALUES ('4767a082-8b56-41fb-a7ae-afb321838409', '', 'Relic', 'Belt Other', 'uhuhuhuhuhuh', 'Cut', '2', '2', '0', '2', '0', '0', '0', '0', '0', '3', '0', '0', '0', '0', '2.0', 'Reverse Keep', 'Zombie', 'bnjjbjbjbjbbjb', '<PyQt5.QtWidgets.QLabel object at 0x7fb5d5dfcb90>', '<PyQt5.QtWidgets.QLabel object at 0x7fb5d5dfcc30>', '<PyQt5.QtWidgets.QLabel object at 0x7fb5d5dfccd0>') 
-2020-06-06 01:31:01,047 [MainThread] INFO  root::on_reset(@Line:88) Item form reset 
-2020-06-06 01:31:01,064 [MainThread] INFO  root::on_save(@Line:148) Item saved: None 
+2020-06-09 20:59:44,202 [MainThread] INFO  root::connect(@Line:43) Connected to car-rental@0.0.0.0:3306/castlevania_inventory_db established 
+2020-06-09 20:59:44,202 [MainThread] INFO  root::get(@Line:33) Retrieving service: ItemService 
+2020-06-09 20:59:46,641 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f795bce3a50> selected! 
+2020-06-09 20:59:49,673 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f795bce3a50> selected! 
+2020-06-09 20:59:52,196 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f795bce3b90> selected! 
+2020-06-09 20:59:54,861 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f795bce3b90> selected! 
+2020-06-09 21:00:06,786 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f795bce3f50> selected! 
+2020-06-09 21:00:08,812 [MainThread] INFO  root::on_reset(@Line:94) Item form reset 
+2020-06-09 21:00:08,832 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f795bce3a50> selected! 
+2020-06-09 21:00:10,027 [MainThread] INFO  root::category_box_clicked(@Line:65) <PyQt5.QtWidgets.QWidget object at 0x7f795bce3f50> selected! 
+2020-06-09 21:00:19,871 [MainThread] INFO  root::on_reset(@Line:94) Item form reset 
