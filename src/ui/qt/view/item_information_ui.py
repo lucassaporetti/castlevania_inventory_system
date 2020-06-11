@@ -21,12 +21,19 @@ class ItemInformationUi(QtView):
         self.weaponPage = self.qt.find_widget(self.window, QWidget, 'weaponPage')
         self.weaponList = self.qt.find_list_widget('weaponList')
         self.shieldPage = self.qt.find_widget(self.window, QWidget, 'shieldPage')
+        self.shieldList = self.qt.find_list_widget('shieldList')
         self.armorPage = self.qt.find_widget(self.window, QWidget, 'armorPage')
+        self.armorList = self.qt.find_list_widget('armorList')
         self.relicPage = self.qt.find_widget(self.window, QWidget, 'relicPage')
+        self.relicList = self.qt.find_list_widget('relicList')
         self.spellPage = self.qt.find_widget(self.window, QWidget, 'spellPage')
+        self.spellList = self.qt.find_list_widget('spellList')
         self.otherPage = self.qt.find_widget(self.window, QWidget, 'otherPage')
+        self.otherList = self.qt.find_list_widget('otherList')
         self.consumablePage = self.qt.find_widget(self.window, QWidget, 'consumablePage')
+        self.consumableList = self.qt.find_list_widget('consumableList')
         self.standardPage = self.qt.find_widget(self.window, QWidget, 'standardPage')
+        self.standardList = self.qt.find_list_widget('standardList')
         self.logoPage = self.qt.find_widget(self.window, QWidget, 'logoPage')
         self.informationPage = self.qt.find_widget(self.window, QWidget, 'informationPage')
         self.infoCategory = self.qt.find_label('infoCategory')
@@ -69,6 +76,14 @@ class ItemInformationUi(QtView):
         self.addButton.clicked.connect(self.add_button_clicked)
 
     def category_box_clicked(self):
+        self.load_to_list(self.weaponList, 'Weapon')
+        self.load_to_list(self.shieldList, 'Shield')
+        self.load_to_list(self.armorList, 'Armor')
+        self.load_to_list(self.relicList, 'Relic')
+        self.load_to_list(self.spellList, 'Spell')
+        self.load_to_list(self.otherList, 'Other')
+        self.load_to_list(self.consumableList, 'Consumable')
+        self.load_to_list(self.standardList, 'Standard')
         index = self.categoryBox.currentIndex()
         image_index = ImagePaths(index).get_image()
         self.log.info(f'{str(self.categoryBox.widget(index))} selected!')
@@ -80,7 +95,6 @@ class ItemInformationUi(QtView):
         self.characterImage.setPixmap(q_pixmap_image_sized)
         self.characterImage.show()
         self.parent.stackedMain.setCurrentIndex(1)
-        self.weapon_list()
         if index == 9:
             self.characterImage.close()
             self.parent.stackedMain.setCurrentIndex(0)
@@ -132,13 +146,14 @@ class ItemInformationUi(QtView):
     def no_clicked(self):
         self.category_box_clicked()
 
-    def weapon_list(self):
+    def load_to_list(self, widget_list, item_category: str):
+        widget_list.clear()
         for item in self.item_service.list():
-            if 'Weapon' in item.category:
-                self.weaponList.setViewMode(QListView.IconMode)
+            while item_category in item.category:
+                widget_list.setViewMode(QListView.IconMode)
                 list_item = QListWidgetItem()
                 item_icon = QtGui.QIcon()
-                item_image_right = item.image.replace('b"', '').replace("b'", '').replace('"', '').replace("'", "")
+                item_image_right = item.image.replace('b"b', '').replace("'", '').replace('"', '')
                 item_image = self.str_to_rgb(item_image_right)
                 height, width, channel = item_image.shape
                 bytes_per_line = 3 * width
@@ -147,9 +162,11 @@ class ItemInformationUi(QtView):
                                     QtGui.QIcon.Normal, QtGui.QIcon.Off)
                 list_item.setIcon(item_icon)
                 list_item.setText(item.category)
-                self.weaponList.addItem(list_item)
+                widget_list.addItem(list_item)
+                break
 
-    def str_to_rgb(self, base64_str):
+    @staticmethod
+    def str_to_rgb(base64_str):
         image_data = base64.b64decode(base64_str)
         image = imageio.imread(io.BytesIO(image_data))
         return cv2.cvtColor(np.array(image), cv2.COLOR_BGR2RGB)

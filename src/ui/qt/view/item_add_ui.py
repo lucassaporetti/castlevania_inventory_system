@@ -145,7 +145,6 @@ class ItemAddUi(QtView):
         self.selected_item.animation = self.imagePath
         self.selected_item.special_animation = self.imagePath
         self.item_service.save(self.selected_item)
-
         self.on_reset()
         self.log.info('Item saved: {}'.format(self.selected_item))
 
@@ -174,6 +173,7 @@ class ItemAddUi(QtView):
             source_object.setMovie(movie)
             movie.start()
         with open(file_name[0], 'rb') as file:
-            binary_data = base64.b64encode(file.read())
+            image_read = file.read()
+            binary_data = base64.b64encode(image_read)
             self.imagePath = binary_data
         return self.imagePath

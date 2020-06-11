@@ -109,7 +109,7 @@ class MySqlRepository(DbRepository):
     def find_by_id(self, entity_id: str) -> Optional[Entity]:
         if entity_id:
             select_stm = self.sql_factory.select(filters=[
-                "UUID = '{}'".format(entity_id)
+                "ENTITY_ID = '{}'".format(entity_id)
             ])
             self.log.info('Executing SQL statement: {}'.format(select_stm))
             self.cursor.execute(select_stm)
