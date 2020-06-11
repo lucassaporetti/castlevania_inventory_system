@@ -43,7 +43,9 @@ class ItemAddUi(QtView):
         self.cancelButton = self.qt.find_tool_button('cancelButton')
         self.resetButton = self.qt.find_tool_button('resetButton')
         self.saveButton = self.qt.find_tool_button('saveButton')
-        self.imagePath = None
+        self.imageData = None
+        self.animationData = None
+        self.specialAnimationData = None
         self.setup_ui()
 
     def setup_ui(self):
@@ -141,17 +143,17 @@ class ItemAddUi(QtView):
         self.selected_item.found_at = self.addFoundBox.currentText()
         self.selected_item.dropped_by = self.addDroppedBox.currentText()
         self.selected_item.effect = self.addEffectEdit.toPlainText()
-        self.selected_item.image = self.imagePath
-        self.selected_item.animation = self.imagePath
-        self.selected_item.special_animation = self.imagePath
+        self.selected_item.image = self.imageData
+        self.selected_item.animation = self.animationData
+        self.selected_item.special_animation = self.specialAnimationData
         self.item_service.save(self.selected_item)
         self.on_reset()
         self.log.info('Item saved: {}'.format(self.selected_item))
 
     def on_cancel(self):
         self.on_reset()
-        self.parent.itemInformationUi.categoryBox.setCurrentIndex(0)
-        self.parent.stackedMain.setCurrentIndex(1)
+        self.parent.itemInformationUi.categoryBox.setCurrentIndex(8)
+        self.parent.stackedMain.setCurrentIndex(0)
 
     def open_file(self, event, source_object):
         directory = os.path.expanduser("~/GIT-Repository/"
@@ -175,5 +177,12 @@ class ItemAddUi(QtView):
         with open(file_name[0], 'rb') as file:
             image_read = file.read()
             binary_data = base64.b64encode(image_read)
-            self.imagePath = binary_data
-        return self.imagePath
+        if source_object == self.addItemImage:
+            self.imageData = binary_data
+            return self.imageData
+        elif source_object == self.addItemAnimation:
+            self.animationData = binary_data
+            return self.animationData
+        else:
+            self.specialAnimationData = binary_data
+            return self.specialAnimationData

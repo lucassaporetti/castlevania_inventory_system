@@ -161,7 +161,7 @@ class ItemInformationUi(QtView):
                 item_icon.addPixmap(QtGui.QPixmap(q_img),
                                     QtGui.QIcon.Normal, QtGui.QIcon.Off)
                 list_item.setIcon(item_icon)
-                list_item.setText(item.category)
+                list_item.setText(item.name.replace(' ', '\n'))
                 widget_list.addItem(list_item)
                 break
 
