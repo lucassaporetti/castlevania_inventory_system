@@ -70,7 +70,7 @@ class ItemInformationUi(QtView):
         self.setup_ui()
 
     def setup_ui(self):
-        self.categoryBox.setCurrentIndex(9)
+        self.categoryBox.setCurrentIndex(8)
         self.categoryBox.currentChanged.connect(self.category_box_clicked)
         self.removeButton.clicked.connect(self.remove_button_clicked)
         self.addButton.clicked.connect(self.add_button_clicked)
@@ -95,7 +95,7 @@ class ItemInformationUi(QtView):
         self.characterImage.setPixmap(q_pixmap_image_sized)
         self.characterImage.show()
         self.parent.stackedMain.setCurrentIndex(1)
-        if index == 9:
+        if index == 8:
             self.characterImage.close()
             self.parent.stackedMain.setCurrentIndex(0)
 

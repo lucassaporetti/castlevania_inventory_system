@@ -148,12 +148,13 @@ class ItemAddUi(QtView):
         self.selected_item.special_animation = self.specialAnimationData
         self.item_service.save(self.selected_item)
         self.on_reset()
+        self.parent.stackedMain.setCurrentIndex(0)
         self.log.info('Item saved: {}'.format(self.selected_item))
 
     def on_cancel(self):
         self.on_reset()
-        self.parent.itemInformationUi.categoryBox.setCurrentIndex(8)
         self.parent.stackedMain.setCurrentIndex(0)
+        self.parent.itemInformationUi.categoryBox.setCurrentIndex(8)
 
     def open_file(self, event, source_object):
         directory = os.path.expanduser("~/GIT-Repository/"

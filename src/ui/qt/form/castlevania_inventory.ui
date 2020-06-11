@@ -75,7 +75,7 @@ background-color: rgba(0, 0, 0, 113);</string>
     <enum>QFrame::Plain</enum>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="mainPage">
     <property name="styleSheet">
@@ -3492,7 +3492,7 @@ background-color: rgba(191, 64, 64, 0);</string>
     <enum>QFrame::NoFrame</enum>
    </property>
    <property name="currentIndex">
-    <number>5</number>
+    <number>8</number>
    </property>
    <property name="tabSpacing">
     <number>6</number>
