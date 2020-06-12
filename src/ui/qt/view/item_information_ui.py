@@ -1,18 +1,16 @@
+import base64
+import functools
 import io
 import cv2
-import numpy
-import base64
 import imageio
-import functools
-from PyQt5 import QtGui
-from PyQt5.QtCore import QIODevice
-from PyQt5.QtWidgets import *
-from PyQt5.uic.properties import QtCore
-
-from src.ui.qt.view.qt_view import QtView
+import numpy
+from PyQt5 import QtCore, QtGui
+from PyQt5.QtGui import QImage, QPixmap, QMovie, QIcon
+from PyQt5.QtWidgets import QWidget, QListView, QListWidgetItem
 from core.service.service_facade import ServiceFacade
-from ui.promotions.cv_confirm_box import CvConfirmBox
 from src.resources.resources_properties.image_paths import ImagePaths
+from src.ui.qt.view.qt_view import QtView
+from ui.promotions.cv_confirm_box import CvConfirmBox
 
 
 class ItemInformationUi(QtView):
@@ -69,8 +67,6 @@ class ItemInformationUi(QtView):
         self.removeButton = self.qt.find_tool_button('removeButton')
         self.entities_id_list = []
         self.update_lists()
-        self.animated_item_gif()
-        self.show_item_image()
         self.setup_ui()
 
     def setup_ui(self):
@@ -91,9 +87,9 @@ class ItemInformationUi(QtView):
         image_index = ImagePaths(index).get_image()
         self.log.info(f'{str(self.categoryBox.widget(index))} selected!')
         character_image = image_index
-        q_image = QtGui.QImage(character_image)
-        q_pixmap = QtGui.QPixmap.fromImage(q_image)
-        q_pixmap_image = QtGui.QPixmap(q_pixmap)
+        q_image = QImage(character_image)
+        q_pixmap = QPixmap.fromImage(q_image)
+        q_pixmap_image = QPixmap(q_pixmap)
         q_pixmap_image_sized = q_pixmap_image.scaled(370, 517)
         self.characterImage.setPixmap(q_pixmap_image_sized)
         self.characterImage.show()
@@ -102,36 +98,36 @@ class ItemInformationUi(QtView):
             self.characterImage.close()
             self.parent.stackedMain.setCurrentIndex(0)
 
-    def show_item_image(self):
-        item_image = '/home/lucassaporetti/GIT-Repository/' \
-                     'castlevania_inventory_system/src/' \
-                     'resources/images/items/alucard_sword_icon.png'
-        qimage = QtGui.QImage(item_image)
-        pixmap = QtGui.QPixmap.fromImage(qimage)
-        pixmap_image = QtGui.QPixmap(pixmap)
-        self.infoItemImage.setPixmap(pixmap_image)
-        self.infoItemImage.show()
+    # def show_item_image(self):
+    #     item_image = '/home/lucassaporetti/GIT-Repository/' \
+    #                  'castlevania_inventory_system/src/' \
+    #                  'resources/images/items/alucard_sword_icon.png'
+    #     qimage = QImage(item_image)
+    #     pixmap = QPixmap.fromImage(qimage)
+    #     pixmap_image = QPixmap(pixmap)
+    #     self.infoItemImage.setPixmap(pixmap_image)
+    #     self.infoItemImage.show()
 
-    def animated_item_gif(self):
-        movie = QtGui.QMovie("/home/lucassaporetti/GIT-Repository/"
-                             "castlevania_inventory_system/src/resources/"
-                             "images/items/alucard_sword.gif")
-        self.infoItemAnimation.setMovie(movie)
-        movie.start()
-        movie2 = QtGui.QMovie("/home/lucassaporetti/GIT-Repository/"
-                              "castlevania_inventory_system/src/resources/"
-                              "images/items/alucard_sword_special.gif")
-        self.infoItemSpecial.setMovie(movie2)
-        movie2.start()
+    # def animated_item_gif(self):
+    #     movie = QMovie("/home/lucassaporetti/GIT-Repository/"
+    #                          "castlevania_inventory_system/src/resources/"
+    #                          "images/items/alucard_sword.gif")
+    #     self.infoItemAnimation.setMovie(movie)
+    #     movie.start()
+    #     movie2 = QMovie("/home/lucassaporetti/GIT-Repository/"
+    #                           "castlevania_inventory_system/src/resources/"
+    #                           "images/items/alucard_sword_special.gif")
+    #     self.infoItemSpecial.setMovie(movie2)
+    #     movie2.start()
 
     def edit_button_clicked(self):
         pass
 
     def remove_button_clicked(self):
         remove_image = ImagePaths(8).get_image()
-        q_image = QtGui.QImage(remove_image)
-        q_pixmap = QtGui.QPixmap.fromImage(q_image)
-        q_pixmap_image = QtGui.QPixmap(q_pixmap)
+        q_image = QImage(remove_image)
+        q_pixmap = QPixmap.fromImage(q_image)
+        q_pixmap_image = QPixmap(q_pixmap)
         q_pixmap_image_sized = q_pixmap_image.scaled(370, 517)
         self.characterImage.setPixmap(q_pixmap_image_sized)
         self.characterImage.show()
@@ -152,15 +148,15 @@ class ItemInformationUi(QtView):
             while item_category in item.category:
                 widget_list.setViewMode(QListView.IconMode)
                 list_item = QListWidgetItem()
-                item_icon = QtGui.QIcon()
+                item_icon = QIcon()
                 item_image_right = item.image.replace('b"b', '').replace("'", '').replace('"', '')
                 item_image = self.str_to_rgb(item_image_right)
                 height, width, channel = item_image.shape
                 bytes_per_line = 3 * width
-                q_img = QtGui.QImage(item_image.data, width, height,
-                                     bytes_per_line, QtGui.QImage.Format_RGB888).rgbSwapped()
-                item_icon.addPixmap(QtGui.QPixmap(q_img),
-                                    QtGui.QIcon.Normal, QtGui.QIcon.Off)
+                q_img = QImage(item_image.data, width, height,
+                               bytes_per_line, QImage.Format_RGB888).rgbSwapped()
+                item_icon.addPixmap(QPixmap(q_img),
+                                    QIcon.Normal, QIcon.Off)
                 list_item.setIcon(item_icon)
                 list_item.setText(item.name.replace(' ', '\n'))
                 list_item.setWhatsThis(item.entity_id)
@@ -168,40 +164,33 @@ class ItemInformationUi(QtView):
                 self.entities_id_list.append(f'{list_item.whatsThis()}')
                 break
 
-    def load_to_info(self, item, label):
+    def load_item_image(self, item, label):
         item_image_right = item.image.replace('b"b', '').replace("'", '').replace('"', '')
         item_image = self.str_to_rgb(item_image_right)
         height, width, channel = item_image.shape
         bytes_per_line = 3 * width
-        q_image = QtGui.QImage(item_image.data, width, height,
-                               bytes_per_line, QtGui.QImage.Format_RGB888).rgbSwapped()
-        q_pixmap = QtGui.QPixmap.fromImage(q_image)
-        q_pixmap_image = QtGui.QPixmap(q_pixmap)
-        if label == self.infoItemImage:
-            label.setPixmap(q_pixmap_image)
-            label.show()
+        q_image = QImage(item_image.data, width, height,
+                         bytes_per_line, QImage.Format_RGB888).rgbSwapped()
+        q_pixmap = QPixmap.fromImage(q_image)
+        q_pixmap_image = QPixmap(q_pixmap)
+        label.setPixmap(q_pixmap_image)
+        label.show()
+
+    def load_item_gif(self, item, label):
+        if label == self.infoItemAnimation:
+            item_image_right = item.animation.replace('b"b', '').replace("'", '').replace('"', '')
         else:
-            item_image_right = item.animation.replace('b"', '').replace('"', '')
-            print(item_image_right)
-            gif = self.str_to_bgr(item_image_right)
-            a = QtCore.QByteArray(gif)
-            b = QtCore.QBuffer(a)
+            item_image_right = item.special_animation.replace('b"b', '').replace("'", '').replace('"', '')
 
-            print('open: %s' % b.open(QtCore.QIODevice.ReadOnly))
-
-            m = QtGui.QMovie()
-            m.setFormat(a)
-            m.setDevice(b)
-
-            print('valid: %s' % m.isValid())
-
-            w = QLabel()
-            w.setMovie(m)
-            m.start()
-
-            w.resize(500, 500)
-            w.show()
-            print('pos: %s' % b.pos())
+        item_image = base64.b64decode(item_image_right)
+        a = QtCore.QByteArray(item_image)
+        b = QtCore.QBuffer(a)
+        m = QtGui.QMovie()
+        m.setFormat(a)
+        m.setDevice(b)
+        label.setMovie(m)
+        m.start()
+        m.stop()
 
     def update_lists(self):
         self.load_to_list(self.weaponList, 'Weapon')
@@ -244,9 +233,9 @@ class ItemInformationUi(QtView):
         self.infoFound.setText(item.found_at)
         self.infoDropped.setText(item.dropped_by)
         self.infoEffect.setText(item.effect)
-        self.load_to_info(item, self.infoItemImage)
-        self.load_to_info(item, self.infoItemAnimation)
-        self.load_to_info(item, self.infoItemSpecial)
+        self.load_item_image(item, label=self.infoItemImage)
+        self.load_item_gif(item, label=self.infoItemAnimation)
+        self.load_item_gif(item, label=self.infoItemSpecial)
 
     @staticmethod
     def str_to_rgb(base64_str):

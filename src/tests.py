@@ -5,20 +5,19 @@ from PyQt5.QtWidgets import QApplication, QLabel
 
 app = QApplication(sys.argv)
 
-data = open("/home/lucassaporetti/GIT-Repository/"
-            "castlevania_inventory_system/src/resources/"
-            "images/items/alucard_sword_special.gif", 'rb').read()
+data = open("/home/lucassaporetti/GIT-Repository/castlevania_inventory_system/"
+            "src/resources/images/items/alucard_shield_icon.png", 'rb').read()
 print(data)
 
 binary_data = base64.b64encode(data)
 
 print(binary_data)
 
-back_data = base64.b64decode(data)
+back_data = base64.b64decode(binary_data)
 
-print(back_data)
+print(type(back_data))
 
-a = QtCore.QByteArray(data)
+a = QtCore.QByteArray(back_data)
 b = QtCore.QBuffer(a)
 
 print('open: %s' % b.open(QtCore.QIODevice.ReadOnly))
