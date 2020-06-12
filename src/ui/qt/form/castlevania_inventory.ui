@@ -75,7 +75,7 @@ background-color: rgba(0, 0, 0, 113);</string>
     <enum>QFrame::Plain</enum>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="mainPage">
     <property name="styleSheet">
@@ -397,46 +397,6 @@ background-color: rgba(0, 0, 0, 0);</string>
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QSpinBox" name="infoStatStr">
-       <property name="geometry">
-        <rect>
-         <x>42</x>
-         <y>32</y>
-         <width>48</width>
-         <height>26</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QSpinBox" name="infoStatAtt">
-       <property name="geometry">
-        <rect>
-         <x>152</x>
-         <y>32</y>
-         <width>48</width>
-         <height>26</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QSpinBox" name="infoStatGold">
-       <property name="geometry">
-        <rect>
-         <x>269</x>
-         <y>32</y>
-         <width>48</width>
-         <height>26</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QSpinBox" name="infoStatMaxHt">
-       <property name="geometry">
-        <rect>
-         <x>269</x>
-         <y>62</y>
-         <width>48</width>
-         <height>26</height>
-        </rect>
-       </property>
-      </widget>
       <widget class="QLabel" name="infoIntLabel">
        <property name="geometry">
         <rect>
@@ -455,7 +415,7 @@ color: rgb(255, 255, 255);</string>
         <string> INT</string>
        </property>
       </widget>
-      <widget class="QLabel" name="infoMaxHTLabel">
+      <widget class="QLabel" name="infoMaxHtLabel">
        <property name="geometry">
         <rect>
          <x>221</x>
@@ -471,36 +431,6 @@ color: rgb(255, 255, 255);</string>
        </property>
        <property name="text">
         <string>MaxHT</string>
-       </property>
-      </widget>
-      <widget class="QSpinBox" name="infoStatInt">
-       <property name="geometry">
-        <rect>
-         <x>42</x>
-         <y>92</y>
-         <width>48</width>
-         <height>26</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QSpinBox" name="infoStatHp">
-       <property name="geometry">
-        <rect>
-         <x>42</x>
-         <y>2</y>
-         <width>48</width>
-         <height>26</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QSpinBox" name="infoStatMaxHp">
-       <property name="geometry">
-        <rect>
-         <x>269</x>
-         <y>92</y>
-         <width>48</width>
-         <height>26</height>
-        </rect>
        </property>
       </widget>
       <widget class="QLabel" name="infoDefLabel">
@@ -557,7 +487,7 @@ color: rgb(255, 255, 255);</string>
         <string>Gold</string>
        </property>
       </widget>
-      <widget class="QLabel" name="infoHeartLabel">
+      <widget class="QLabel" name="infoHtLabel">
        <property name="geometry">
         <rect>
          <x>221</x>
@@ -573,16 +503,6 @@ color: rgb(255, 255, 255);</string>
        </property>
        <property name="text">
         <string>Heart</string>
-       </property>
-      </widget>
-      <widget class="QSpinBox" name="infoStatMp">
-       <property name="geometry">
-        <rect>
-         <x>151</x>
-         <y>2</y>
-         <width>48</width>
-         <height>26</height>
-        </rect>
        </property>
       </widget>
       <widget class="QLabel" name="infoMaxHpLabel">
@@ -621,36 +541,6 @@ color: rgb(255, 255, 255);</string>
         <string>MP</string>
        </property>
       </widget>
-      <widget class="QSpinBox" name="infoStatDef">
-       <property name="geometry">
-        <rect>
-         <x>152</x>
-         <y>62</y>
-         <width>48</width>
-         <height>26</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QSpinBox" name="infoStatLck">
-       <property name="geometry">
-        <rect>
-         <x>152</x>
-         <y>92</y>
-         <width>48</width>
-         <height>26</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QSpinBox" name="infoStatHt">
-       <property name="geometry">
-        <rect>
-         <x>269</x>
-         <y>2</y>
-         <width>48</width>
-         <height>26</height>
-        </rect>
-       </property>
-      </widget>
       <widget class="QLabel" name="infoAttLabel">
        <property name="geometry">
         <rect>
@@ -685,16 +575,6 @@ color: rgb(255, 255, 255);</string>
        </property>
        <property name="text">
         <string>LCK</string>
-       </property>
-      </widget>
-      <widget class="QSpinBox" name="infoStatCon">
-       <property name="geometry">
-        <rect>
-         <x>42</x>
-         <y>62</y>
-         <width>48</width>
-         <height>26</height>
-        </rect>
        </property>
       </widget>
       <widget class="QLabel" name="infoConLabel">
@@ -734,9 +614,9 @@ color: rgb(255, 255, 255);</string>
        </property>
       </widget>
       <zorder>infoMaxHpLabel</zorder>
-      <zorder>infoMaxHTLabel</zorder>
+      <zorder>infoMaxHtLabel</zorder>
       <zorder>infoGoldLabel</zorder>
-      <zorder>infoHeartLabel</zorder>
+      <zorder>infoHtLabel</zorder>
       <zorder>infoLckLabel</zorder>
       <zorder>infoDefLabel</zorder>
       <zorder>infoAttLabel</zorder>
@@ -745,18 +625,6 @@ color: rgb(255, 255, 255);</string>
       <zorder>infoConLabel</zorder>
       <zorder>infoStrLabel</zorder>
       <zorder>infoHpLabel</zorder>
-      <zorder>infoStatStr</zorder>
-      <zorder>infoStatAtt</zorder>
-      <zorder>infoStatGold</zorder>
-      <zorder>infoStatMaxHt</zorder>
-      <zorder>infoStatInt</zorder>
-      <zorder>infoStatHp</zorder>
-      <zorder>infoStatMaxHp</zorder>
-      <zorder>infoStatMp</zorder>
-      <zorder>infoStatDef</zorder>
-      <zorder>infoStatLck</zorder>
-      <zorder>infoStatHt</zorder>
-      <zorder>infoStatCon</zorder>
      </widget>
      <widget class="QFrame" name="infoItemFrame">
       <property name="geometry">
@@ -826,7 +694,7 @@ color: rgba(181, 0, 0, 107);</string>
         </font>
        </property>
        <property name="cursor">
-        <cursorShape>PointingHandCursor</cursorShape>
+        <cursorShape>ArrowCursor</cursorShape>
        </property>
        <property name="styleSheet">
         <string notr="true">color: rgba(255, 255, 255, 57);</string>
@@ -1165,7 +1033,7 @@ p, li { white-space: pre-wrap; }
      <widget class="QLabel" name="infoDropped">
       <property name="geometry">
        <rect>
-        <x>150</x>
+        <x>151</x>
         <y>433</y>
         <width>222</width>
         <height>33</height>
@@ -1180,16 +1048,16 @@ background-color: rgba(0, 0, 0, 0);</string>
        <enum>QFrame::NoFrame</enum>
       </property>
       <property name="text">
-       <string> Skeleton</string>
+       <string>Skeleton</string>
       </property>
       <property name="indent">
-       <number>5</number>
+       <number>8</number>
       </property>
      </widget>
      <widget class="QLabel" name="infoCategory">
       <property name="geometry">
        <rect>
-        <x>150</x>
+        <x>151</x>
         <y>60</y>
         <width>222</width>
         <height>33</height>
@@ -1225,7 +1093,7 @@ background-color: rgba(0, 0, 0, 0);</string>
      <widget class="QLabel" name="infoType">
       <property name="geometry">
        <rect>
-        <x>150</x>
+        <x>151</x>
         <y>90</y>
         <width>222</width>
         <height>33</height>
@@ -1240,16 +1108,16 @@ background-color: rgba(0, 0, 0, 0);</string>
        <enum>QFrame::NoFrame</enum>
       </property>
       <property name="text">
-       <string> Sword</string>
+       <string>Sword</string>
       </property>
       <property name="indent">
-       <number>5</number>
+       <number>8</number>
       </property>
      </widget>
      <widget class="QLabel" name="infoFound">
       <property name="geometry">
        <rect>
-        <x>150</x>
+        <x>151</x>
         <y>405</y>
         <width>222</width>
         <height>33</height>
@@ -1264,16 +1132,16 @@ background-color: rgba(0, 0, 0, 0);</string>
        <enum>QFrame::NoFrame</enum>
       </property>
       <property name="text">
-       <string> Catacombs</string>
+       <string>Catacombs</string>
       </property>
       <property name="indent">
-       <number>5</number>
+       <number>8</number>
       </property>
      </widget>
      <widget class="QLabel" name="infoAttributes">
       <property name="geometry">
        <rect>
-        <x>150</x>
+        <x>151</x>
         <y>177</y>
         <width>222</width>
         <height>33</height>
@@ -1288,10 +1156,10 @@ background-color: rgba(0, 0, 0, 0);</string>
        <enum>QFrame::NoFrame</enum>
       </property>
       <property name="text">
-       <string> Cut</string>
+       <string>Cut</string>
       </property>
       <property name="indent">
-       <number>5</number>
+       <number>8</number>
       </property>
      </widget>
      <widget class="QTextEdit" name="infoDescription">

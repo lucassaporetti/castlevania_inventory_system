@@ -149,7 +149,7 @@ class ItemAddUi(QtView):
         self.item_service.save(self.selected_item)
         self.on_reset()
         self.parent.stackedMain.setCurrentIndex(0)
-        self.parent.itemInformationUi.entities_id_dict.clear()
+        self.parent.itemInformationUi.entities_id_list.clear()
         self.parent.itemInformationUi.update_lists()
         self.log.info('Item saved: {}'.format(self.selected_item))
 
