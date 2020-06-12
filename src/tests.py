@@ -1,64 +1,105 @@
-import random
+import base64
 import sys
-from PyQt5 import QtGui, QtCore, QtWidgets
+from PyQt5 import QtCore, QtGui
+from PyQt5.QtWidgets import QApplication, QLabel
 
+app = QApplication(sys.argv)
 
-class ViewDelegate(QtWidgets.QStyledItemDelegate):
-    def __init__(self):
-        QtWidgets.QStyledItemDelegate.__init__(self)
-        self.padding = 2
-        self.AlignmentFlag = QtCore.Qt.AlignRight
+data = open("/home/lucassaporetti/GIT-Repository/"
+            "castlevania_inventory_system/src/resources/"
+            "images/items/alucard_sword_special.gif", 'rb').read()
+print(data)
 
-    def paint(self, painter, option, index):
-        x = option.rect.x()
-        y = option.rect.y()
-        width = option.rect.width()
-        height = option.rect.height()
-        icon_list = index.data(256)                      # get the icons associated with the item
-        text = index.data()                             # get the items text
+binary_data = base64.b64encode(data)
 
-        for a, i in enumerate(icon_list):
-            m = max([i.width(), i.height()])
-            f = (height - 2*self.padding)                 # scalingfactor
-            i = i.scaled(int(i.width()*f), int(i.height()*f))                    # scale all pixmaps to the same size depending on lineheight
-            painter.drawPixmap(QtCore.QPoint(x, y+self.padding), i)
-            x += height
+print(binary_data)
 
-        painter.drawText(QtCore.QRect(x + self.padding, y + self.padding,
-                                      width - x - 2*self.padding, height - 2*self.padding), self.AlignmentFlag, text)
+back_data = base64.b64decode(data)
 
+print(back_data)
 
-class MyWidget(QtWidgets.QWidget):
-    def __init__(self):
-        QtWidgets.QWidget.__init__(self)
-        self.setGeometry(200, 100, 200, 220)
-        self.icons = []
-        i = '/home/lucassaporetti/GIT-Repository/castlevania_inventory_system/src/resources/images/items/alucard_sword_icon.png'
-        icon = QtGui.QImage(i)
-        icon2 = QtGui.QPixmap.fromImage(icon)
-        icon3 = QtGui.QPixmap(icon2)
-        self.icons.append(icon3)
+a = QtCore.QByteArray(data)
+b = QtCore.QBuffer(a)
 
-        self.listWidget = QtWidgets.QListView(self)
-        self.delegate = ViewDelegate()
-        self.listWidget.setGeometry(20, 20, 160, 180)
-        self.listWidget.setItemDelegate(self.delegate)
-        self.model = QtGui.QStandardItemModel(self.listWidget)
+print('open: %s' % b.open(QtCore.QIODevice.ReadOnly))
 
-    def icon_list(self):                             # creates a random iconList
-        r = random.randint(1, len(self.icons))                   # Anzahl icons in the list
-        icon_list = []
-        for i in range(0, r):
-            n = random.randint(0, len(self.icons)-1)
-            icon = self.icons[n]
-            icon_list.append(icon)
-        return icon_list
+m = QtGui.QMovie()
+m.setFormat(a)
+m.setDevice(b)
 
+print('valid: %s' % m.isValid())
 
-app = QtWidgets.QApplication(sys.argv)
-widget = MyWidget()
-widget.show()
-sys.exit(app.exec_())
+w = QLabel()
+w.setMovie(m)
+m.start()
+
+w.resize(500, 500)
+w.show()
+app.exec_()
+
+print('pos: %s' % b.pos())
+
+# import random
+# import sys
+# from PyQt5 import QtGui, QtCore, QtWidgets
+#
+#
+# class ViewDelegate(QtWidgets.QStyledItemDelegate):
+#     def __init__(self):
+#         QtWidgets.QStyledItemDelegate.__init__(self)
+#         self.padding = 2
+#         self.AlignmentFlag = QtCore.Qt.AlignRight
+#
+#     def paint(self, painter, option, index):
+#         x = option.rect.x()
+#         y = option.rect.y()
+#         width = option.rect.width()
+#         height = option.rect.height()
+#         icon_list = index.data(256)                      # get the icons associated with the item
+#         text = index.data()                             # get the items text
+#
+#         for a, i in enumerate(icon_list):
+#             m = max([i.width(), i.height()])
+#             f = (height - 2*self.padding)                 # scalingfactor
+#             i = i.scaled(int(i.width()*f), int(i.height()*f))                    # scale all pixmaps to the same size depending on lineheight
+#             painter.drawPixmap(QtCore.QPoint(x, y+self.padding), i)
+#             x += height
+#
+#         painter.drawText(QtCore.QRect(x + self.padding, y + self.padding,
+#                                       width - x - 2*self.padding, height - 2*self.padding), self.AlignmentFlag, text)
+#
+#
+# class MyWidget(QtWidgets.QWidget):
+#     def __init__(self):
+#         QtWidgets.QWidget.__init__(self)
+#         self.setGeometry(200, 100, 200, 220)
+#         self.icons = []
+#         i = '/home/lucassaporetti/GIT-Repository/castlevania_inventory_system/src/resources/images/items/alucard_sword_icon.png'
+#         icon = QtGui.QImage(i)
+#         icon2 = QtGui.QPixmap.fromImage(icon)
+#         icon3 = QtGui.QPixmap(icon2)
+#         self.icons.append(icon3)
+#
+#         self.listWidget = QtWidgets.QListView(self)
+#         self.delegate = ViewDelegate()
+#         self.listWidget.setGeometry(20, 20, 160, 180)
+#         self.listWidget.setItemDelegate(self.delegate)
+#         self.model = QtGui.QStandardItemModel(self.listWidget)
+#
+#     def icon_list(self):                             # creates a random iconList
+#         r = random.randint(1, len(self.icons))                   # Anzahl icons in the list
+#         icon_list = []
+#         for i in range(0, r):
+#             n = random.randint(0, len(self.icons)-1)
+#             icon = self.icons[n]
+#             icon_list.append(icon)
+#         return icon_list
+#
+#
+# app = QtWidgets.QApplication(sys.argv)
+# widget = MyWidget()
+# widget.show()
+# sys.exit(app.exec_())
 
 
 # #!/usr/bin/env python

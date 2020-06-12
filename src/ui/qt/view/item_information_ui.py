@@ -5,7 +5,10 @@ import base64
 import imageio
 import functools
 from PyQt5 import QtGui
+from PyQt5.QtCore import QIODevice
 from PyQt5.QtWidgets import *
+from PyQt5.uic.properties import QtCore
+
 from src.ui.qt.view.qt_view import QtView
 from core.service.service_facade import ServiceFacade
 from ui.promotions.cv_confirm_box import CvConfirmBox
@@ -165,6 +168,41 @@ class ItemInformationUi(QtView):
                 self.entities_id_list.append(f'{list_item.whatsThis()}')
                 break
 
+    def load_to_info(self, item, label):
+        item_image_right = item.image.replace('b"b', '').replace("'", '').replace('"', '')
+        item_image = self.str_to_rgb(item_image_right)
+        height, width, channel = item_image.shape
+        bytes_per_line = 3 * width
+        q_image = QtGui.QImage(item_image.data, width, height,
+                               bytes_per_line, QtGui.QImage.Format_RGB888).rgbSwapped()
+        q_pixmap = QtGui.QPixmap.fromImage(q_image)
+        q_pixmap_image = QtGui.QPixmap(q_pixmap)
+        if label == self.infoItemImage:
+            label.setPixmap(q_pixmap_image)
+            label.show()
+        else:
+            item_image_right = item.animation.replace('b"', '').replace('"', '')
+            print(item_image_right)
+            gif = self.str_to_bgr(item_image_right)
+            a = QtCore.QByteArray(gif)
+            b = QtCore.QBuffer(a)
+
+            print('open: %s' % b.open(QtCore.QIODevice.ReadOnly))
+
+            m = QtGui.QMovie()
+            m.setFormat(a)
+            m.setDevice(b)
+
+            print('valid: %s' % m.isValid())
+
+            w = QLabel()
+            w.setMovie(m)
+            m.start()
+
+            w.resize(500, 500)
+            w.show()
+            print('pos: %s' % b.pos())
+
     def update_lists(self):
         self.load_to_list(self.weaponList, 'Weapon')
         self.load_to_list(self.shieldList, 'Shield')
@@ -206,12 +244,17 @@ class ItemInformationUi(QtView):
         self.infoFound.setText(item.found_at)
         self.infoDropped.setText(item.dropped_by)
         self.infoEffect.setText(item.effect)
-        self.infoItemImage.setText('Click')
-        self.infoItemAnimation.setText('Click')
-        self.infoItemSpecial.setText('Click')
+        self.load_to_info(item, self.infoItemImage)
+        self.load_to_info(item, self.infoItemAnimation)
+        self.load_to_info(item, self.infoItemSpecial)
 
     @staticmethod
     def str_to_rgb(base64_str):
         image_data = base64.b64decode(base64_str)
         image = imageio.imread(io.BytesIO(image_data))
         return cv2.cvtColor(numpy.array(image), cv2.COLOR_BGR2RGB)
+
+    @staticmethod
+    def str_to_bgr(base64_str):
+        image_data = base64.b64decode(base64_str)
+        return image_data
