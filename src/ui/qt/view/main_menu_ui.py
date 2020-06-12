@@ -1,10 +1,10 @@
 import os
 from PyQt5 import uic, QtGui
 from PyQt5.QtWidgets import *
-from src.resources.resources_properties.image_paths import ImagePaths
 from src.ui.qt.view.qt_view import QtView
 from ui.qt.view.item_add_ui import ItemAddUi
 from ui.qt.view.item_information_ui import ItemInformationUi
+from src.resources.resources_properties.image_paths import ImagePaths
 
 
 class MainMenuUi(QtView):

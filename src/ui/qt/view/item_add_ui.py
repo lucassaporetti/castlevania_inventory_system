@@ -1,11 +1,11 @@
-import base64
 import os
+import base64
 import functools
 from PyQt5 import QtGui
 from PyQt5.QtWidgets import *
 from src.model.item_model import Item
-from src.core.service.service_facade import ServiceFacade
 from src.ui.qt.view.qt_view import QtView
+from src.core.service.service_facade import ServiceFacade
 
 
 class ItemAddUi(QtView):
@@ -52,12 +52,12 @@ class ItemAddUi(QtView):
         self.saveButton.clicked.connect(self.on_save)
         self.cancelButton.clicked.connect(self.on_cancel)
         self.resetButton.clicked.connect(self.on_reset)
-        self.addItemImage.mouseReleaseEvent = functools.partial(self.open_file,
-                                                                source_object=self.addItemImage)
-        self.addItemAnimation.mouseReleaseEvent = functools.partial(self.open_file,
-                                                                    source_object=self.addItemAnimation)
-        self.addItemSpecialAnimation.mouseReleaseEvent = functools.partial(self.open_file,
-                                                                           source_object=self.addItemSpecialAnimation)
+        self.addItemImage.mouseReleaseEvent = \
+            functools.partial(self.open_file, source_object=self.addItemImage)
+        self.addItemAnimation.mouseReleaseEvent = \
+            functools.partial(self.open_file, source_object=self.addItemAnimation)
+        self.addItemSpecialAnimation.mouseReleaseEvent = \
+            functools.partial(self.open_file, source_object=self.addItemSpecialAnimation)
 
     def item_selected(self, args):
         item = args['selected_item']
@@ -149,6 +149,8 @@ class ItemAddUi(QtView):
         self.item_service.save(self.selected_item)
         self.on_reset()
         self.parent.stackedMain.setCurrentIndex(0)
+        self.parent.itemInformationUi.entities_id_dict.clear()
+        self.parent.itemInformationUi.update_lists()
         self.log.info('Item saved: {}'.format(self.selected_item))
 
     def on_cancel(self):

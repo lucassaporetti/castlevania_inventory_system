@@ -1,15 +1,15 @@
-import base64
 import io
-import numpy as np
 import cv2
-from PyQt5 import QtGui
-from PyQt5.QtGui import QImage
-from PyQt5.QtWidgets import *
-from core.service.service_facade import ServiceFacade
-from src.resources.resources_properties.image_paths import ImagePaths
-from src.ui.qt.view.qt_view import QtView
-from ui.promotions.cv_confirm_box import CvConfirmBox
+import numpy
+import base64
 import imageio
+import functools
+from PyQt5 import QtGui
+from PyQt5.QtWidgets import *
+from src.ui.qt.view.qt_view import QtView
+from core.service.service_facade import ServiceFacade
+from ui.promotions.cv_confirm_box import CvConfirmBox
+from src.resources.resources_properties.image_paths import ImagePaths
 
 
 class ItemInformationUi(QtView):
@@ -65,6 +65,8 @@ class ItemInformationUi(QtView):
         self.editButton = self.qt.find_tool_button('editButton')
         self.removeButton = self.qt.find_tool_button('removeButton')
         self.addButton = self.qt.find_tool_button('addButton')
+        self.entities_id_list = []
+        self.update_lists()
         self.animated_item_gif()
         self.show_item_image()
         self.setup_ui()
@@ -74,16 +76,16 @@ class ItemInformationUi(QtView):
         self.categoryBox.currentChanged.connect(self.category_box_clicked)
         self.removeButton.clicked.connect(self.remove_button_clicked)
         self.addButton.clicked.connect(self.add_button_clicked)
+        self.weaponList.mouseReleaseEvent = functools.partial(self.icon_click, source_object=self.weaponList)
+        self.shieldList.mouseReleaseEvent = functools.partial(self.icon_click, source_object=self.shieldList)
+        self.armorList.mouseReleaseEvent = functools.partial(self.icon_click, source_object=self.armorList)
+        self.relicList.mouseReleaseEvent = functools.partial(self.icon_click, source_object=self.relicList)
+        self.spellList.mouseReleaseEvent = functools.partial(self.icon_click, source_object=self.spellList)
+        self.otherList.mouseReleaseEvent = functools.partial(self.icon_click, source_object=self.otherList)
+        self.consumableList.mouseReleaseEvent = functools.partial(self.icon_click, source_object=self.consumableList)
+        self.standardList.mouseReleaseEvent = functools.partial(self.icon_click, source_object=self.standardList)
 
     def category_box_clicked(self):
-        self.load_to_list(self.weaponList, 'Weapon')
-        self.load_to_list(self.shieldList, 'Shield')
-        self.load_to_list(self.armorList, 'Armor')
-        self.load_to_list(self.relicList, 'Relic')
-        self.load_to_list(self.spellList, 'Spell')
-        self.load_to_list(self.otherList, 'Other')
-        self.load_to_list(self.consumableList, 'Consumable')
-        self.load_to_list(self.standardList, 'Standard')
         index = self.categoryBox.currentIndex()
         image_index = ImagePaths(index).get_image()
         self.log.info(f'{str(self.categoryBox.widget(index))} selected!')
@@ -157,16 +159,64 @@ class ItemInformationUi(QtView):
                 item_image = self.str_to_rgb(item_image_right)
                 height, width, channel = item_image.shape
                 bytes_per_line = 3 * width
-                q_img = QImage(item_image.data, width, height, bytes_per_line, QImage.Format_RGB888).rgbSwapped()
+                q_img = QtGui.QImage(item_image.data, width, height,
+                                     bytes_per_line, QtGui.QImage.Format_RGB888).rgbSwapped()
                 item_icon.addPixmap(QtGui.QPixmap(q_img),
                                     QtGui.QIcon.Normal, QtGui.QIcon.Off)
                 list_item.setIcon(item_icon)
                 list_item.setText(item.name.replace(' ', '\n'))
+                list_item.setWhatsThis(item.entity_id)
                 widget_list.addItem(list_item)
+                self.entities_id_list.append(f'{list_item.whatsThis()}')
                 break
+
+    def update_lists(self):
+        self.load_to_list(self.weaponList, 'Weapon')
+        self.load_to_list(self.shieldList, 'Shield')
+        self.load_to_list(self.armorList, 'Armor')
+        self.load_to_list(self.relicList, 'Relic')
+        self.load_to_list(self.spellList, 'Spell')
+        self.load_to_list(self.otherList, 'Other')
+        self.load_to_list(self.consumableList, 'Consumable')
+        self.load_to_list(self.standardList, 'Standard')
+
+    def icon_click(self, event, source_object):
+        icon = source_object.currentItem()
+        for item in self.item_service.list():
+            if icon.whatsThis() == item.entity_id:
+                return self.info_item(item)
+
+    def info_item(self, item):
+        self.log.info(f'Item {item.name} selected for information')
+        self.infoItemName.setText(item.name)
+        self.infoCategory.setText(item.category)
+        self.infoType.setText(item.item_type)
+        self.infoDescription.setText(item.description)
+        self.infoAttributes.setText(item.attributes)
+        self.infoConsumeMp.setCurrentIndex(0)
+        self.infoConsumeHt.setValue(0)
+        self.infoStatHp.setValue(0)
+        self.infoStatMp.setValue(0)
+        self.infoStatHt.setValue(0)
+        self.infoStatStr.setValue(0)
+        self.infoStatAtt.setValue(0)
+        self.infoStatInt.setValue(0)
+        self.infoStatCon.setValue(0)
+        self.infoStatMaxHt.setValue(0)
+        self.infoStatMaxHp.setValue(0)
+        self.infoStatDef.setValue(0)
+        self.infoStatLck.setValue(0)
+        self.infoStatGold.setValue(0)
+        self.infoSell.setValue(0)
+        self.infoFound.setValue(0.00)
+        self.infoDropped.setCurrentIndex(0)
+        self.infoEffect.setCurrentIndex(0)
+        self.infoItemImage.setText('Click')
+        self.infoItemAnimation.setText('Click')
+        self.infoItemSpecial.setText('Click')
 
     @staticmethod
     def str_to_rgb(base64_str):
         image_data = base64.b64decode(base64_str)
         image = imageio.imread(io.BytesIO(image_data))
-        return cv2.cvtColor(np.array(image), cv2.COLOR_BGR2RGB)
+        return cv2.cvtColor(numpy.array(image), cv2.COLOR_BGR2RGB)

@@ -3492,7 +3492,7 @@ background-color: rgba(191, 64, 64, 0);</string>
     <enum>QFrame::NoFrame</enum>
    </property>
    <property name="currentIndex">
-    <number>8</number>
+    <number>0</number>
    </property>
    <property name="tabSpacing">
     <number>6</number>
@@ -3534,7 +3534,8 @@ background-color: rgba(191, 64, 64, 0);</string>
       <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
-      <string notr="true">font: 75 bold 10pt &quot;Ubuntu Condensed&quot;;</string>
+      <string notr="true">font: 75 bold 10pt &quot;Ubuntu Condensed&quot;;
+</string>
      </property>
      <property name="frameShape">
       <enum>QFrame::NoFrame</enum>
