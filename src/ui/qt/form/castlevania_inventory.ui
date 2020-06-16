@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1167</width>
-    <height>605</height>
+    <height>599</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -75,7 +75,7 @@ background-color: rgba(0, 0, 0, 113);</string>
     <enum>QFrame::Plain</enum>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>3</number>
    </property>
    <widget class="QWidget" name="mainPage">
     <property name="styleSheet">
@@ -2617,7 +2617,7 @@ color: rgba(181, 0, 0, 107);</string>
       <widget class="QLabel" name="addItemImage">
        <property name="geometry">
         <rect>
-         <x>213</x>
+         <x>214</x>
          <y>30</y>
          <width>56</width>
          <height>56</height>
@@ -3103,6 +3103,1860 @@ color: rgb(211, 215, 207);</string>
      <zorder>addStatisticsFrame</zorder>
      <zorder>addItemFrame</zorder>
      <zorder>addTitle</zorder>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="editPage">
+    <widget class="QFrame" name="editFrame">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>811</width>
+       <height>521</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>338</width>
+       <height>363</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>5000</width>
+       <height>5000</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(0, 0, 0, 153);</string>
+     </property>
+     <widget class="QLabel" name="editTypeLabel">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>90</y>
+        <width>91</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(0, 0, 0, 93);
+font: 75 italic 11pt &quot;URW Bookman L&quot;;
+color: rgb(241, 146, 0);</string>
+      </property>
+      <property name="text">
+       <string>Type</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="editDescriptionLabel">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>120</y>
+        <width>91</width>
+        <height>53</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(0, 0, 0, 93);
+font: 75 italic 11pt &quot;URW Bookman L&quot;;
+color: rgb(241, 146, 0);</string>
+      </property>
+      <property name="text">
+       <string>Description</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="editFoundLabel">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>392</y>
+        <width>91</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(0, 0, 0, 93);
+font: 75 italic 11pt &quot;URW Bookman L&quot;;
+color: rgb(241, 146, 0);</string>
+      </property>
+      <property name="text">
+       <string>Found at</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="editAttributesLabel">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>173</y>
+        <width>91</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(0, 0, 0, 93);
+font: 75 italic 11pt &quot;URW Bookman L&quot;;
+color: rgb(241, 146, 0);</string>
+      </property>
+      <property name="text">
+       <string>Attributes</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="editTypeBox">
+      <property name="geometry">
+       <rect>
+        <x>151</x>
+        <y>90</y>
+        <width>222</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(0, 0, 0);
+font: 12pt &quot;URW Bookman L&quot;;
+color: rgb(238, 238, 236);
+gridline-color: rgb(46, 52, 54);
+selection-color: rgb(0, 0, 0);
+selection-background-color: rgb(181, 0, 0);
+
+</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>Unique</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Fist Weapon</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Short Sword Weapon</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Sword Weapon</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Club Weapon</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Two-Handed Weapon</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Throwing-Sword Weapon</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Bomb Weapon</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Projectile Weapon</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Sub Weapon</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Head Armor/Clothe</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Body Armor/Clothe</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Gauntlet Armor/Clothe</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Cloak Armor/Clothe</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Boot Armor/Clothe</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Ring Other</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Necklace Other</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Belt Other</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Brooch Other</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Medicine Consumable</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Food Consumable</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Drink Consumable</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Card Consumable</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QComboBox" name="editAttributesBox">
+      <property name="geometry">
+       <rect>
+        <x>151</x>
+        <y>175</y>
+        <width>222</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(0, 0, 0);
+font: 12pt &quot;URW Bookman L&quot;;
+color: rgb(238, 238, 236);
+gridline-color: rgb(46, 52, 54);
+selection-color: rgb(0, 0, 0);
+selection-background-color: rgb(181, 0, 0);
+
+</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>None</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Hit</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Cut</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Curse</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Poison</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Stone</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Fire</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Ice</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Thunder</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Holly</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Dark</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QTextEdit" name="editDescriptionEdit">
+      <property name="geometry">
+       <rect>
+        <x>152</x>
+        <y>121</y>
+        <width>219</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="cursor" stdset="0">
+       <cursorShape>IBeamCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255, 255, 255, 134);
+font: 12pt &quot;URW Bookman L&quot;;
+color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="placeholderText">
+       <string>| Insert item description</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="editCategoryLabel">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>60</y>
+        <width>91</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(0, 0, 0, 93);
+font: 75 italic 11pt &quot;URW Bookman L&quot;;
+color: rgb(241, 146, 0);</string>
+      </property>
+      <property name="text">
+       <string>Category</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="editCategoryBox">
+      <property name="geometry">
+       <rect>
+        <x>151</x>
+        <y>61</y>
+        <width>222</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(0, 0, 0);
+font: 12pt &quot;URW Bookman L&quot;;
+color: rgb(238, 238, 236);
+gridline-color: rgb(46, 52, 54);
+selection-color: rgb(0, 0, 0);
+selection-background-color: rgb(181, 0, 0);
+
+</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>Weapon</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Shield</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Armor/Clothe</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Relic</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Spell</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Other</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Consumable</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Standard</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLabel" name="editConsumeLabel">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>201</y>
+        <width>92</width>
+        <height>35</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(0, 0, 0, 93);
+font: 75 italic 11pt &quot;URW Bookman L&quot;;
+color: rgb(241, 146, 0);</string>
+      </property>
+      <property name="text">
+       <string>Consume</string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="editConsumeHt">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>207</y>
+        <width>48</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="editConsumeMp">
+      <property name="geometry">
+       <rect>
+        <x>192</x>
+        <y>207</y>
+        <width>48</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+     </widget>
+     <widget class="QLabel" name="editConsumeMpLabel">
+      <property name="geometry">
+       <rect>
+        <x>152</x>
+        <y>201</y>
+        <width>91</width>
+        <height>36</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(0, 0, 0, 0);
+font: 75 bold 12pt &quot;URW Bookman L&quot;;
+color: rgb(32, 74, 135);</string>
+      </property>
+      <property name="text">
+       <string> MP:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="editConsumeHtLabel">
+      <property name="geometry">
+       <rect>
+        <x>254</x>
+        <y>201</y>
+        <width>91</width>
+        <height>36</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(0, 0, 0, 0);
+font: 75 bold 12pt &quot;URW Bookman L&quot;;
+color: rgb(164, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string>Heart:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="editStatisticsLabel">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>236</y>
+        <width>91</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(0, 0, 0, 93);
+font: 75 italic 11pt &quot;URW Bookman L&quot;;
+color: rgb(241, 146, 0);</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="text">
+       <string>Statistics</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="editSellLabel">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>357</y>
+        <width>91</width>
+        <height>35</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(0, 0, 0, 93);
+font: 75 italic 11pt &quot;URW Bookman L&quot;;
+color: rgb(241, 146, 0);</string>
+      </property>
+      <property name="text">
+       <string>Sell</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="editEffectLabel">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>452</y>
+        <width>91</width>
+        <height>53</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(0, 0, 0, 93);
+font: 75 italic 11pt &quot;URW Bookman L&quot;;
+color: rgb(241, 146, 0);</string>
+      </property>
+      <property name="text">
+       <string>Effect</string>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="editEffectEdit">
+      <property name="geometry">
+       <rect>
+        <x>152</x>
+        <y>455</y>
+        <width>219</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>228</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="cursor" stdset="0">
+       <cursorShape>IBeamCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255, 255, 255, 134);
+font: 12pt &quot;URW Bookman L&quot;;
+color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="placeholderText">
+       <string>| Insert item Effect</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="editDroppedLabel">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>422</y>
+        <width>91</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(0, 0, 0, 93);
+font: 75 italic 11pt &quot;URW Bookman L&quot;;
+color: rgb(241, 146, 0);</string>
+      </property>
+      <property name="text">
+       <string>Dropped by</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="editFoundBox">
+      <property name="geometry">
+       <rect>
+        <x>151</x>
+        <y>392</y>
+        <width>222</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(0, 0, 0);
+font: 12pt &quot;URW Bookman L&quot;;
+color: rgb(238, 238, 236);
+gridline-color: rgb(46, 52, 54);
+selection-color: rgb(0, 0, 0);
+selection-background-color: rgb(181, 0, 0);
+</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>None</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Entrance</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Alchemy Laboratory</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Marble Gallery</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Cursed Prison</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Outer Wall</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Long Library</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Underground Caverns</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Royal Chapel</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Castle Keep</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Underground Garden</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Olrox's Quarters</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Colosseum</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Abandoned Mine</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Catacombs</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Clock Tower</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Master of the Castle</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Reverse Keep</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Reverse Clock Tower</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Reverse Outer Wall</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Forbidden Library</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Black Marble Gallery</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Death Wing's Lair</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Reverse Colosseum</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Anti-Chapel</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Reverse Caverns</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Reverse Cursed Prison</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Necromancy Laboratory</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Reverse Entrance</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Hell Garden</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Cave</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Floating Catacombs</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Final Showdown</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QComboBox" name="editDroppedBox">
+      <property name="geometry">
+       <rect>
+        <x>151</x>
+        <y>424</y>
+        <width>222</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(0, 0, 0);
+font: 12pt &quot;URW Bookman L&quot;;
+color: rgb(238, 238, 236);
+gridline-color: rgb(46, 52, 54);
+selection-color: rgb(0, 0, 0);
+selection-background-color: rgb(181, 0, 0);
+</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>None</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Buy - Librarian</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Dracula</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Blood Skeleton</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Bat</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Stone Skull</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Zombie</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Merman</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Skeleton</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Warg</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Bone Scimitar</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Merman</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Spittle Bone</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Axe Knight</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QDoubleSpinBox" name="editSell">
+      <property name="geometry">
+       <rect>
+        <x>176</x>
+        <y>361</y>
+        <width>62</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+     </widget>
+     <widget class="QLabel" name="editSellLabel2">
+      <property name="geometry">
+       <rect>
+        <x>159</x>
+        <y>357</y>
+        <width>101</width>
+        <height>35</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 12pt &quot;URW Bookman L&quot;;</string>
+      </property>
+      <property name="text">
+       <string> $</string>
+      </property>
+     </widget>
+     <widget class="QFrame" name="editStatisticsFrame">
+      <property name="geometry">
+       <rect>
+        <x>151</x>
+        <y>236</y>
+        <width>325</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QSpinBox" name="editStatStr">
+       <property name="geometry">
+        <rect>
+         <x>42</x>
+         <y>32</y>
+         <width>48</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+      </widget>
+      <widget class="QSpinBox" name="editStatAtt">
+       <property name="geometry">
+        <rect>
+         <x>152</x>
+         <y>32</y>
+         <width>48</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+      </widget>
+      <widget class="QSpinBox" name="editStatGold">
+       <property name="geometry">
+        <rect>
+         <x>269</x>
+         <y>32</y>
+         <width>48</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+      </widget>
+      <widget class="QSpinBox" name="editStatMaxHt">
+       <property name="geometry">
+        <rect>
+         <x>269</x>
+         <y>62</y>
+         <width>48</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+      </widget>
+      <widget class="QLabel" name="editStatIntLabel">
+       <property name="geometry">
+        <rect>
+         <x>6</x>
+         <y>87</y>
+         <width>95</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(0, 0, 0, 0);
+font: 75 bold 10pt &quot;URW Bookman L&quot;;
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string> INT</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="editStatMaxHtLabel">
+       <property name="geometry">
+        <rect>
+         <x>221</x>
+         <y>60</y>
+         <width>91</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(0, 0, 0, 0);
+font: 75 bold 10pt &quot;URW Bookman L&quot;;
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>MaxHT</string>
+       </property>
+      </widget>
+      <widget class="QSpinBox" name="editStatInt">
+       <property name="geometry">
+        <rect>
+         <x>42</x>
+         <y>92</y>
+         <width>48</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+      </widget>
+      <widget class="QSpinBox" name="editStatHp">
+       <property name="geometry">
+        <rect>
+         <x>42</x>
+         <y>2</y>
+         <width>48</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+      </widget>
+      <widget class="QSpinBox" name="editStatMaxHp">
+       <property name="geometry">
+        <rect>
+         <x>269</x>
+         <y>92</y>
+         <width>48</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+      </widget>
+      <widget class="QLabel" name="editStatDefLabel">
+       <property name="geometry">
+        <rect>
+         <x>121</x>
+         <y>60</y>
+         <width>91</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(0, 0, 0, 0);
+font: 75 bold 10pt &quot;URW Bookman L&quot;;
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>DEF</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="editStatStrLabel">
+       <property name="geometry">
+        <rect>
+         <x>6</x>
+         <y>30</y>
+         <width>95</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(0, 0, 0, 0);
+font: 75 bold 10pt &quot;URW Bookman L&quot;;
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string> STR</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="editStatGoldLabel">
+       <property name="geometry">
+        <rect>
+         <x>221</x>
+         <y>30</y>
+         <width>91</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(0, 0, 0, 0);
+font: 75 bold 10pt &quot;URW Bookman L&quot;;
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>Gold</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="editStatHeartLabel">
+       <property name="geometry">
+        <rect>
+         <x>221</x>
+         <y>0</y>
+         <width>91</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(0, 0, 0, 0);
+font: 75 bold 10pt &quot;URW Bookman L&quot;;
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>Heart</string>
+       </property>
+      </widget>
+      <widget class="QSpinBox" name="editStatMp">
+       <property name="geometry">
+        <rect>
+         <x>151</x>
+         <y>2</y>
+         <width>48</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+      </widget>
+      <widget class="QLabel" name="editStatMaxHpLabel">
+       <property name="geometry">
+        <rect>
+         <x>221</x>
+         <y>90</y>
+         <width>91</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(0, 0, 0, 0);
+font: 75 bold 10pt &quot;URW Bookman L&quot;;
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>MaxHP</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="editStatMpLabel">
+       <property name="geometry">
+        <rect>
+         <x>121</x>
+         <y>0</y>
+         <width>91</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(0, 0, 0, 0);
+font: 75 bold 10pt &quot;URW Bookman L&quot;;
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>MP</string>
+       </property>
+      </widget>
+      <widget class="QSpinBox" name="editStatDef">
+       <property name="geometry">
+        <rect>
+         <x>152</x>
+         <y>62</y>
+         <width>48</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+      </widget>
+      <widget class="QSpinBox" name="editStatLck">
+       <property name="geometry">
+        <rect>
+         <x>152</x>
+         <y>92</y>
+         <width>48</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+      </widget>
+      <widget class="QSpinBox" name="editStatHt">
+       <property name="geometry">
+        <rect>
+         <x>269</x>
+         <y>2</y>
+         <width>48</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+      </widget>
+      <widget class="QLabel" name="editStatAttLabel">
+       <property name="geometry">
+        <rect>
+         <x>121</x>
+         <y>30</y>
+         <width>91</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(0, 0, 0, 0);
+font: 75 bold 10pt &quot;URW Bookman L&quot;;
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>ATT</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="editStatLckLabel">
+       <property name="geometry">
+        <rect>
+         <x>121</x>
+         <y>90</y>
+         <width>91</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(0, 0, 0, 0);
+font: 75 bold 10pt &quot;URW Bookman L&quot;;
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>LCK</string>
+       </property>
+      </widget>
+      <widget class="QSpinBox" name="editStatCon">
+       <property name="geometry">
+        <rect>
+         <x>42</x>
+         <y>62</y>
+         <width>48</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+      </widget>
+      <widget class="QLabel" name="editStatConLabel">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>60</y>
+         <width>91</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(0, 0, 0, 0);
+font: 75 bold 10pt &quot;URW Bookman L&quot;;
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>CON</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="editStatHpLabel">
+       <property name="geometry">
+        <rect>
+         <x>7</x>
+         <y>0</y>
+         <width>95</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(0, 0, 0, 0);
+font: 75 bold 10pt &quot;URW Bookman L&quot;;
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string> HP</string>
+       </property>
+      </widget>
+      <zorder>editStatHpLabel</zorder>
+      <zorder>editStatStrLabel</zorder>
+      <zorder>editStatConLabel</zorder>
+      <zorder>editStatMpLabel</zorder>
+      <zorder>editStatAttLabel</zorder>
+      <zorder>editStatLckLabel</zorder>
+      <zorder>editStatMaxHpLabel</zorder>
+      <zorder>editStatMaxHtLabel</zorder>
+      <zorder>editStatGoldLabel</zorder>
+      <zorder>editStatStr</zorder>
+      <zorder>editStatAtt</zorder>
+      <zorder>editStatGold</zorder>
+      <zorder>editStatMaxHt</zorder>
+      <zorder>editStatIntLabel</zorder>
+      <zorder>editStatInt</zorder>
+      <zorder>editStatHp</zorder>
+      <zorder>editStatMaxHp</zorder>
+      <zorder>editStatDefLabel</zorder>
+      <zorder>editStatHeartLabel</zorder>
+      <zorder>editStatMp</zorder>
+      <zorder>editStatDef</zorder>
+      <zorder>editStatLck</zorder>
+      <zorder>editStatCon</zorder>
+      <zorder>editStatHt</zorder>
+     </widget>
+     <widget class="QFrame" name="editItemFrame">
+      <property name="geometry">
+       <rect>
+        <x>505</x>
+        <y>52</y>
+        <width>305</width>
+        <height>469</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>230</width>
+        <height>361</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>5000</width>
+        <height>5000</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(0, 0, 0, 200);
+color: rgba(181, 0, 0, 107);</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Plain</enum>
+      </property>
+      <property name="lineWidth">
+       <number>1</number>
+      </property>
+      <widget class="QLabel" name="editItemImage">
+       <property name="geometry">
+        <rect>
+         <x>214</x>
+         <y>30</y>
+         <width>56</width>
+         <height>56</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>56</width>
+         <height>56</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>56</width>
+         <height>56</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Ubuntu Condensed</family>
+         <pointsize>11</pointsize>
+         <weight>75</weight>
+         <italic>false</italic>
+         <bold>true</bold>
+         <underline>false</underline>
+         <strikeout>false</strikeout>
+         <kerning>true</kerning>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(211, 215, 207);
+
+
+</string>
+       </property>
+       <property name="inputMethodHints">
+        <set>Qt::ImhNone</set>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Box</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <property name="lineWidth">
+        <number>1</number>
+       </property>
+       <property name="midLineWidth">
+        <number>1</number>
+       </property>
+       <property name="text">
+        <string>Click</string>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="editItemAnimation">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>53</x>
+         <y>130</y>
+         <width>200</width>
+         <height>116</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>200</width>
+         <height>116</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>116</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Ubuntu Condensed</family>
+         <pointsize>13</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="mouseTracking">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(211, 215, 207);</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Box</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <property name="lineWidth">
+        <number>1</number>
+       </property>
+       <property name="midLineWidth">
+        <number>1</number>
+       </property>
+       <property name="text">
+        <string>Click</string>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="wordWrap">
+        <bool>false</bool>
+       </property>
+       <property name="margin">
+        <number>0</number>
+       </property>
+      </widget>
+      <widget class="QLabel" name="editItemSpecialAnimation">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>53</x>
+         <y>299</y>
+         <width>200</width>
+         <height>74</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>200</width>
+         <height>74</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>74</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Ubuntu Condensed</family>
+         <pointsize>13</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(211, 215, 207);
+
+
+</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Box</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <property name="lineWidth">
+        <number>1</number>
+       </property>
+       <property name="midLineWidth">
+        <number>1</number>
+       </property>
+       <property name="text">
+        <string>Click</string>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="wordWrap">
+        <bool>false</bool>
+       </property>
+       <property name="margin">
+        <number>0</number>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="editNameEdit">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>30</y>
+         <width>214</width>
+         <height>56</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>161</width>
+         <height>56</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>5000</width>
+         <height>5000</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 bold 16pt &quot;Ubuntu Condensed&quot;;
+background-color: rgba(181, 0, 0, 107);
+color: rgb(255, 255, 255);
+selection-background-color: rgb(0, 0, 0);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="placeholderText">
+        <string>| Insert item name</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="editNameLabel">
+       <property name="geometry">
+        <rect>
+         <x>2</x>
+         <y>10</y>
+         <width>41</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(191, 64, 64, 0);
+font: 75 italic 11pt &quot;URW Bookman L&quot;;
+color: rgb(241, 146, 0);</string>
+       </property>
+       <property name="text">
+        <string>Name</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="editImageLabel">
+       <property name="geometry">
+        <rect>
+         <x>214</x>
+         <y>9</y>
+         <width>51</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 italic 11pt &quot;URW Bookman L&quot;;
+color: rgb(241, 146, 0);
+background-color: rgba(191, 64, 64, 0);</string>
+       </property>
+       <property name="text">
+        <string>Image</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="editAnimationLabel">
+       <property name="geometry">
+        <rect>
+         <x>53</x>
+         <y>110</y>
+         <width>111</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(191, 64, 64, 0);
+font: 75 italic 11pt &quot;URW Bookman L&quot;;
+color: rgb(241, 146, 0);</string>
+       </property>
+       <property name="text">
+        <string>Animation</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="editSpecialAnimationLabel">
+       <property name="geometry">
+        <rect>
+         <x>53</x>
+         <y>276</y>
+         <width>131</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(191, 64, 64, 0);
+font: 75 italic 11pt &quot;URW Bookman L&quot;;
+color: rgb(241, 146, 0);</string>
+       </property>
+       <property name="text">
+        <string>Special animation</string>
+       </property>
+      </widget>
+      <widget class="QFrame" name="editActionButtonBox">
+       <property name="geometry">
+        <rect>
+         <x>21</x>
+         <y>392</y>
+         <width>262</width>
+         <height>54</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);
+background-color: rgba(0, 0, 0, 0);</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <property name="lineWidth">
+        <number>0</number>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QToolButton" name="editResetButton">
+          <property name="minimumSize">
+           <size>
+            <width>70</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>70</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(104, 0, 0);
+font: 12pt &quot;URW Bookman L&quot;;
+selection-background-color: rgb(0, 0, 0);</string>
+          </property>
+          <property name="text">
+           <string>Reset</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QToolButton" name="editCancelButton">
+          <property name="minimumSize">
+           <size>
+            <width>70</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>70</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(104, 0, 0);
+font: 12pt &quot;URW Bookman L&quot;;
+selection-background-color: rgb(0, 0, 0);</string>
+          </property>
+          <property name="text">
+           <string>Cancel</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QToolButton" name="editSaveButton">
+          <property name="minimumSize">
+           <size>
+            <width>70</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>70</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(104, 0, 0);
+font: 12pt &quot;URW Bookman L&quot;;
+selection-background-color: rgb(0, 0, 0);</string>
+          </property>
+          <property name="text">
+           <string>Save</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <zorder>editNameEdit</zorder>
+      <zorder>editNameLabel</zorder>
+      <zorder>editImageLabel</zorder>
+      <zorder>editAnimationLabel</zorder>
+      <zorder>editSpecialAnimationLabel</zorder>
+      <zorder>editActionButtonBox</zorder>
+      <zorder>editItemImage</zorder>
+      <zorder>editItemAnimation</zorder>
+      <zorder>editItemSpecialAnimation</zorder>
+     </widget>
+     <widget class="QLabel" name="editTitle">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>809</width>
+        <height>52</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Ubuntu Condensed</family>
+        <pointsize>18</pointsize>
+        <weight>9</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(0, 0, 0, 200);
+font: 75 18pt &quot;Ubuntu Condensed&quot;;
+color: rgb(211, 215, 207);</string>
+      </property>
+      <property name="text">
+       <string>         Edit Item</string>
+      </property>
+     </widget>
+     <zorder>editSellLabel2</zorder>
+     <zorder>editConsumeHtLabel</zorder>
+     <zorder>editConsumeMpLabel</zorder>
+     <zorder>editTypeLabel</zorder>
+     <zorder>editDescriptionLabel</zorder>
+     <zorder>editFoundLabel</zorder>
+     <zorder>editAttributesLabel</zorder>
+     <zorder>editTypeBox</zorder>
+     <zorder>editAttributesBox</zorder>
+     <zorder>editDescriptionEdit</zorder>
+     <zorder>editCategoryLabel</zorder>
+     <zorder>editCategoryBox</zorder>
+     <zorder>editConsumeLabel</zorder>
+     <zorder>editConsumeHt</zorder>
+     <zorder>editConsumeMp</zorder>
+     <zorder>editStatisticsLabel</zorder>
+     <zorder>editSellLabel</zorder>
+     <zorder>editEffectLabel</zorder>
+     <zorder>editEffectEdit</zorder>
+     <zorder>editDroppedLabel</zorder>
+     <zorder>editFoundBox</zorder>
+     <zorder>editDroppedBox</zorder>
+     <zorder>editSell</zorder>
+     <zorder>editStatisticsFrame</zorder>
+     <zorder>editItemFrame</zorder>
+     <zorder>editTitle</zorder>
     </widget>
    </widget>
   </widget>

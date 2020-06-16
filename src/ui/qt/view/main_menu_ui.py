@@ -3,6 +3,7 @@ from PyQt5 import uic, QtGui
 from PyQt5.QtWidgets import *
 from src.ui.qt.view.qt_view import QtView
 from ui.qt.view.item_add_ui import ItemAddUi
+from ui.qt.view.item_edit_ui import ItemEditUi
 from ui.qt.view.item_information_ui import ItemInformationUi
 from src.resources.resources_properties.image_paths import ImagePaths
 
@@ -16,6 +17,7 @@ class MainMenuUi(QtView):
         self.form.setupUi(self.window)
         self.itemInformationUi = ItemInformationUi(self)
         self.itemAddUi = ItemAddUi(self)
+        self.itemEditUi = ItemEditUi(self)
         self.frameMain = self.qt.find_frame('frameMain')
         self.frameToolbox = self.qt.find_frame('frameToolbox')
         self.addButton = self.qt.find_tool_button('addButton')

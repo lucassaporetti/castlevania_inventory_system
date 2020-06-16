@@ -10,7 +10,8 @@ from PyQt5.QtWidgets import QWidget, QListView, QListWidgetItem
 from core.service.service_facade import ServiceFacade
 from src.resources.resources_properties.image_paths import ImagePaths
 from src.ui.qt.view.qt_view import QtView
-from ui.promotions.cv_confirm_box import CvConfirmBox
+from src.ui.promotions.cv_confirm_box import CvConfirmBox
+from ui.qt.view.item_edit_ui import ItemEditUi
 
 
 class ItemInformationUi(QtView):
@@ -18,6 +19,7 @@ class ItemInformationUi(QtView):
         super().__init__(parent.window, parent)
         self.item_service = ServiceFacade.get_item_service()
         self.selected_item = None
+        self.ItemEditUi = ItemEditUi(self)
         self.characterImage = self.qt.find_label('characterImage')
         self.categoryBox = self.qt.find_tool_box('categoryBox')
         self.weaponPage = self.qt.find_widget(self.window, QWidget, 'weaponPage')
@@ -74,6 +76,7 @@ class ItemInformationUi(QtView):
         self.categoryBox.setCurrentIndex(8)
         self.categoryBox.currentChanged.connect(self.category_box_clicked)
         self.removeButton.clicked.connect(self.remove_button_clicked)
+        self.editButton.clicked.connect(self.edit_button_clicked)
         self.weaponList.mouseReleaseEvent = functools.partial(self.icon_click, source_object=self.weaponList)
         self.shieldList.mouseReleaseEvent = functools.partial(self.icon_click, source_object=self.shieldList)
         self.armorList.mouseReleaseEvent = functools.partial(self.icon_click, source_object=self.armorList)
@@ -112,7 +115,10 @@ class ItemInformationUi(QtView):
     #     movie2.start()
 
     def edit_button_clicked(self):
-        pass
+        item_list = self.selected_item
+        print(item_list)
+        self.ItemEditUi.item_selected(self.selected_item)
+        self.parent.stackedMain.setCurrentIndex(3)
 
     def remove_button_clicked(self):
         remove_image = ImagePaths(8).get_image()
@@ -123,15 +129,17 @@ class ItemInformationUi(QtView):
         self.characterImage.setPixmap(q_pixmap_image_sized)
         self.characterImage.show()
         message_box = CvConfirmBox(self.window, 'Warning!', 'Remove this item from inventory?')
+        message_box.yesClicked.connect(self.yes_clicked)
+        message_box.noClicked.connect(self.no_clicked)
         message_box.exec()
-        if message_box.yesClicked.connect(self.yes_clicked):
-            self.item_service.remove(self.selected_item)
-            self.log.info('Item removed: {}'.format(self.selected_item))
-        else:
-            message_box.noClicked.connect(self.no_clicked)
 
     def yes_clicked(self):
         self.parent.stackedMain.setCurrentIndex(0)
+        self.categoryBox.setCurrentIndex(8)
+        self.item_service.remove(self.selected_item)
+        self.log.info('Item removed: {}'.format(self.selected_item))
+        self.entities_id_list.clear()
+        self.update_lists()
 
     def no_clicked(self):
         self.category_box_clicked()
@@ -200,7 +208,7 @@ class ItemInformationUi(QtView):
         icon = source_object.currentItem()
         for item in self.item_service.list():
             if icon.whatsThis() == item.entity_id:
-                self.selected_item = item
+                self.selected_item = icon.whatsThis()
                 return self.info_item(item)
 
     def info_item(self, item):
