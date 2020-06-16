@@ -19,6 +19,7 @@ class ItemInformationUi(QtView):
         super().__init__(parent.window, parent)
         self.item_service = ServiceFacade.get_item_service()
         self.selected_item = None
+        self.item = None
         self.characterImage = self.qt.find_label('characterImage')
         self.categoryBox = self.qt.find_tool_box('categoryBox')
         self.weaponPage = self.qt.find_widget(self.window, QWidget, 'weaponPage')
@@ -136,8 +137,8 @@ class ItemInformationUi(QtView):
     def yes_clicked(self):
         self.parent.stackedMain.setCurrentIndex(0)
         self.categoryBox.setCurrentIndex(8)
-        self.item_service.remove(self.selected_item)
-        self.log.info('Item removed: {}'.format(self.selected_item))
+        self.item_service.remove(self.item)
+        self.log.info('Item removed: {}'.format(self.item))
         self.entities_id_list.clear()
         self.update_lists()
 
@@ -209,6 +210,7 @@ class ItemInformationUi(QtView):
         for item in self.item_service.list():
             if icon.whatsThis() == item.entity_id:
                 self.selected_item = icon.whatsThis()
+                self.item = item
                 return self.info_item(item)
 
     def info_item(self, item):
