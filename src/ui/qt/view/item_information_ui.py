@@ -5,7 +5,7 @@ import cv2
 import imageio
 import numpy
 from PyQt5 import QtCore, QtGui
-from PyQt5.QtGui import QImage, QPixmap, QMovie, QIcon
+from PyQt5.QtGui import QImage, QPixmap, QIcon
 from PyQt5.QtWidgets import QWidget, QListView, QListWidgetItem
 from core.service.service_facade import ServiceFacade
 from src.resources.resources_properties.image_paths import ImagePaths
@@ -17,6 +17,7 @@ class ItemInformationUi(QtView):
     def __init__(self, parent: QtView):
         super().__init__(parent.window, parent)
         self.item_service = ServiceFacade.get_item_service()
+        self.selected_item = None
         self.characterImage = self.qt.find_label('characterImage')
         self.categoryBox = self.qt.find_tool_box('categoryBox')
         self.weaponPage = self.qt.find_widget(self.window, QWidget, 'weaponPage')
@@ -98,16 +99,6 @@ class ItemInformationUi(QtView):
             self.characterImage.close()
             self.parent.stackedMain.setCurrentIndex(0)
 
-    # def show_item_image(self):
-    #     item_image = '/home/lucassaporetti/GIT-Repository/' \
-    #                  'castlevania_inventory_system/src/' \
-    #                  'resources/images/items/alucard_sword_icon.png'
-    #     qimage = QImage(item_image)
-    #     pixmap = QPixmap.fromImage(qimage)
-    #     pixmap_image = QPixmap(pixmap)
-    #     self.infoItemImage.setPixmap(pixmap_image)
-    #     self.infoItemImage.show()
-
     # def animated_item_gif(self):
     #     movie = QMovie("/home/lucassaporetti/GIT-Repository/"
     #                          "castlevania_inventory_system/src/resources/"
@@ -132,9 +123,12 @@ class ItemInformationUi(QtView):
         self.characterImage.setPixmap(q_pixmap_image_sized)
         self.characterImage.show()
         message_box = CvConfirmBox(self.window, 'Warning!', 'Remove this item from inventory?')
-        message_box.yesClicked.connect(self.yes_clicked)
-        message_box.noClicked.connect(self.no_clicked)
         message_box.exec()
+        if message_box.yesClicked.connect(self.yes_clicked):
+            self.item_service.remove(self.selected_item)
+            self.log.info('Item removed: {}'.format(self.selected_item))
+        else:
+            message_box.noClicked.connect(self.no_clicked)
 
     def yes_clicked(self):
         self.parent.stackedMain.setCurrentIndex(0)
@@ -206,6 +200,7 @@ class ItemInformationUi(QtView):
         icon = source_object.currentItem()
         for item in self.item_service.list():
             if icon.whatsThis() == item.entity_id:
+                self.selected_item = item
                 return self.info_item(item)
 
     def info_item(self, item):

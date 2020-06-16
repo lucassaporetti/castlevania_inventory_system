@@ -75,7 +75,7 @@ class MySqlRepository(DbRepository):
 
     def update(self, entity: Entity):
         update_stm = self.sql_factory.update(entity.__dict__, filters=[
-            "UUID = '{}'".format(entity.entity_id)
+            " = '{}'".format(entity.entity_id)
         ])
         self.log.info('Executing SQL statement: {}'.format(update_stm))
         self.cursor.execute(update_stm)
@@ -83,7 +83,7 @@ class MySqlRepository(DbRepository):
 
     def delete(self, entity: Entity):
         delete_stm = self.sql_factory.delete(filters=[
-            "UUID = '{}'".format(entity.entity_id)
+            "ENTITY_ID = '{}'".format(entity.entity_id)
         ])
         self.log.info('Executing SQL statement: {}'.format(delete_stm))
         self.cursor.execute(delete_stm)

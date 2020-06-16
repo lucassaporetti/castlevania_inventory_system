@@ -6,7 +6,7 @@ from PyQt5.QtWidgets import QApplication, QLabel
 app = QApplication(sys.argv)
 
 data = open("/home/lucassaporetti/GIT-Repository/castlevania_inventory_system/"
-            "src/resources/images/items/alucard_shield_icon.png", 'rb').read()
+            "src/resources/images/items/alucard_shield.gif", 'rb').read()
 print(data)
 
 binary_data = base64.b64encode(data)

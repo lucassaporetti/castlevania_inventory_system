@@ -22,7 +22,7 @@ class SqlFactory(ABC):
             if len(parts) >= 2:
                 key = parts[0].strip()
                 value = parts[1].strip().replace('"', "")
-                str_filters += '"{} AND {}="{}"'.format(sep, key, value)
+                str_filters += '{} AND {}={}'.format(sep, key, value)
 
         return str_filters
 
