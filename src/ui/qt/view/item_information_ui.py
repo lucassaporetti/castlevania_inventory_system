@@ -115,10 +115,11 @@ class ItemInformationUi(QtView):
     #     movie2.start()
 
     def edit_button_clicked(self):
+        self.categoryBox.setCurrentIndex(8)
         item_list = self.selected_item
         print(item_list)
-        self.ItemEditUi.item_selected(self.selected_item)
         self.parent.stackedMain.setCurrentIndex(3)
+        self.ItemEditUi.item_selected(self.selected_item)
 
     def remove_button_clicked(self):
         remove_image = ImagePaths(8).get_image()

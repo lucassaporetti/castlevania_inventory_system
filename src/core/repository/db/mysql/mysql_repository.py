@@ -75,7 +75,7 @@ class MySqlRepository(DbRepository):
 
     def update(self, entity: Entity):
         update_stm = self.sql_factory.update(entity.__dict__, filters=[
-            " = '{}'".format(entity.entity_id)
+            "ENTITY_ID = '{}'".format(entity.entity_id)
         ])
         self.log.info('Executing SQL statement: {}'.format(update_stm))
         self.cursor.execute(update_stm)

@@ -3,7 +3,6 @@ import base64
 import functools
 from PyQt5 import QtGui
 from PyQt5.QtWidgets import *
-from src.model.item_model import Item
 from src.ui.qt.view.qt_view import QtView
 from src.core.service.service_facade import ServiceFacade
 
@@ -12,6 +11,7 @@ class ItemEditUi(QtView):
     def __init__(self, parent: QtView):
         super().__init__(parent.window, parent)
         self.item_service = ServiceFacade.get_item_service()
+        self.edited_item = None
         self.editPage = self.qt.find_widget(self.window, QWidget, 'editPage')
         self.editNameEdit = self.qt.find_line_edit('editNameEdit')
         self.editCategoryBox = self.qt.find_combo_box('editCategoryBox')
@@ -42,6 +42,8 @@ class ItemEditUi(QtView):
         self.editCancelButton = self.qt.find_tool_button('editCancelButton')
         self.editResetButton = self.qt.find_tool_button('editResetButton')
         self.editSaveButton = self.qt.find_tool_button('editSaveButton')
+        self.selected_item = None
+        self.entityId = None
         self.imageData = None
         self.animationData = None
         self.specialAnimationData = None
@@ -62,6 +64,7 @@ class ItemEditUi(QtView):
         for item in self.item_service.list():
             if selected_item == item.entity_id:
                 self.log.info('Item selected for update: {}'.format(item))
+                self.entityId = item.entity_id
                 self.editNameEdit.setText(item.name)
                 self.editCategoryBox.setCurrentText(item.category)
                 self.editTypeBox.setCurrentText(item.item_type)
@@ -85,6 +88,7 @@ class ItemEditUi(QtView):
                 self.editFoundBox.setCurrentText(item.found_at)
                 self.editDroppedBox.setCurrentText(item.dropped_by)
                 self.editEffectEdit.setText(item.effect)
+                self.edited_item = item
 
     def on_reset(self):
         self.log.info('Item form reset')
@@ -117,39 +121,38 @@ class ItemEditUi(QtView):
         self.window.repaint()
 
     def on_save(self):
-        self.selected_item = self.selected_item if self.selected_item else Item()
-        self.selected_item.name = self.editNameEdit.text()
-        self.selected_item.category = self.editCategoryBox.currentText()
-        self.selected_item.item_type = self.editTypeBox.currentText()
-        self.selected_item.description = self.editDescriptionEdit.toPlainText()
-        self.selected_item.attributes = self.editAttributes.currentText()
-        self.selected_item.consume_mp = self.editConsumeMp.value()
-        self.selected_item.consume_heart = self.editConsumeHt.value()
-        self.selected_item.statistics_hp = self.editStatHp.value()
-        self.selected_item.statistics_mp = self.editStatMp.value()
-        self.selected_item.statistics_heart = self.editStatHt.value()
-        self.selected_item.statistics_str = self.editStatStr.value()
-        self.selected_item.statistics_att = self.editStatAtt.value()
-        self.selected_item.statistics_int = self.editStatInt.value()
-        self.selected_item.statistics_con = self.editStatCon.value()
-        self.selected_item.statistics_max_ht = self.editStatMaxHt.value()
-        self.selected_item.statistics_max_hp = self.editStatMaxHp.value()
-        self.selected_item.statistics_def = self.editStatDef.value()
-        self.selected_item.statistics_lck = self.editStatLck.value()
-        self.selected_item.statistics_gold = self.editStatGold.value()
-        self.selected_item.sell = self.editSell.value()
-        self.selected_item.found_at = self.editFoundBox.currentText()
-        self.selected_item.dropped_by = self.editDroppedBox.currentText()
-        self.selected_item.effect = self.editEffectEdit.toPlainText()
-        self.selected_item.image = self.imageData
-        self.selected_item.animation = self.animationData
-        self.selected_item.special_animation = self.specialAnimationData
-        self.item_service.save(self.selected_item)
+        self.edited_item.name = self.editNameEdit.text()
+        self.edited_item.category = self.editCategoryBox.currentText()
+        self.edited_item.item_type = self.editTypeBox.currentText()
+        self.edited_item.description = self.editDescriptionEdit.toPlainText()
+        self.edited_item.attributes = self.editAttributes.currentText()
+        self.edited_item.consume_mp = self.editConsumeMp.value()
+        self.edited_item.consume_heart = self.editConsumeHt.value()
+        self.edited_item.statistics_hp = self.editStatHp.value()
+        self.edited_item.statistics_mp = self.editStatMp.value()
+        self.edited_item.statistics_heart = self.editStatHt.value()
+        self.edited_item.statistics_str = self.editStatStr.value()
+        self.edited_item.statistics_att = self.editStatAtt.value()
+        self.edited_item.statistics_int = self.editStatInt.value()
+        self.edited_item.statistics_con = self.editStatCon.value()
+        self.edited_item.statistics_max_ht = self.editStatMaxHt.value()
+        self.edited_item.statistics_max_hp = self.editStatMaxHp.value()
+        self.edited_item.statistics_def = self.editStatDef.value()
+        self.edited_item.statistics_lck = self.editStatLck.value()
+        self.edited_item.statistics_gold = self.editStatGold.value()
+        self.edited_item.sell = self.editSell.value()
+        self.edited_item.found_at = self.editFoundBox.currentText()
+        self.edited_item.dropped_by = self.editDroppedBox.currentText()
+        self.edited_item.effect = self.editEffectEdit.toPlainText()
+        self.edited_item.image = self.imageData
+        self.edited_item.animation = self.animationData
+        self.edited_item.special_animation = self.specialAnimationData
+        self.edited_item.entity_id = self.entityId
+        self.item_service.save(self.edited_item)
+        self.log.info('Item edited: {}'.format(self.edited_item))
         self.on_reset()
+        self.parent.itemInformationUi.entities_id_list.clear()
         self.parent.stackedMain.setCurrentIndex(0)
-        self.parent.ItemInformationUi.entities_id_list.clear()
-        self.parent.ItemInformationUi.update_lists()
-        self.log.info('Item edited: {}'.format(self.selected_item))
 
     def on_cancel(self):
         self.on_reset()
