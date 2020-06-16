@@ -5,6 +5,7 @@ from src.ui.qt.view.qt_view import QtView
 from src.ui.qt.view.item_add_ui import ItemAddUi
 from src.ui.qt.view.item_information_ui import ItemInformationUi
 from src.resources.resources_properties.image_paths import ImagePaths
+from ui.qt.view.item_edit_ui import ItemEditUi
 
 
 class MainMenuUi(QtView):
@@ -16,6 +17,7 @@ class MainMenuUi(QtView):
         self.form.setupUi(self.window)
         self.itemInformationUi = ItemInformationUi(self)
         self.itemAddUi = ItemAddUi(self)
+        self.ItemEditUi = ItemEditUi(self)
         self.frameMain = self.qt.find_frame('frameMain')
         self.frameToolbox = self.qt.find_frame('frameToolbox')
         self.addButton = self.qt.find_tool_button('addButton')

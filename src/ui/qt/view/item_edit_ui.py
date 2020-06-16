@@ -149,10 +149,11 @@ class ItemEditUi(QtView):
         self.edited_item.special_animation = self.specialAnimationData
         self.edited_item.entity_id = self.entityId
         self.item_service.save(self.edited_item)
-        self.log.info('Item edited: {}'.format(self.edited_item))
         self.on_reset()
-        self.parent.itemInformationUi.entities_id_list.clear()
         self.parent.stackedMain.setCurrentIndex(0)
+        self.parent.itemInformationUi.entities_id_list.clear()
+        self.parent.itemInformationUi.update_lists()
+        self.log.info('Item edited: {}'.format(self.edited_item))
 
     def on_cancel(self):
         self.on_reset()

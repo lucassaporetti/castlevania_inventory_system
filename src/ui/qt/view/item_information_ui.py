@@ -19,7 +19,6 @@ class ItemInformationUi(QtView):
         super().__init__(parent.window, parent)
         self.item_service = ServiceFacade.get_item_service()
         self.selected_item = None
-        self.ItemEditUi = ItemEditUi(self)
         self.characterImage = self.qt.find_label('characterImage')
         self.categoryBox = self.qt.find_tool_box('categoryBox')
         self.weaponPage = self.qt.find_widget(self.window, QWidget, 'weaponPage')
@@ -119,7 +118,7 @@ class ItemInformationUi(QtView):
         item_list = self.selected_item
         print(item_list)
         self.parent.stackedMain.setCurrentIndex(3)
-        self.ItemEditUi.item_selected(self.selected_item)
+        self.parent.ItemEditUi.item_selected(self.selected_item)
 
     def remove_button_clicked(self):
         remove_image = ImagePaths(8).get_image()
