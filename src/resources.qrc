@@ -1,24 +1,27 @@
 <RCC>
   <qresource prefix="items">
-    <file>resources/images/items/alucard_sword_animation.gif</file>
     <file>resources/images/items/alucard_sword_icon.png</file>
   </qresource>
   <qresource prefix="background">
+    <file>resources/images/backgrounds/shaft.png</file>
+    <file>resources/images/backgrounds/Master_Librarian.png</file>
     <file>resources/images/backgrounds/system_logo.png</file>
-    <file>resources/images/backgrounds/richter_sit_pose.png</file>
-    <file>resources/images/backgrounds/delete_background.png</file>
+    <file>resources/images/backgrounds/system_background.jpg</file>
     <file>resources/images/backgrounds/richter_weapon_pose.png</file>
-    <file>resources/images/backgrounds/alucard_shield_pose.png</file>
+    <file>resources/images/backgrounds/richter_sit_pose.png</file>
+    <file>resources/images/backgrounds/items_border.jpg</file>
+    <file>resources/images/backgrounds/dracula_pose2.png</file>
+    <file>resources/images/backgrounds/dracula_pose.png</file>
+    <file>resources/images/backgrounds/delete_background.png</file>
     <file>resources/images/backgrounds/background5.jpg</file>
-    <file>resources/images/backgrounds/system_background.jpg</file>
-    <file>resources/images/backgrounds/system_background.jpg</file>
-    <file>resources/images/backgrounds/alucard_relic_pose.png</file>
-    <file>resources/images/backgrounds/alucard_weapon_pose.png</file>
     <file>resources/images/backgrounds/background4.jpg</file>
     <file>resources/images/backgrounds/background3.jpg</file>
     <file>resources/images/backgrounds/background2.jpg</file>
     <file>resources/images/backgrounds/background1</file>
     <file>resources/images/backgrounds/background.jpg</file>
+    <file>resources/images/backgrounds/alucard_weapon_pose.png</file>
+    <file>resources/images/backgrounds/alucard_shield_pose.png</file>
+    <file>resources/images/backgrounds/alucard_relic_pose.png</file>
   </qresource>
   <qresource prefix="icons">
     <file>resources/images/icons/delete_icon_selected.png</file>

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1167</width>
-    <height>599</height>
+    <width>1217</width>
+    <height>642</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -43,8 +43,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>337</x>
-     <y>63</y>
+     <x>390</x>
+     <y>106</y>
      <width>811</width>
      <height>519</height>
     </rect>
@@ -75,7 +75,7 @@ background-color: rgba(0, 0, 0, 113);</string>
     <enum>QFrame::Plain</enum>
    </property>
    <property name="currentIndex">
-    <number>3</number>
+    <number>2</number>
    </property>
    <widget class="QWidget" name="mainPage">
     <property name="styleSheet">
@@ -84,10 +84,10 @@ background-color: rgba(0, 0, 0, 113);</string>
     <widget class="QLabel" name="logoImage">
      <property name="geometry">
       <rect>
-       <x>251</x>
-       <y>157</y>
-       <width>307</width>
-       <height>164</height>
+       <x>207</x>
+       <y>125</y>
+       <width>391</width>
+       <height>211</height>
       </rect>
      </property>
      <property name="sizePolicy">
@@ -109,7 +109,8 @@ background-color: rgba(0, 0, 0, 113);</string>
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgba(191, 64, 64, 0);</string>
+      <string notr="true">background-color: rgba(191, 64, 64, 0);
+border-image: url(:/background/resources/images/backgrounds/system_logo.png);</string>
      </property>
      <property name="text">
       <string/>
@@ -121,7 +122,7 @@ background-color: rgba(0, 0, 0, 113);</string>
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>-3</y>
+       <y>0</y>
        <width>811</width>
        <height>521</height>
       </rect>
@@ -1301,7 +1302,7 @@ p, li { white-space: pre-wrap; }
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>-3</y>
+       <y>0</y>
        <width>811</width>
        <height>521</height>
       </rect>
@@ -5147,13 +5148,13 @@ color: rgb(238, 238, 236);</string>
     </item>
    </layout>
   </widget>
-  <widget class="QLabel" name="characterImage">
+  <widget class="QLabel" name="characterWeaponImage">
    <property name="geometry">
     <rect>
-     <x>26</x>
-     <y>73</y>
-     <width>370</width>
-     <height>517</height>
+     <x>95</x>
+     <y>76</y>
+     <width>371</width>
+     <height>560</height>
     </rect>
    </property>
    <property name="minimumSize">
@@ -5169,7 +5170,7 @@ color: rgb(238, 238, 236);</string>
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">border-image: url(:/background/resources/images/backgrounds/richter_weapon_pose.png);</string>
    </property>
    <property name="text">
     <string/>
@@ -5182,8 +5183,8 @@ color: rgb(238, 238, 236);</string>
    <property name="geometry">
     <rect>
      <x>13</x>
-     <y>36</y>
-     <width>324</width>
+     <y>79</y>
+     <width>376</width>
      <height>546</height>
     </rect>
    </property>
@@ -5214,7 +5215,7 @@ background-color: rgba(191, 64, 64, 0);</string>
     <enum>QFrame::NoFrame</enum>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>8</number>
    </property>
    <property name="tabSpacing">
     <number>6</number>
@@ -5224,7 +5225,7 @@ background-color: rgba(191, 64, 64, 0);</string>
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>324</width>
+      <width>376</width>
       <height>240</height>
      </rect>
     </property>
@@ -5275,7 +5276,7 @@ background-color: rgba(191, 64, 64, 0);</string>
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>324</width>
+      <width>376</width>
       <height>240</height>
      </rect>
     </property>
@@ -5328,7 +5329,7 @@ background-color: rgba(191, 64, 64, 0);</string>
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>324</width>
+      <width>376</width>
       <height>240</height>
      </rect>
     </property>
@@ -5393,7 +5394,7 @@ background-color: rgba(191, 64, 64, 0);</string>
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>324</width>
+      <width>376</width>
       <height>240</height>
      </rect>
     </property>
@@ -5443,7 +5444,7 @@ background-color: rgba(191, 64, 64, 0);</string>
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>324</width>
+      <width>376</width>
       <height>240</height>
      </rect>
     </property>
@@ -5493,7 +5494,7 @@ background-color: rgba(191, 64, 64, 0);</string>
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>324</width>
+      <width>376</width>
       <height>240</height>
      </rect>
     </property>
@@ -5543,7 +5544,7 @@ background-color: rgba(191, 64, 64, 0);</string>
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>324</width>
+      <width>376</width>
       <height>240</height>
      </rect>
     </property>
@@ -5593,7 +5594,7 @@ background-color: rgba(191, 64, 64, 0);</string>
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>324</width>
+      <width>376</width>
       <height>240</height>
      </rect>
     </property>
@@ -5710,10 +5711,298 @@ background-color: rgba(191, 64, 64, 0);</string>
     </attribute>
    </widget>
   </widget>
+  <widget class="QLabel" name="characterShieldImage">
+   <property name="geometry">
+    <rect>
+     <x>87</x>
+     <y>76</y>
+     <width>371</width>
+     <height>560</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>270</width>
+     <height>383</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>50000</width>
+     <height>50000</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/background/resources/images/backgrounds/alucard_shield_pose.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="textInteractionFlags">
+    <set>Qt::NoTextInteraction</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="characterArmorImage">
+   <property name="geometry">
+    <rect>
+     <x>94</x>
+     <y>76</y>
+     <width>371</width>
+     <height>560</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>270</width>
+     <height>383</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>50000</width>
+     <height>50000</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/background/resources/images/backgrounds/alucard_weapon_pose.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="textInteractionFlags">
+    <set>Qt::NoTextInteraction</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="characterRelicImage">
+   <property name="geometry">
+    <rect>
+     <x>84</x>
+     <y>76</y>
+     <width>371</width>
+     <height>560</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>270</width>
+     <height>383</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>50000</width>
+     <height>50000</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/background/resources/images/backgrounds/dracula_pose.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="textInteractionFlags">
+    <set>Qt::NoTextInteraction</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="characterSpellImage">
+   <property name="geometry">
+    <rect>
+     <x>88</x>
+     <y>76</y>
+     <width>371</width>
+     <height>560</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>270</width>
+     <height>383</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>50000</width>
+     <height>50000</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/background/resources/images/backgrounds/shaft.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="textInteractionFlags">
+    <set>Qt::NoTextInteraction</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="characterOtherImage">
+   <property name="geometry">
+    <rect>
+     <x>94</x>
+     <y>76</y>
+     <width>371</width>
+     <height>560</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>270</width>
+     <height>383</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>50000</width>
+     <height>50000</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/background/resources/images/backgrounds/richter_sit_pose.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="textInteractionFlags">
+    <set>Qt::NoTextInteraction</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="characterConsumableImage">
+   <property name="geometry">
+    <rect>
+     <x>82</x>
+     <y>76</y>
+     <width>371</width>
+     <height>560</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>270</width>
+     <height>383</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>50000</width>
+     <height>50000</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/background/resources/images/backgrounds/dracula_pose2.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="textInteractionFlags">
+    <set>Qt::NoTextInteraction</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="characterStandardImage">
+   <property name="geometry">
+    <rect>
+     <x>94</x>
+     <y>76</y>
+     <width>371</width>
+     <height>560</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>270</width>
+     <height>383</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>50000</width>
+     <height>50000</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/background/resources/images/backgrounds/alucard_relic_pose.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="textInteractionFlags">
+    <set>Qt::NoTextInteraction</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="characterAddImage">
+   <property name="geometry">
+    <rect>
+     <x>94</x>
+     <y>76</y>
+     <width>371</width>
+     <height>560</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>270</width>
+     <height>383</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>50000</width>
+     <height>50000</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/background/resources/images/backgrounds/Master_Librarian.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="textInteractionFlags">
+    <set>Qt::NoTextInteraction</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="characterDeleteImage">
+   <property name="geometry">
+    <rect>
+     <x>102</x>
+     <y>76</y>
+     <width>371</width>
+     <height>560</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>270</width>
+     <height>383</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>50000</width>
+     <height>50000</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/background/resources/images/backgrounds/delete_background.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="textInteractionFlags">
+    <set>Qt::NoTextInteraction</set>
+   </property>
+  </widget>
   <zorder>stackedMain</zorder>
-  <zorder>characterImage</zorder>
+  <zorder>characterWeaponImage</zorder>
   <zorder>categoryBox</zorder>
   <zorder>frameToolbox</zorder>
+  <zorder>characterShieldImage</zorder>
+  <zorder>characterArmorImage</zorder>
+  <zorder>characterRelicImage</zorder>
+  <zorder>characterSpellImage</zorder>
+  <zorder>characterOtherImage</zorder>
+  <zorder>characterConsumableImage</zorder>
+  <zorder>characterStandardImage</zorder>
+  <zorder>characterAddImage</zorder>
+  <zorder>characterDeleteImage</zorder>
  </widget>
  <resources>
   <include location="../../../resources.qrc"/>
