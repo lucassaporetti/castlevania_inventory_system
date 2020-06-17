@@ -4,6 +4,7 @@ from src.ui.qt.view.qt_view import QtView
 from ui.qt.view.item_edit_ui import ItemEditUi
 from src.ui.qt.view.item_add_ui import ItemAddUi
 from src.ui.qt.view.item_information_ui import ItemInformationUi
+from resources.resources_properties.image_paths import ImagePaths
 
 
 class MainMenuUi(QtView):
@@ -14,6 +15,7 @@ class MainMenuUi(QtView):
         self.form = MainMenuUi.form()
         self.form.setupUi(self.window)
         self.itemInformationUi = ItemInformationUi(self)
+        self.ImagePaths = ImagePaths(self)
         self.itemAddUi = ItemAddUi(self)
         self.ItemEditUi = ItemEditUi(self)
         self.frameMain = self.qt.find_frame('frameMain')
@@ -40,3 +42,4 @@ class MainMenuUi(QtView):
     def add_button_clicked(self):
         self.itemInformationUi.categoryBox.setCurrentIndex(8)
         self.stackedMain.setCurrentIndex(2)
+        self.ImagePaths.get_image(9)

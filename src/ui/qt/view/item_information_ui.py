@@ -19,7 +19,6 @@ class ItemInformationUi(QtView):
         self.item_service = ServiceFacade.get_item_service()
         self.selected_id = None
         self.selected_item = None
-        self.characterImage = self.qt.find_label('characterImage')
         self.categoryBox = self.qt.find_tool_box('categoryBox')
         self.weaponPage = self.qt.find_widget(self.window, QWidget, 'weaponPage')
         self.weaponList = self.qt.find_list_widget('weaponList')
@@ -87,18 +86,10 @@ class ItemInformationUi(QtView):
 
     def category_box_clicked(self):
         index = self.categoryBox.currentIndex()
-        image_index = ImagePaths(index).get_image()
+        self.parent.ImagePaths.get_image(index)
         self.log.info(f'{str(self.categoryBox.widget(index))} selected!')
-        character_image = image_index
-        q_image = QImage(character_image)
-        q_pixmap = QPixmap.fromImage(q_image)
-        q_pixmap_image = QPixmap(q_pixmap)
-        q_pixmap_image_sized = q_pixmap_image.scaled(370, 517)
-        self.characterImage.setPixmap(q_pixmap_image_sized)
-        self.characterImage.show()
         self.parent.stackedMain.setCurrentIndex(1)
         if index == 8:
-            self.characterImage.close()
             self.parent.stackedMain.setCurrentIndex(0)
 
     # def animated_item_gif(self):
@@ -116,18 +107,11 @@ class ItemInformationUi(QtView):
     def edit_button_clicked(self):
         self.categoryBox.setCurrentIndex(8)
         item_id = self.selected_id
-        print(item_id)
         self.parent.stackedMain.setCurrentIndex(3)
         self.parent.ItemEditUi.item_selected(self.selected_id)
 
     def remove_button_clicked(self):
-        remove_image = ImagePaths(8).get_image()
-        q_image = QImage(remove_image)
-        q_pixmap = QPixmap.fromImage(q_image)
-        q_pixmap_image = QPixmap(q_pixmap)
-        q_pixmap_image_sized = q_pixmap_image.scaled(370, 517)
-        self.characterImage.setPixmap(q_pixmap_image_sized)
-        self.characterImage.show()
+        self.parent.ImagePaths.get_image(10)
         message_box = CvConfirmBox(self.window, 'Warning!', 'Remove this item from inventory?')
         message_box.yesClicked.connect(self.yes_clicked)
         message_box.noClicked.connect(self.no_clicked)
