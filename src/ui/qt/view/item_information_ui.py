@@ -1,25 +1,24 @@
-import base64
-import functools
 import io
 import cv2
-import imageio
 import numpy
+import base64
+import imageio
+import functools
 from PyQt5 import QtCore, QtGui
-from PyQt5.QtGui import QImage, QPixmap, QIcon
-from PyQt5.QtWidgets import QWidget, QListView, QListWidgetItem
-from core.service.service_facade import ServiceFacade
-from src.resources.resources_properties.image_paths import ImagePaths
 from src.ui.qt.view.qt_view import QtView
+from PyQt5.QtGui import QImage, QPixmap, QIcon
+from core.service.service_facade import ServiceFacade
 from src.ui.promotions.cv_confirm_box import CvConfirmBox
-from ui.qt.view.item_edit_ui import ItemEditUi
+from PyQt5.QtWidgets import QWidget, QListView, QListWidgetItem
+from src.resources.resources_properties.image_paths import ImagePaths
 
 
 class ItemInformationUi(QtView):
     def __init__(self, parent: QtView):
         super().__init__(parent.window, parent)
         self.item_service = ServiceFacade.get_item_service()
+        self.selected_id = None
         self.selected_item = None
-        self.item = None
         self.characterImage = self.qt.find_label('characterImage')
         self.categoryBox = self.qt.find_tool_box('categoryBox')
         self.weaponPage = self.qt.find_widget(self.window, QWidget, 'weaponPage')
@@ -116,10 +115,10 @@ class ItemInformationUi(QtView):
 
     def edit_button_clicked(self):
         self.categoryBox.setCurrentIndex(8)
-        item_list = self.selected_item
-        print(item_list)
+        item_id = self.selected_id
+        print(item_id)
         self.parent.stackedMain.setCurrentIndex(3)
-        self.parent.ItemEditUi.item_selected(self.selected_item)
+        self.parent.ItemEditUi.item_selected(self.selected_id)
 
     def remove_button_clicked(self):
         remove_image = ImagePaths(8).get_image()
@@ -137,8 +136,8 @@ class ItemInformationUi(QtView):
     def yes_clicked(self):
         self.parent.stackedMain.setCurrentIndex(0)
         self.categoryBox.setCurrentIndex(8)
-        self.item_service.remove(self.item)
-        self.log.info('Item removed: {}'.format(self.item))
+        self.item_service.remove(self.selected_item)
+        self.log.info('Item removed: {}'.format(self.selected_item))
         self.entities_id_list.clear()
         self.update_lists()
 
@@ -209,8 +208,8 @@ class ItemInformationUi(QtView):
         icon = source_object.currentItem()
         for item in self.item_service.list():
             if icon.whatsThis() == item.entity_id:
-                self.selected_item = icon.whatsThis()
-                self.item = item
+                self.selected_id = icon.whatsThis()
+                self.selected_item = item
                 return self.info_item(item)
 
     def info_item(self, item):

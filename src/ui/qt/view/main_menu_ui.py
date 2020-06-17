@@ -1,11 +1,10 @@
-import os
 from PyQt5 import uic, QtGui
 from PyQt5.QtWidgets import *
 from src.ui.qt.view.qt_view import QtView
+from ui.qt.view.item_edit_ui import ItemEditUi
 from src.ui.qt.view.item_add_ui import ItemAddUi
 from src.ui.qt.view.item_information_ui import ItemInformationUi
 from src.resources.resources_properties.image_paths import ImagePaths
-from ui.qt.view.item_edit_ui import ItemEditUi
 
 
 class MainMenuUi(QtView):
@@ -38,9 +37,6 @@ class MainMenuUi(QtView):
     def show(self):
         self.window.show()
 
-    def key_pressed(self, key_pressed):
-        pass
-
     def search_button_clicked(self):
         pass
 
@@ -56,14 +52,3 @@ class MainMenuUi(QtView):
         q_pixmap_image_sized = q_pixmap_image.scaled(307, 164)
         self.logoImage.setPixmap(q_pixmap_image_sized)
         self.logoImage.show()
-
-    @staticmethod
-    def open_file():
-        directory = os.path.expanduser("~/GIT-Repository/"
-                                       "castlevania_inventory_system/"
-                                       "src/resources/images/items")
-        os.system("ls {0}".format(directory))
-        file_name = QFileDialog.getOpenFileName(caption="Choose item image...",
-                                                directory=directory, filter='*.png',
-                                                options=QFileDialog.DontUseNativeDialog)
-        return file_name

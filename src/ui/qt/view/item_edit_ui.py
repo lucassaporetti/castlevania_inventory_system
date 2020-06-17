@@ -60,9 +60,9 @@ class ItemEditUi(QtView):
         self.editItemSpecialAnimation.mouseReleaseEvent = \
             functools.partial(self.open_file, source_object=self.editItemSpecialAnimation)
 
-    def item_selected(self, selected_item):
+    def item_selected(self, selected_id):
         for item in self.item_service.list():
-            if selected_item == item.entity_id:
+            if selected_id == item.entity_id:
                 self.log.info('Item selected for update: {}'.format(item))
                 self.entityId = item.entity_id
                 self.editNameEdit.setText(item.name)
