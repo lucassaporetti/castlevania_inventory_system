@@ -65,12 +65,12 @@ class ItemInformationUi(QtView):
         self.infoItemSpecial = self.qt.find_label('infoItemSpecial')
         self.editButton = self.qt.find_tool_button('editButton')
         self.removeButton = self.qt.find_tool_button('removeButton')
+        self.categoryBox.setCurrentIndex(8)
         self.entities_id_list = []
         self.update_lists()
         self.setup_ui()
 
     def setup_ui(self):
-        self.categoryBox.setCurrentIndex(8)
         self.categoryBox.currentChanged.connect(self.category_box_clicked)
         self.removeButton.clicked.connect(self.remove_button_clicked)
         self.editButton.clicked.connect(self.edit_button_clicked)
@@ -87,7 +87,22 @@ class ItemInformationUi(QtView):
         index = self.categoryBox.currentIndex()
         self.parent.ImagePaths.get_image(index)
         self.log.info(f'{str(self.categoryBox.widget(index))} selected!')
-        self.parent.stackedMain.setCurrentIndex(1)
+        if self.categoryBox.currentWidget() == self.weaponPage:
+            self.first_icon_view(self.weaponList)
+        elif self.categoryBox.currentWidget() == self.shieldPage:
+            self.first_icon_view(self.shieldList)
+        elif self.categoryBox.currentWidget() == self.armorPage:
+            self.first_icon_view(self.armorList)
+        elif self.categoryBox.currentWidget() == self.relicPage:
+            self.first_icon_view(self.relicList)
+        elif self.categoryBox.currentWidget() == self.spellPage:
+            self.first_icon_view(self.spellList)
+        elif self.categoryBox.currentWidget() == self.otherPage:
+            self.first_icon_view(self.otherList)
+        elif self.categoryBox.currentWidget() == self.consumablePage:
+            self.first_icon_view(self.consumableList)
+        elif self.categoryBox.currentWidget() == self.standardPage:
+            self.first_icon_view(self.standardList)
         if index == 8:
             self.parent.stackedMain.setCurrentIndex(0)
 
@@ -181,6 +196,19 @@ class ItemInformationUi(QtView):
                 self.selected_item = item
                 return self.info_item(item)
 
+    def first_icon_view(self, source_object):
+        if source_object.count() > 0:
+            source_object.item(0).setSelected(True)
+            source_object.setFocus()
+            icon = source_object.item(0).whatsThis()
+            for item in self.item_service.list():
+                if icon == item.entity_id:
+                    self.selected_id = icon
+                    self.selected_item = item
+                    return self.info_item(item)
+        else:
+            self.parent.stackedMain.setCurrentIndex(0)
+
     def info_item(self, item):
         self.log.info(f'Item {item.name} selected for information')
         self.infoItemName.setText(item.name)
@@ -209,6 +237,7 @@ class ItemInformationUi(QtView):
         self.load_item_image(item, label=self.infoItemImage)
         self.load_item_gif(item, label=self.infoItemAnimation)
         self.load_item_gif(item, label=self.infoItemSpecial)
+        self.parent.stackedMain.setCurrentIndex(1)
 
     @staticmethod
     def str_to_rgb(base64_str):
