@@ -167,26 +167,38 @@ class ItemAddUi(QtView):
         file_name = QFileDialog.getOpenFileName(caption="Choose item image...",
                                                 directory=directory, filter='*',
                                                 options=QFileDialog.DontUseNativeDialog)
-        item_image = file_name[0]
-        if source_object == self.addItemImage:
-            q_image = QtGui.QImage(item_image)
-            q_pixmap = QtGui.QPixmap.fromImage(q_image)
-            q_pixmap_image = QtGui.QPixmap(q_pixmap)
-            source_object.setPixmap(q_pixmap_image)
-            source_object.show()
+        if file_name == ('', ''):
+            if source_object == self.addItemImage:
+                self.imageData = 'Without Image'
+                return self.addItemImage.setText('Without\nImage')
+            elif source_object == self.addItemAnimation:
+                self.animationData = 'Without Image'
+                return self.addItemAnimation.setText('Without Image')
+            else:
+                self.specialAnimationData = 'Without Image'
+                return self.addItemSpecialAnimation.setText('Without Image')
         else:
-            movie = QtGui.QMovie(item_image)
-            source_object.setMovie(movie)
-            movie.start()
-        with open(file_name[0], 'rb') as file:
-            image_read = file.read()
-            binary_data = base64.b64encode(image_read)
-        if source_object == self.addItemImage:
-            self.imageData = binary_data
-            return self.imageData
-        elif source_object == self.addItemAnimation:
-            self.animationData = binary_data
-            return self.animationData
-        else:
-            self.specialAnimationData = binary_data
-            return self.specialAnimationData
+            item_image = file_name[0]
+            if source_object == self.addItemImage:
+                q_image = QtGui.QImage(item_image)
+                q_pixmap = QtGui.QPixmap.fromImage(q_image)
+                q_pixmap_image = QtGui.QPixmap(q_pixmap)
+                source_object.setPixmap(q_pixmap_image)
+                source_object.show()
+            else:
+                movie = QtGui.QMovie(item_image)
+                source_object.setMovie(movie)
+                movie.start()
+
+            with open(file_name[0], 'rb') as file:
+                image_read = file.read()
+                binary_data = base64.b64encode(image_read)
+            if source_object == self.addItemImage:
+                self.imageData = binary_data
+                return self.imageData
+            elif source_object == self.addItemAnimation:
+                self.animationData = binary_data
+                return self.animationData
+            else:
+                self.specialAnimationData = binary_data
+                return self.specialAnimationData
