@@ -10,7 +10,6 @@ from PyQt5.QtGui import QImage, QPixmap, QIcon
 from core.service.service_facade import ServiceFacade
 from src.ui.promotions.cv_confirm_box import CvConfirmBox
 from PyQt5.QtWidgets import QWidget, QListView, QListWidgetItem
-from src.resources.resources_properties.image_paths import ImagePaths
 
 
 class ItemInformationUi(QtView):
@@ -92,21 +91,8 @@ class ItemInformationUi(QtView):
         if index == 8:
             self.parent.stackedMain.setCurrentIndex(0)
 
-    # def animated_item_gif(self):
-    #     movie = QMovie("/home/lucassaporetti/GIT-Repository/"
-    #                          "castlevania_inventory_system/src/resources/"
-    #                          "images/items/alucard_sword.gif")
-    #     self.infoItemAnimation.setMovie(movie)
-    #     movie.start()
-    #     movie2 = QMovie("/home/lucassaporetti/GIT-Repository/"
-    #                           "castlevania_inventory_system/src/resources/"
-    #                           "images/items/alucard_sword_special.gif")
-    #     self.infoItemSpecial.setMovie(movie2)
-    #     movie2.start()
-
     def edit_button_clicked(self):
         self.categoryBox.setCurrentIndex(8)
-        item_id = self.selected_id
         self.parent.stackedMain.setCurrentIndex(3)
         self.parent.ItemEditUi.item_selected(self.selected_id)
 
@@ -167,7 +153,6 @@ class ItemInformationUi(QtView):
             item_image_right = item.animation.replace('b"b', '').replace("'", '').replace('"', '')
         else:
             item_image_right = item.special_animation.replace('b"b', '').replace("'", '').replace('"', '')
-
         item_image = base64.b64decode(item_image_right)
         a = QtCore.QByteArray(item_image)
         b = QtCore.QBuffer(a)

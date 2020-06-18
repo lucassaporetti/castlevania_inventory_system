@@ -164,7 +164,6 @@ class ItemEditUi(QtView):
         directory = os.path.expanduser("~/GIT-Repository/"
                                        "castlevania_inventory_system/"
                                        "src/resources/images/items")
-        os.system("ls {0}".format(directory))
         file_name = QFileDialog.getOpenFileName(caption="Choose item image...",
                                                 directory=directory, filter='*',
                                                 options=QFileDialog.DontUseNativeDialog)

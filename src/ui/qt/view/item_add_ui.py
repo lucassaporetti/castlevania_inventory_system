@@ -151,18 +151,19 @@ class ItemAddUi(QtView):
         self.parent.stackedMain.setCurrentIndex(0)
         self.parent.itemInformationUi.entities_id_list.clear()
         self.parent.itemInformationUi.update_lists()
+        self.parent.imagePaths.get_image(8)
         self.log.info('Item saved: {}'.format(self.selected_item))
 
     def on_cancel(self):
         self.on_reset()
         self.parent.stackedMain.setCurrentIndex(0)
+        self.parent.ImagePaths.get_image(8)
         self.parent.itemInformationUi.categoryBox.setCurrentIndex(8)
 
     def open_file(self, event, source_object):
         directory = os.path.expanduser("~/GIT-Repository/"
                                        "castlevania_inventory_system/"
                                        "src/resources/images/items")
-        os.system("ls {0}".format(directory))
         file_name = QFileDialog.getOpenFileName(caption="Choose item image...",
                                                 directory=directory, filter='*',
                                                 options=QFileDialog.DontUseNativeDialog)
