@@ -47,7 +47,9 @@ class ItemSearchUi(QtView):
                 item_icon.addPixmap(QPixmap(q_img),
                                     QIcon.Normal, QIcon.Off)
                 list_item.setIcon(item_icon)
-                list_item.setText(item.name + f' - {item.description}')
+                list_item.setText(f'{item.name} - {item.category} - {item.item_type}'
+                                  f' - {item.description} - {item.attributes} -'
+                                  f' {item.dropped_by} - {item.found_at}')
                 list_item.setWhatsThis(item.entity_id)
                 self.searchList.addItem(list_item)
                 self.entities_id_list.append(f'{list_item.whatsThis()}')
