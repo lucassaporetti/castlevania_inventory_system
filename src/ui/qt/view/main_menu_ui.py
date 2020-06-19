@@ -5,6 +5,7 @@ from ui.qt.view.item_edit_ui import ItemEditUi
 from src.ui.qt.view.item_add_ui import ItemAddUi
 from src.ui.qt.view.item_information_ui import ItemInformationUi
 from resources.resources_properties.image_paths import ImagePaths
+from ui.qt.view.item_search_ui import ItemSearchUi
 
 
 class MainMenuUi(QtView):
@@ -18,6 +19,7 @@ class MainMenuUi(QtView):
         self.ImagePaths = ImagePaths(self)
         self.itemAddUi = ItemAddUi(self)
         self.ItemEditUi = ItemEditUi(self)
+        self.ItemSearchUi = ItemSearchUi(self)
         self.frameMain = self.qt.find_frame('frameMain')
         self.frameToolbox = self.qt.find_frame('frameToolbox')
         self.addButton = self.qt.find_tool_button('addButton')
@@ -37,7 +39,10 @@ class MainMenuUi(QtView):
         self.window.show()
 
     def search_button_clicked(self):
-        pass
+        self.itemInformationUi.categoryBox.setCurrentIndex(8)
+        self.stackedMain.setCurrentIndex(4)
+        self.ImagePaths.get_image(9)
+        self.ItemSearchUi.items_found()
 
     def add_button_clicked(self):
         self.itemInformationUi.categoryBox.setCurrentIndex(8)

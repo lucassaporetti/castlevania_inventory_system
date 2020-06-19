@@ -75,7 +75,7 @@ background-color: rgba(0, 0, 0, 113);</string>
     <enum>QFrame::Plain</enum>
    </property>
    <property name="currentIndex">
-    <number>3</number>
+    <number>4</number>
    </property>
    <widget class="QWidget" name="mainPage">
     <property name="styleSheet">
@@ -5007,6 +5007,18 @@ color: rgb(211, 215, 207);</string>
      <zorder>editStatisticsFrame</zorder>
      <zorder>editItemFrame</zorder>
      <zorder>editTitle</zorder>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="searchPage">
+    <widget class="QListWidget" name="searchList">
+     <property name="geometry">
+      <rect>
+       <x>92</x>
+       <y>-2</y>
+       <width>831</width>
+       <height>611</height>
+      </rect>
+     </property>
     </widget>
    </widget>
   </widget>
