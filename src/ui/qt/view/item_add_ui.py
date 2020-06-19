@@ -116,6 +116,9 @@ class ItemAddUi(QtView):
         self.addItemImage.setText('Click')
         self.addItemAnimation.setText('Click')
         self.addItemSpecialAnimation.setText('Click')
+        self.imageData = None
+        self.animationData = None
+        self.specialAnimationData = None
         self.window.repaint()
 
     def on_save(self):
@@ -143,16 +146,31 @@ class ItemAddUi(QtView):
         self.selected_item.found_at = self.addFoundBox.currentText()
         self.selected_item.dropped_by = self.addDroppedBox.currentText()
         self.selected_item.effect = self.addEffectEdit.toPlainText()
-        self.selected_item.image = self.imageData
-        self.selected_item.animation = self.animationData
-        self.selected_item.special_animation = self.specialAnimationData
-        self.item_service.save(self.selected_item)
-        self.on_reset()
-        self.parent.stackedMain.setCurrentIndex(0)
-        self.parent.itemInformationUi.entities_id_list.clear()
-        self.parent.itemInformationUi.update_lists()
-        self.parent.imagePaths.get_image(8)
-        self.log.info('Item saved: {}'.format(self.selected_item))
+        if self.imageData is None or self.animationData is None or self.specialAnimationData is None:
+            message = QMessageBox()
+            message.setStyleSheet("""
+                        background-color: rgb(0, 0, 0); 
+                        font: 12pt 'URW Bookman L'; 
+                        color: rgb(238, 238, 236); 
+                        gridline-color: rgb(46, 52, 54); 
+                        selection-color: rgb(0, 0, 0); 
+                        selection-background-color: rgb(181, 0, 0);
+                        """)
+            message.setText('Missing image file')
+            message.setWindowTitle('Error!')
+            message.setStandardButtons(QMessageBox.Ok)
+            message.exec_()
+        else:
+            self.selected_item.image = self.imageData
+            self.selected_item.animation = self.animationData
+            self.selected_item.special_animation = self.specialAnimationData
+            self.item_service.save(self.selected_item)
+            self.on_reset()
+            self.parent.stackedMain.setCurrentIndex(0)
+            self.parent.itemInformationUi.entities_id_list.clear()
+            self.parent.itemInformationUi.update_lists()
+            self.parent.ImagePaths.get_image(8)
+            self.log.info('Item saved: {}'.format(self.selected_item))
 
     def on_cancel(self):
         self.on_reset()
@@ -169,36 +187,32 @@ class ItemAddUi(QtView):
                                                 options=QFileDialog.DontUseNativeDialog)
         if file_name == ('', ''):
             if source_object == self.addItemImage:
-                self.imageData = 'Without Image'
-                return self.addItemImage.setText('Without\nImage')
+                self.imageData = None
             elif source_object == self.addItemAnimation:
-                self.animationData = 'Without Image'
-                return self.addItemAnimation.setText('Without Image')
+                self.animationData = None
             else:
-                self.specialAnimationData = 'Without Image'
-                return self.addItemSpecialAnimation.setText('Without Image')
+                self.specialAnimationData = None
+        item_image = file_name[0]
+        if source_object == self.addItemImage:
+            q_image = QtGui.QImage(item_image)
+            q_pixmap = QtGui.QPixmap.fromImage(q_image)
+            q_pixmap_image = QtGui.QPixmap(q_pixmap)
+            source_object.setPixmap(q_pixmap_image)
+            source_object.show()
         else:
-            item_image = file_name[0]
-            if source_object == self.addItemImage:
-                q_image = QtGui.QImage(item_image)
-                q_pixmap = QtGui.QPixmap.fromImage(q_image)
-                q_pixmap_image = QtGui.QPixmap(q_pixmap)
-                source_object.setPixmap(q_pixmap_image)
-                source_object.show()
-            else:
-                movie = QtGui.QMovie(item_image)
-                source_object.setMovie(movie)
-                movie.start()
+            movie = QtGui.QMovie(item_image)
+            source_object.setMovie(movie)
+            movie.start()
+        with open(file_name[0], 'rb') as file:
+            image_read = file.read()
+            binary_data = base64.b64encode(image_read)
+        if source_object == self.addItemImage:
+            self.imageData = binary_data
+            return self.imageData
+        elif source_object == self.addItemAnimation:
+            self.animationData = binary_data
+            return self.animationData
+        else:
+            self.specialAnimationData = binary_data
+            return self.specialAnimationData
 
-            with open(file_name[0], 'rb') as file:
-                image_read = file.read()
-                binary_data = base64.b64encode(image_read)
-            if source_object == self.addItemImage:
-                self.imageData = binary_data
-                return self.imageData
-            elif source_object == self.addItemAnimation:
-                self.animationData = binary_data
-                return self.animationData
-            else:
-                self.specialAnimationData = binary_data
-                return self.specialAnimationData

@@ -136,72 +136,47 @@ class ItemInformationUi(QtView):
                 widget_list.setViewMode(QListView.IconMode)
                 list_item = QListWidgetItem()
                 item_icon = QIcon()
-                if item.image == "b'Without Image'":
-                    list_item.setIcon(item_icon)
-                    list_item.setText(item.name.replace(' ', '\n'))
-                    list_item.setWhatsThis(item.entity_id)
-                    widget_list.addItem(list_item)
-                    self.entities_id_list.append(f'{list_item.whatsThis()}')
-                else:
-                    item_image_right = item.image.replace('b"b', '').replace("'", '').replace('"', '')
-                    item_image = self.str_to_rgb(item_image_right)
-                    height, width, channel = item_image.shape
-                    bytes_per_line = 3 * width
-                    q_img = QImage(item_image.data, width, height,
-                                   bytes_per_line, QImage.Format_RGB888).rgbSwapped()
-                    item_icon.addPixmap(QPixmap(q_img),
-                                        QIcon.Normal, QIcon.Off)
-                    list_item.setIcon(item_icon)
-                    list_item.setText(item.name.replace(' ', '\n'))
-                    list_item.setWhatsThis(item.entity_id)
-                    widget_list.addItem(list_item)
-                    self.entities_id_list.append(f'{list_item.whatsThis()}')
+                item_image_right = item.image.replace('b"b', '').replace("'", '').replace('"', '')
+                item_image = self.str_to_rgb(item_image_right)
+                height, width, channel = item_image.shape
+                bytes_per_line = 3 * width
+                q_img = QImage(item_image.data, width, height,
+                               bytes_per_line, QImage.Format_RGB888).rgbSwapped()
+                item_icon.addPixmap(QPixmap(q_img),
+                                    QIcon.Normal, QIcon.Off)
+                list_item.setIcon(item_icon)
+                list_item.setText(item.name.replace(' ', '\n'))
+                list_item.setWhatsThis(item.entity_id)
+                widget_list.addItem(list_item)
+                self.entities_id_list.append(f'{list_item.whatsThis()}')
                 break
 
     def load_item_image(self, item, label):
-        if item.image == "b'Without Image'":
-            label.setText('Without\nImage')
-        else:
-            item_image_right = item.image.replace('b"b', '').replace("'", '').replace('"', '')
-            item_image = self.str_to_rgb(item_image_right)
-            height, width, channel = item_image.shape
-            bytes_per_line = 3 * width
-            q_image = QImage(item_image.data, width, height,
-                             bytes_per_line, QImage.Format_RGB888).rgbSwapped()
-            q_pixmap = QPixmap.fromImage(q_image)
-            q_pixmap_image = QPixmap(q_pixmap)
-            label.setPixmap(q_pixmap_image)
-            label.show()
+        item_image_right = item.image.replace('b"b', '').replace("'", '').replace('"', '')
+        item_image = self.str_to_rgb(item_image_right)
+        height, width, channel = item_image.shape
+        bytes_per_line = 3 * width
+        q_image = QImage(item_image.data, width, height,
+                         bytes_per_line, QImage.Format_RGB888).rgbSwapped()
+        q_pixmap = QPixmap.fromImage(q_image)
+        q_pixmap_image = QPixmap(q_pixmap)
+        label.setPixmap(q_pixmap_image)
+        label.show()
 
     def load_item_gif(self, item, label):
         if label == self.infoItemAnimation:
-            if item.animation == "b'Without Image'":
-                label.setText('Without Image')
-            else:
-                item_image_right = item.animation.replace('b"b', '').replace("'", '').replace('"', '')
-                item_image = base64.b64decode(item_image_right)
-                a = QtCore.QByteArray(item_image)
-                b = QtCore.QBuffer(a)
-                m = QtGui.QMovie()
-                m.setFormat(a)
-                m.setDevice(b)
-                label.setMovie(m)
-                m.start()
-                m.stop()
+            item_image_right = item.animation.replace('b"b', '').replace("'", '').replace('"', '')
         else:
-            if item.special_animation == "b'Without Image'":
-                label.setText('Without Image')
-            else:
-                item_image_right = item.special_animation.replace('b"b', '').replace("'", '').replace('"', '')
-                item_image = base64.b64decode(item_image_right)
-                a = QtCore.QByteArray(item_image)
-                b = QtCore.QBuffer(a)
-                m = QtGui.QMovie()
-                m.setFormat(a)
-                m.setDevice(b)
-                label.setMovie(m)
-                m.start()
-                m.stop()
+            item_image_right = item.special_animation.replace('b"b', '').replace("'", '').replace('"', '')
+        item_image = base64.b64decode(item_image_right)
+        a = QtCore.QByteArray(item_image)
+        b = QtCore.QBuffer(a)
+        m = QtGui.QMovie()
+        m.setFormat(a)
+        m.setDevice(b)
+        label.setMovie(m)
+        m.start()
+        m.stop()
 
     def update_lists(self):
         self.load_to_list(self.weaponList, 'Weapon')

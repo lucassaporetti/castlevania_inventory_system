@@ -1,7 +1,12 @@
 import os
+import io
+import cv2
+import numpy
+import imageio
 import base64
 import functools
-from PyQt5 import QtGui
+from PyQt5 import QtGui, QtCore
+from PyQt5.QtGui import QImage, QPixmap
 from PyQt5.QtWidgets import *
 from src.ui.qt.view.qt_view import QtView
 from src.core.service.service_facade import ServiceFacade
@@ -47,6 +52,9 @@ class ItemEditUi(QtView):
         self.imageData = None
         self.animationData = None
         self.specialAnimationData = None
+        self.itemImageClicked = False
+        self.itemAnimationClicked = False
+        self.itemSpecialAnimationClicked = False
         self.setup_ui()
 
     def setup_ui(self):
@@ -59,6 +67,33 @@ class ItemEditUi(QtView):
             functools.partial(self.open_file, source_object=self.editItemAnimation)
         self.editItemSpecialAnimation.mouseReleaseEvent = \
             functools.partial(self.open_file, source_object=self.editItemSpecialAnimation)
+
+    def load_item_image(self, item, label):
+        item_image_right = item.image.replace('b"b', '').replace("'", '').replace('"', '')
+        item_image = self.str_to_rgb(item_image_right)
+        height, width, channel = item_image.shape
+        bytes_per_line = 3 * width
+        q_image = QImage(item_image.data, width, height,
+                         bytes_per_line, QImage.Format_RGB888).rgbSwapped()
+        q_pixmap = QPixmap.fromImage(q_image)
+        q_pixmap_image = QPixmap(q_pixmap)
+        label.setPixmap(q_pixmap_image)
+        label.show()
+
+    def load_item_gif(self, item, label):
+        if label == self.editItemAnimation:
+            item_image_right = item.animation.replace('b"b', '').replace("'", '').replace('"', '')
+        else:
+            item_image_right = item.special_animation.replace('b"b', '').replace("'", '').replace('"', '')
+        item_image = base64.b64decode(item_image_right)
+        a = QtCore.QByteArray(item_image)
+        b = QtCore.QBuffer(a)
+        m = QtGui.QMovie()
+        m.setFormat(a)
+        m.setDevice(b)
+        label.setMovie(m)
+        m.start()
+        m.stop()
 
     def item_selected(self, selected_id):
         for item in self.item_service.list():
@@ -88,6 +123,9 @@ class ItemEditUi(QtView):
                 self.editFoundBox.setCurrentText(item.found_at)
                 self.editDroppedBox.setCurrentText(item.dropped_by)
                 self.editEffectEdit.setText(item.effect)
+                self.load_item_image(item, label=self.editItemImage)
+                self.load_item_gif(item, label=self.editItemAnimation)
+                self.load_item_gif(item, label=self.editItemSpecialAnimation)
                 self.edited_item = item
 
     def on_reset(self):
@@ -118,6 +156,9 @@ class ItemEditUi(QtView):
         self.editItemImage.setText('Click')
         self.editItemAnimation.setText('Click')
         self.editItemSpecialAnimation.setText('Click')
+        self.imageData = None
+        self.animationData = None
+        self.specialAnimationData = None
         self.window.repaint()
 
     def on_save(self):
@@ -144,10 +185,19 @@ class ItemEditUi(QtView):
         self.edited_item.found_at = self.editFoundBox.currentText()
         self.edited_item.dropped_by = self.editDroppedBox.currentText()
         self.edited_item.effect = self.editEffectEdit.toPlainText()
-        self.edited_item.image = self.imageData
-        self.edited_item.animation = self.animationData
-        self.edited_item.special_animation = self.specialAnimationData
         self.edited_item.entity_id = self.entityId
+        if self.itemImageClicked is True and self.imageData is not None:
+            self.edited_item.image = self.imageData
+        else:
+            self.edited_item.image = self.edited_item.image.replace('"b', '').replace('"', '')
+        if self.itemAnimationClicked is True and self.animationData is not None:
+            self.edited_item.animation = self.animationData
+        else:
+            self.edited_item.animation = self.edited_item.animation.replace('"b', '').replace('"', '')
+        if self.itemSpecialAnimationClicked is True and self.specialAnimationData is not None:
+            self.edited_item.special_animation = self.specialAnimationData
+        else:
+            self.edited_item.special_animation = self.edited_item.special_animation.replace('"b', '').replace('"', '')
         self.item_service.save(self.edited_item)
         self.on_reset()
         self.parent.stackedMain.setCurrentIndex(0)
@@ -160,7 +210,16 @@ class ItemEditUi(QtView):
         self.parent.stackedMain.setCurrentIndex(0)
         self.parent.itemInformationUi.categoryBox.setCurrentIndex(8)
 
+    def clicked_source(self, source_object):
+        if source_object == self.editItemImage:
+            self.itemImageClicked = True
+        elif source_object == self.editItemAnimation:
+            self.itemAnimationClicked = True
+        else:
+            self.itemSpecialAnimationClicked = True
+
     def open_file(self, event, source_object):
+        self.clicked_source(source_object)
         directory = os.path.expanduser("~/GIT-Repository/"
                                        "castlevania_inventory_system/"
                                        "src/resources/images/items")
@@ -169,14 +228,11 @@ class ItemEditUi(QtView):
                                                 options=QFileDialog.DontUseNativeDialog)
         if file_name == ('', ''):
             if source_object == self.editItemImage:
-                self.imageData = 'Without Image'
-                return self.editItemImage.setText('Without\nImage')
+                self.imageData = None
             elif source_object == self.editItemAnimation:
-                self.animationData = 'Without Image'
-                return self.editItemAnimation.setText('Without Image')
+                self.animationData = None
             else:
-                self.specialAnimationData = 'Without Image'
-                return self.editItemSpecialAnimation.setText('Without Image')
+                self.specialAnimationData = None
         else:
             item_image = file_name[0]
             if source_object == self.editItemImage:
@@ -201,3 +257,14 @@ class ItemEditUi(QtView):
             else:
                 self.specialAnimationData = binary_data
                 return self.specialAnimationData
+
+    @staticmethod
+    def str_to_rgb(base64_str):
+        image_data = base64.b64decode(base64_str)
+        image = imageio.imread(io.BytesIO(image_data))
+        return cv2.cvtColor(numpy.array(image), cv2.COLOR_BGR2RGB)
+
+    @staticmethod
+    def str_to_bgr(base64_str):
+        image_data = base64.b64decode(base64_str)
+        return image_data
