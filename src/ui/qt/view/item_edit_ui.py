@@ -1,8 +1,4 @@
 import os
-import io
-import cv2
-import numpy
-import imageio
 import base64
 import functools
 from PyQt5 import QtGui, QtCore
@@ -70,7 +66,7 @@ class ItemEditUi(QtView):
 
     def load_item_image(self, item, label):
         item_image_right = item.image.replace('b"b', '').replace("'", '').replace('"', '')
-        item_image = self.str_to_rgb(item_image_right)
+        item_image = self.parent.itemInformationUi.str_to_rgb(item_image_right)
         height, width, channel = item_image.shape
         bytes_per_line = 3 * width
         q_image = QImage(item_image.data, width, height,
@@ -257,14 +253,3 @@ class ItemEditUi(QtView):
             else:
                 self.specialAnimationData = binary_data
                 return self.specialAnimationData
-
-    @staticmethod
-    def str_to_rgb(base64_str):
-        image_data = base64.b64decode(base64_str)
-        image = imageio.imread(io.BytesIO(image_data))
-        return cv2.cvtColor(numpy.array(image), cv2.COLOR_BGR2RGB)
-
-    @staticmethod
-    def str_to_bgr(base64_str):
-        image_data = base64.b64decode(base64_str)
-        return image_data
