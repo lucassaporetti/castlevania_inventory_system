@@ -32,7 +32,7 @@ w = QLabel()
 w.setMovie(m)
 m.start()
 
-w.resize(500, 500)
+w.resize(200, 200)
 w.show()
 app.exec_()
 

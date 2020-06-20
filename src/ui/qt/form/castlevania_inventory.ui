@@ -75,7 +75,7 @@ background-color: rgba(0, 0, 0, 177);</string>
     <enum>QFrame::Plain</enum>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>3</number>
    </property>
    <widget class="QWidget" name="mainPage">
     <property name="styleSheet">
@@ -1031,7 +1031,7 @@ color: rgb(211, 215, 207);</string>
         <x>216</x>
         <y>507</y>
         <width>219</width>
-        <height>51</height>
+        <height>81</height>
        </rect>
       </property>
       <property name="maximumSize">
@@ -1895,7 +1895,7 @@ background-color: rgba(0, 0, 0, 0);</string>
         <x>211</x>
         <y>500</y>
         <width>219</width>
-        <height>51</height>
+        <height>60</height>
        </rect>
       </property>
       <property name="maximumSize">
@@ -3713,7 +3713,7 @@ background-color: rgba(0, 0, 0, 0);</string>
         <x>211</x>
         <y>499</y>
         <width>219</width>
-        <height>51</height>
+        <height>60</height>
        </rect>
       </property>
       <property name="maximumSize">
