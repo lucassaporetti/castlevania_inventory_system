@@ -2,4 +2,4 @@
 #
 # Package: src.ui.qt.view
 
-__all__ = ["item_add_ui", "item_edit_ui", "item_information_ui", "main_menu_ui", "qt_view"]
+__all__ = ["item_add_ui", "item_edit_ui", "item_information_ui", "item_search_ui", "main_menu_ui", "qt_view"]

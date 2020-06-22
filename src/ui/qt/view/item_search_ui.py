@@ -1,8 +1,8 @@
 import functools
-from PyQt5.QtGui import QIcon, QImage, QPixmap
-from PyQt5.QtWidgets import QWidget, QListView, QListWidgetItem, QMessageBox
-from core.service.service_facade import ServiceFacade
 from ui.qt.view.qt_view import QtView
+from PyQt5.QtGui import QIcon, QImage, QPixmap
+from core.service.service_facade import ServiceFacade
+from PyQt5.QtWidgets import QWidget, QListView, QListWidgetItem, QMessageBox
 
 
 class ItemSearchUi(QtView):

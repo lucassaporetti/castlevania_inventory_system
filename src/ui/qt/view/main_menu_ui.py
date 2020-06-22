@@ -3,9 +3,9 @@ from PyQt5.QtWidgets import *
 from src.ui.qt.view.qt_view import QtView
 from ui.qt.view.item_edit_ui import ItemEditUi
 from src.ui.qt.view.item_add_ui import ItemAddUi
+from ui.qt.view.item_search_ui import ItemSearchUi
 from src.ui.qt.view.item_information_ui import ItemInformationUi
 from resources.resources_properties.image_paths import ImagePaths
-from ui.qt.view.item_search_ui import ItemSearchUi
 
 
 class MainMenuUi(QtView):
@@ -33,6 +33,7 @@ class MainMenuUi(QtView):
         self.itemInformationUi.categoryBox.setCurrentIndex(8)
         self.stackedMain.setCurrentIndex(0)
         self.searchButton.clicked.connect(self.search_button_clicked)
+        self.searchLine.returnPressed.connect(self.searchButton.click)
         self.addButton.clicked.connect(self.add_button_clicked)
 
     def show(self):

@@ -1,9 +1,9 @@
 import os
 import base64
 import functools
+from PyQt5.QtWidgets import *
 from PyQt5 import QtGui, QtCore
 from PyQt5.QtGui import QImage, QPixmap
-from PyQt5.QtWidgets import *
 from src.ui.qt.view.qt_view import QtView
 from src.core.service.service_facade import ServiceFacade
 
@@ -51,6 +51,7 @@ class ItemEditUi(QtView):
         self.itemImageClicked = False
         self.itemAnimationClicked = False
         self.itemSpecialAnimationClicked = False
+        self.resetButtonClicked = False
         self.setup_ui()
 
     def setup_ui(self):
@@ -155,6 +156,7 @@ class ItemEditUi(QtView):
         self.imageData = None
         self.animationData = None
         self.specialAnimationData = None
+        self.resetButtonClicked = True
         self.window.repaint()
 
     def on_save(self):
@@ -194,12 +196,30 @@ class ItemEditUi(QtView):
             self.edited_item.special_animation = self.specialAnimationData
         else:
             self.edited_item.special_animation = self.edited_item.special_animation.replace('"b', '').replace('"', '')
-        self.item_service.save(self.edited_item)
-        self.on_reset()
-        self.parent.stackedMain.setCurrentIndex(0)
-        self.parent.itemInformationUi.entities_id_list.clear()
-        self.parent.itemInformationUi.update_lists()
-        self.log.info('Item edited: {}'.format(self.edited_item))
+        if self.resetButtonClicked is True:
+            if self.imageData is None or self.animationData is None or self.specialAnimationData is None:
+                message = QMessageBox()
+                message.setStyleSheet("""
+                                        background-color: rgb(0, 0, 0); 
+                                        font: 12pt 'URW Bookman L'; 
+                                        color: rgb(238, 238, 236); 
+                                        gridline-color: rgb(46, 52, 54); 
+                                        selection-color: rgb(0, 0, 0); 
+                                        selection-background-color: rgb(181, 0, 0);
+                                        """)
+                message.setText('Missing image file')
+                message.setWindowTitle('Error!')
+                message.setStandardButtons(QMessageBox.Ok)
+                message.exec_()
+            else:
+                self.resetButtonClicked = False
+        else:
+            self.item_service.save(self.edited_item)
+            self.on_reset()
+            self.parent.stackedMain.setCurrentIndex(0)
+            self.parent.itemInformationUi.entities_id_list.clear()
+            self.parent.itemInformationUi.update_lists()
+            self.log.info('Item edited: {}'.format(self.edited_item))
 
     def on_cancel(self):
         self.on_reset()

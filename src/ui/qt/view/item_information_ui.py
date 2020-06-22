@@ -110,6 +110,7 @@ class ItemInformationUi(QtView):
         self.categoryBox.setCurrentIndex(8)
         self.parent.stackedMain.setCurrentIndex(3)
         self.parent.ItemEditUi.item_selected(self.selected_id)
+        self.parent.ItemEditUi.resetButtonClicked = False
 
     def remove_button_clicked(self):
         self.parent.ImagePaths.get_image(10)
