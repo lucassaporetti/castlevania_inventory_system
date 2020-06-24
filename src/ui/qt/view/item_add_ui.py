@@ -179,9 +179,7 @@ class ItemAddUi(QtView):
         self.parent.itemInformationUi.categoryBox.setCurrentIndex(8)
 
     def open_file(self, event, source_object):
-        directory = os.path.expanduser("~/GIT-Repository/"
-                                       "castlevania_inventory_system/"
-                                       "src/resources/images/items")
+        directory = os.path.expanduser("~")
         file_name = QFileDialog.getOpenFileName(caption="Choose item image...",
                                                 directory=directory, filter='*',
                                                 options=QFileDialog.DontUseNativeDialog)
